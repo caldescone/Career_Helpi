@@ -38,9 +38,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React - Final Project
-          Christopher Calderone
         </a>
-        <p>Connor Westerman</p>
+        <p>Connor Westerman, Ethan Ciarlo, John Fulkerson, Christopher Calderone
+        </p>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
@@ -48,7 +48,6 @@ function App() {
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
-      <div>Ethan Ciarlo</div>
     </div>
   );
 }
