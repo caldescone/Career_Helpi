@@ -39,6 +39,7 @@ function App() {
         >
           Learn React - Final Project
         </a>
+        <p>Connor Westerman</p>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
