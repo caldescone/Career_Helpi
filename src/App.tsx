@@ -38,6 +38,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React - Final Project
+          Christopher Calderone
         </a>
         <p>Connor Westerman</p>
       </header>
