@@ -40,6 +40,7 @@ function App() {
           Learn React - Final Project
           Christopher Calderone
         </a>
+        <p>Connor Westerman</p>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
@@ -47,6 +48,7 @@ function App() {
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
+      <div>Ethan Ciarlo</div>
     </div>
   );
 }
