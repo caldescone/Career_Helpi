@@ -3,6 +3,7 @@ import "./App.css";
 import { Button, Form } from "react-bootstrap";
 
 import BasicQuiz from "./components/BasicQuiz";
+import DetailedQuiz from "./components/DetailedQuiz";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -27,6 +28,12 @@ function App() {
   }
   return (
     <div className="App">
+      <Button className="Basic-Button" onClick={() => BasicQuiz()}>
+        Basic Quiz
+      </Button>
+      <Button className="Detailed-Button" onClick={() => DetailedQuiz()}>
+        Detailed Quiz 
+      </Button>
       <header className="App-header">
         <BasicQuiz />
       </header>
