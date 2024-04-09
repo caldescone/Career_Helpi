@@ -3,6 +3,7 @@ import "./App.css";
 import { Button, Form } from "react-bootstrap";
 
 import BasicQuiz from "./components/BasicQuiz";
+import DetailedQuiz from "./components/DetailedQuiz";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -14,6 +15,9 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
+  const [currentQuiz, setCurrentQuiz] = useState<"detailed" | "basic" | "none">(
+    "none"
+  );
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -27,9 +31,8 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-        <BasicQuiz />
-      </header>
+      { currentQuiz === "basic" ? <BasicQuiz /> : null }
+      { currentQuiz === "detailed" ? <DetailedQuiz /> : null }
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control
