@@ -15,6 +15,9 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
+  const [currentQuiz, setCurrentQuiz] = useState<"detailed" | "basic" | "none">(
+    "none"
+  );
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -28,6 +31,8 @@ function App() {
   }
   return (
     <div className="App">
+      { currentQuiz === "basic" ? <BasicQuiz /> : null }
+      { currentQuiz === "detailed" ? <DetailedQuiz /> : null }
       <Button className="Basic-Button" onClick={() => BasicQuiz()}>
         Basic Quiz
       </Button>
