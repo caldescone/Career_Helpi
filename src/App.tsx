@@ -15,8 +15,8 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [currentQuiz, setCurrentQuiz] = useState<"detailed" | "basic" | "none">(
-    "none"
+  const [currentPage, setCurrentPage] = useState<"detailed" | "basic" | "home">(
+    "home"
   );
 
   //sets the local storage item to the api key the user inputed
@@ -31,16 +31,18 @@ function App() {
   }
   return (
     <div className="App">
-      { currentQuiz === "basic" ? <BasicQuiz /> : null }
-      { currentQuiz === "detailed" ? <DetailedQuiz /> : null }
-      <Button className="Basic-Button" onClick={() => BasicQuiz()}>
+      { currentPage === "basic" ? <BasicQuiz /> : null }
+      { currentPage === "detailed" ? <DetailedQuiz /> : null }
+      <Button className="Basic-Button" onClick={() => setCurrentPage("home")}>
+        Home Page
+      </Button>
+      <Button className="Basic-Button" onClick={() => setCurrentPage("basic")}>
         Basic Quiz
       </Button>
-      <Button className="Detailed-Button" onClick={() => DetailedQuiz()}>
+      <Button className="Detailed-Button" onClick={() => setCurrentPage("detailed")}>
         Detailed Quiz 
       </Button>
       <header className="App-header">
-        <BasicQuiz />
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
