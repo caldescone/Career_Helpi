@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (39 ms)
+  ✕ renders learn react link (37 ms)
 
   ● renders learn react link
 
@@ -15,32 +15,27 @@ FAIL src/App.test.tsx
         [36m<div[39m
           [33mclass[39m=[32m"App"[39m
         [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"Basic-Button btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mHome Page[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"Basic-Button btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mBasic Quiz[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"Detailed-Button btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mDetailed Quiz[0m
+          [36m</button>[39m
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"quiz"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"progress-bar"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"progress-bar__fill"[39m
-                  [33mstyle[39m=[32m"width: 80%;"[39m
-                [36m>[39m
-                  [36m<span[39m
-                    [33mclass[39m=[32m"progress-bar__text"[39m
-                  [36m>[39m
-                    [0m80[0m
-                    [0m%[0m
-                  [36m</span>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<h1>[39m
-                [0m Basic Quiz[0m
-              [36m</h1>[39m
-            [36m</div>[39m
-          [36m</header>[39m
+          [36m/>[39m
           [36m<form[39m
             [33mclass[39m=[32m""[39m
           [36m>[39m
@@ -87,20 +82,20 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |      40 |    16.66 |    37.5 |      40 |                   
- src                 |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx            |      60 |       50 |   33.33 |      60 | 12,20-26          
+All files            |   23.52 |       30 |    9.09 |   23.52 |                   
+ src                 |      28 |       30 |    12.5 |      28 |                   
+  App.tsx            |      50 |       50 |   16.66 |      50 | 13,24-30,36-42    
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |   66.66 |      100 |   66.66 |   66.66 |                   
-  BasicQuiz.tsx      |     100 |      100 |     100 |     100 |                   
+ src/components      |   11.11 |      100 |       0 |   11.11 |                   
+  BasicQuiz.tsx      |       0 |      100 |       0 |       0 | 5-8               
   DetailedQuiz.tsx   |       0 |      100 |       0 |       0 | 5-8               
-  ProgressBar.tsx    |     100 |      100 |     100 |     100 |                   
+  ProgressBar.tsx    |   33.33 |      100 |       0 |   33.33 | 5-7               
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.813 s
+Time:        2.948 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
