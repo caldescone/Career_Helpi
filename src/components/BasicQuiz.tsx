@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
 import ProgressBar from "./ProgressBar";
 
 export default function BasicQuiz() {
-  const [questionsComplete] = useState<number>(12);
+  const [questionsComplete] = useState<number>(0);
   const totalQuestions = 15;
 
   return (
