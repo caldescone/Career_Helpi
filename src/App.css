@@ -39,7 +39,11 @@
   width: 100%;
 }
 
-.quiz {
+
+/*
+  It's giving me an error so I commented it off for now since it's not used yet
+
+  .quiz {
   background-color: #00000;
   top: 0;
   left: 0;  
@@ -47,6 +51,25 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
+} */
+
+.column {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+
+.columnCenter {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
