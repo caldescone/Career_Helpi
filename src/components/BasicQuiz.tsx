@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 import ProgressBar from "./ProgressBar";
 
 export default function BasicQuiz() {
@@ -11,25 +12,39 @@ export default function BasicQuiz() {
         questionsComplete={questionsComplete}
         totalQuestions={totalQuestions}
       />
-      <h1> Basic Quiz</h1>
-
+      <h1> <u> Basic Quiz </u> </h1>
       <hr></hr>
 
       <div className="row">
         <div className="column">
           <ol>
             <li>Question 1</li>
+            
+            <br></br>
             <li>Question 2</li>
+            
+            <br></br>
             <li>Question 3</li>
+            
+            <br></br>
             <li>Question 4</li>
+            
           </ol>
         </div>
         <div className="column">
           <ol>
             <li>Question 5</li>
+            
+            <br></br>
             <li>Question 6</li>
+            
+            <br></br>
             <li>Question 7</li>
+            
+            <br></br>
             <li>Question 8</li>
+            
+            <br></br>
           </ol>
         </div>
       </div>
