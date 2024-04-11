@@ -6,12 +6,35 @@ export default function BasicQuiz() {
   const totalQuestions = 15;
 
   return (
-    <div className="quiz">
+    <div>
       <ProgressBar
         questionsComplete={questionsComplete}
         totalQuestions={totalQuestions}
       />
       <h1> Basic Quiz</h1>
-    </div>
+
+      <hr></hr>
+
+      <div className="row">
+        <div className="column">
+          <ol>
+            <li>Question 1</li>
+            <li>Question 2</li>
+            <li>Question 3</li>
+            <li>Question 4</li>
+          </ol>
+        </div>
+        <div className="column">
+          <ol>
+            <li>Question 5</li>
+            <li>Question 6</li>
+            <li>Question 7</li>
+            <li>Question 8</li>
+          </ol>
+        </div>
+      </div>
+    <hr></hr>
+  </div>
+      
   );
 }
