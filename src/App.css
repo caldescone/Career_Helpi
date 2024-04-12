@@ -33,6 +33,7 @@
 }
 
 .progress-bar__text {
+  padding-left: 10px;
   color: #fff;
   font-size: 12px;
   text-align: center;
