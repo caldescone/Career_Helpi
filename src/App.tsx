@@ -4,6 +4,7 @@ import { Button, Form } from "react-bootstrap";
 
 import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
+import HomePage from "./components/HomePage";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -31,9 +32,12 @@ function App() {
   }
   return (
     <div className="App">
+      { currentPage === "home" ? <HomePage /> : null }
       { currentPage === "basic" ? <BasicQuiz /> : null }
       { currentPage === "detailed" ? <DetailedQuiz /> : null }
-      <Button className="Basic-Button" onClick={() => setCurrentPage("home")}>
+
+
+      <Button className="Home-Button" onClick={() => setCurrentPage("home")}>
         Home Page
       </Button>
       <Button className="Basic-Button" onClick={() => setCurrentPage("basic")}>
@@ -42,24 +46,6 @@ function App() {
       <Button className="Detailed-Button" onClick={() => setCurrentPage("detailed")}>
         Detailed Quiz 
       </Button>
-
-      {/* Is there a way to only see the description  */}
-      <div className="row">
-        <div className="columnCenter">
-          <h1> <u>Basic Quiz Description</u> </h1>
-          A quicker quiz filled with more basic questions. 
-          <br></br>
-          <br></br>
-          Estimated time: 5 Minutes
-        </div>
-        <div className="columnCenter">
-          <h1> <u>Detailed Quiz Description</u> </h1> 
-          A longer quiz filled with harder, more detailed questions.
-          <br></br>
-          <br></br>
-          Estimated time: 10 Minutes
-        </div>
-      </div>
 
 
       <header className="App-header">
@@ -81,3 +67,55 @@ function App() {
 }
 
 export default App;
+
+
+// return (
+//   <div className="App">
+//     { currentPage === "basic" ? <BasicQuiz /> : null }
+//     { currentPage === "detailed" ? <DetailedQuiz /> : null }
+//     <Button className="Basic-Button" onClick={() => setCurrentPage("home")}>
+//       Home Page
+//     </Button>
+//     <Button className="Basic-Button" onClick={() => setCurrentPage("basic")}>
+//       Basic Quiz
+//     </Button>
+//     <Button className="Detailed-Button" onClick={() => setCurrentPage("detailed")}>
+//       Detailed Quiz 
+//     </Button>
+
+
+//     <div className="row">
+//       <div className="columnCenter">
+//         <h1> <u>Basic Quiz Description</u> </h1>
+//         A quicker quiz filled with more basic questions. 
+//         <br></br>
+//         <br></br>
+//         Estimated time: 5 Minutes
+//       </div>
+//       <div className="columnCenter">
+//         <h1> <u>Detailed Quiz Description</u> </h1> 
+//         A longer quiz filled with harder, more detailed questions.
+//         <br></br>
+//         <br></br>
+//         Estimated time: 10 Minutes
+//       </div>
+//     </div>
+
+
+//     <header className="App-header">
+//     </header>
+//     <Form>
+//       <Form.Label>API Key:</Form.Label>
+//       <Form.Control
+//         type="password"
+//         placeholder="Insert API Key Here"
+//         onChange={changeKey}
+//       ></Form.Control>
+//       <br></br>
+//       <Button className="Submit-Button" onClick={handleSubmit}>
+//         Submit
+//       </Button>
+//     </Form>
+//   </div>
+// );
+// }
