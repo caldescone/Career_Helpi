@@ -9,7 +9,7 @@ export default function DetailedQuiz() {
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
   const totalQuestions = 8;
 
-  const handleAnswerChange = (index: number, value: string) => {
+  const updateAnswer = (index: number, value: string) => {
     const newAnswers = [...answers];
     newAnswers[index] = value;
     setAnswers(newAnswers);
@@ -34,7 +34,7 @@ export default function DetailedQuiz() {
               <input
                 type="text"
                 value={answers[index]}
-                onChange={(e) => handleAnswerChange(index, e.target.value)}
+                onChange={(e) => updateAnswer(index, e.target.value)}
               />
               {answers[index].length > 3 ? "✔️" : "❌"}
             </ol>
