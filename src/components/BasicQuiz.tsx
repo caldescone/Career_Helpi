@@ -29,7 +29,7 @@ export default function BasicQuiz() {
             <div className="row">
                 {Array.from({ length: 8 }, (_, index) => (
                     <div className="column" key={index}>
-                        <ol>
+                        <ol start={index+1}>
                             <li>Question {index + 1}</li>
                             <div>
                                 <Form.Group>
@@ -47,6 +47,9 @@ export default function BasicQuiz() {
                         </ol>
                     </div>
                 ))}
+              <hr></hr>
+                <button onClick={() => console.log("Submitted")}>Submit</button>
+              <hr></hr>
             </div>
             <hr />
         </div>
