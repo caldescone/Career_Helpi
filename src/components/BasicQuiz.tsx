@@ -51,7 +51,6 @@ export default function BasicQuiz() {
                 <button onClick={() => console.log("Submitted")}>Submit</button>
               <hr></hr>
             </div>
-            <hr />
         </div>
     );
 }
