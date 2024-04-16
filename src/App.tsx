@@ -6,7 +6,7 @@ import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
 
-import { sendQuery } from "./components/GPT";
+import { sendChatQuery } from "./components/GPT";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -48,7 +48,7 @@ function App() {
       <Button className="Detailed-Button" onClick={() => setCurrentPage("detailed")}>
         Detailed Quiz 
       </Button>
-      < Button className = "Basic-Button" onClick={() => sendQuery("What does the fox say?", keyData)}>
+      < Button className = "Basic-Button" onClick={() => sendChatQuery("What does the fox say?", keyData)}>
         Test API
       </Button>
 
