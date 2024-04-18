@@ -41,6 +41,14 @@ export default function DetailedQuiz() {
           </div>
         ))}
         <hr></hr>
+        {questionsComplete === answers.length ? (
+              <span>
+                <div>All Questions Complete!</div>
+                <div>When Ready, Please Hit Submit below</div>
+              </span>
+          ) : (
+              <span></span>
+          )}
         <button onClick={() => console.log("Submitted")}>Submit</button>
         <hr></hr>
       </div>
