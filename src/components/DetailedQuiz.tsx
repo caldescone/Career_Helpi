@@ -3,7 +3,14 @@ import ProgressBar from "./ProgressBar";
 
 export default function DetailedQuiz() {
   const defaultOption = "";
-  const QuestionList = ["Question 1","Question 2","Question 3","Question 4","Question 5","Question 6","Question 7","Question 8"]
+  const QuestionList = ["What type of career are you interested in?",
+    "In your ideal work environment, what type of schedule dynamic would you like for yourself?", 
+    "What is the highest level of education you have and would like to achieve?", 
+    "Reflecting on your skills and strengths, what types of roles or careers do you think would allow you to leverage them most effectively?", 
+    "Have you ever thought about turning a hobby or personal interest into a career? If so, how do you imagine that transition happening?", 
+    "Are there any emerging trends or technologies that excite you, and could potentially open up new career paths for you? If so, what are they and why?", 
+    "Have you ever considered starting your own business? If so, what skills or expertise do you possess that could be marketable in those areas?", 
+    "Have you ever thought about pursuing a career that involves travel or allows you to work remotely? What aspects of such a career appeal to you?"]
 
   const [answers, setAnswers] = useState<string[]>(new Array(8).fill(defaultOption));
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
