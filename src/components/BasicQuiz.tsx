@@ -5,6 +5,14 @@ import { Form } from "react-bootstrap";
 export default function BasicQuiz() {
 
     const options: string[] = ["", "Yes", "No"];
+    const QuestionList: string[] = ["Do you like creative tasks?", "Which do you favor more: working in an office or engaging in fieldwork?", 
+    "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?", 
+    "Are you a tactile person or more of a visual/auditory person?", 
+    "Do you lean towards working in a startup or a well-established company?", 
+    "Do you possess or plan to complete a college degree?", 
+    "Do you prefer working in a group or independently?", 
+    "Are you comfortable using technology or do you prefer non-technical tasks?"]
+    
     const defaultOption = options[0];
 
     const [selectedOptions, setSelectedOptions] = useState<string[]>(Array(8).fill(defaultOption));
@@ -30,7 +38,7 @@ export default function BasicQuiz() {
                 {Array.from({ length: 8 }, (_, index) => (
                     <div className="column" key={index}>
                         <ol start={index+1}>
-                            <li>Question {index + 1}</li>
+                            <li>{QuestionList[index]}</li>
                             <div>
                                 <Form.Group>
                                     <Form.Select value={selectedOptions[index]} onChange={(event) => updateSelectedOption(index, event)}>
