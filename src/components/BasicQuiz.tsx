@@ -38,7 +38,7 @@ export default function BasicQuiz() {
                 {Array.from({ length: 8 }, (_, index) => (
                     <div className="column" key={index}>
                         <ol start={index+1}>
-                            <li>{QuestionList[index]}</li>
+                            <div style={ {border: '1px solid black', padding: '2px'} } >{QuestionList[index]}</div>
                             <div>
                                 <Form.Group>
                                     <Form.Select value={selectedOptions[index]} onChange={(event) => updateSelectedOption(index, event)}>
@@ -56,7 +56,7 @@ export default function BasicQuiz() {
                     </div>
                 ))}
               <hr></hr>
-                <button onClick={() => console.log("Submitted")}>Submit</button>
+                <button className="submit" onClick={() => console.log("Submitted")}>Submit</button>
               <hr></hr>
             </div>
         </div>

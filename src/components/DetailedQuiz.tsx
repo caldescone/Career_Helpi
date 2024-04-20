@@ -37,7 +37,7 @@ export default function DetailedQuiz() {
         {[...Array(8)].map((_, index) => (
           <div className="column" key={index}>
             <ol start={index+1}>
-              <li>{QuestionList[index]}</li>
+              <div style={ {border: '1px solid black', padding: '2px'} }>{QuestionList[index]}</div>
               <input
                 type="text"
                 value={answers[index]}
@@ -48,7 +48,7 @@ export default function DetailedQuiz() {
           </div>
         ))}
         <hr></hr>
-        <button onClick={() => console.log("Submitted")}>Submit</button>
+        <button className="submit" onClick={() => console.log("Submitted")}>Submit</button>
         <hr></hr>
       </div>
     </div>
