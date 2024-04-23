@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
+import Report from "./Report";
 
 export default function DetailedQuiz() {
   const defaultOption = "";
@@ -39,8 +40,7 @@ export default function DetailedQuiz() {
             totalQuestions={totalQuestions}
           />
           <h1>
-            {" "}
-            <u> Detailed Quiz </u>{" "}
+            <u> Detailed Quiz </u>
           </h1>
 
           <hr></hr>
@@ -86,15 +86,7 @@ export default function DetailedQuiz() {
         ) : ( 
           <div>
             <h1> <u>Detailed Quiz Report</u> </h1>
-            <h4>Based on your answers to the quiz, here is a job that you might be interested in: </h4>
-            {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
-            <hr></hr>
-            <h3>Top Recommended Career:</h3>
-            <p>Job Description:</p> 
-            <p>Salary: </p>
-            <p>Education Required: </p>
-            {/* Maybe add a picture showing the job along with the results? */}
-            {/* Maybe style it so that there are boxes around the difference sections or something seperating them? */}
+            { showReport === true ? <Report /> : null }
             <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
             <hr></hr>
           </div>

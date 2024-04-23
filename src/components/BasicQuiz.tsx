@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { Form } from "react-bootstrap";
+import Report from "./Report";
 
 export default function BasicQuiz() {
   const QuestionList: string[] = [
@@ -106,31 +107,9 @@ export default function BasicQuiz() {
       ) : (
         <div>
           <h1>
-            {" "}
-            <u>Basic Quiz Report</u>{" "}
+            <u>Basic Quiz Report</u>
           </h1>
-          <h4>
-            Based on your answers to the quiz, here are some jobs that you might
-            be interested in:
-          </h4>
-          {/* 
-                Eventually used to make a list of recommended jobs
-                {
-                  <div>
-                    <ul>
-                    {recJobs.map((recJob,index) => )
-                      <li key={index}>{recJob}</li>
-                    }
-                    </ul>
-                  </div>
-                } */}
-          <hr></hr>
-          {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
-          <h3>Top Recommended Career:</h3>
-          <p>Salary: </p>
-          <p>Education Required: </p>
-          {/* Maybe add a picture showing the job along with the results? */}
-
+          { showReport === true ? <Report /> : null }
           <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
           <hr></hr>
         </div>
