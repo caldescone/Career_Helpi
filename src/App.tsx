@@ -40,13 +40,13 @@ function App() {
       { currentPage === "detailed" ? <DetailedQuiz /> : null }
 
 
-      <Button className="Home-Button mt-3 mx-auto mb-3" onClick={() => setCurrentPage("home")}>
+      <Button className="Home-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("home")}>
         Home Page
       </Button>
-      <Button className="Basic-Button mt-3 mx-auto mb-3" onClick={() => setCurrentPage("basic")}>
+      <Button className="Basic-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("basic")}>
         Basic Quiz
       </Button>
-      <Button className="Detailed-Button mt-3 mx-auto mb-3" onClick={() => setCurrentPage("detailed")}>
+      <Button className="Detailed-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("detailed")}>
         Detailed Quiz 
       </Button>
 
