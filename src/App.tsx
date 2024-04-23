@@ -32,6 +32,9 @@ function App() {
   }
   return (
     <div className="App">
+      <header className="App-header">
+        The Career Helpi
+      </header>
       { currentPage === "home" ? <HomePage /> : null }
       { currentPage === "basic" ? <BasicQuiz /> : null }
       { currentPage === "detailed" ? <DetailedQuiz /> : null }
