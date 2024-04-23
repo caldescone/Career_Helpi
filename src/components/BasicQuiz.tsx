@@ -72,8 +72,7 @@ export default function BasicQuiz() {
                     ))}
                   </Form.Select>
                 </Form.Group>
-                {selectedOptions[index] === "Yes" ||
-                selectedOptions[index] === "No"
+                {selectedOptions[index] !== ""
                   ? "✔️"
                   : "❌"}
               </div>
