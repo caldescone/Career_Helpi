@@ -69,24 +69,15 @@ export default function DetailedQuiz() {
         ) : ( 
           <div>
             <h1> <u>Detailed Quiz Report</u> </h1>
-            <h4>Based on your answers to the quiz, here are some jobs that you might be interested in:</h4>
-            {/* 
-            Eventually used to make a list of recommended jobs
-            {
-              <div>
-                <ul>
-                {recJobs.map((recJob,index) => )
-                  <li key={index}>{recJob}</li>
-                }
-                </ul>
-              </div>
-            } */}
-            <hr></hr>
+            <h4>Based on your answers to the quiz, here is a job that you might be interested in: </h4>
             {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
+            <hr></hr>
             <h3>Top Recommended Career:</h3>
+            <p>Job Description:</p> 
             <p>Salary: </p>
             <p>Education Required: </p>
             {/* Maybe add a picture showing the job along with the results? */}
+            {/* Maybe style it so that there are boxes around the difference sections or something seperating them? */}
             <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
             <hr></hr>
           </div>
