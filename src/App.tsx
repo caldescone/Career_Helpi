@@ -6,7 +6,7 @@ import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
 
-import logo from "./assets/images/logo.png";
+//import logo from "./assets/images/logo.png";
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
