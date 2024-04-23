@@ -29,11 +29,11 @@ export default function BasicQuiz() {
         setQuestionsComplete(newSelectedOptions.filter((option) => option !== defaultOption).length);
     }
 
-    function handleQuestionClick(question: string) {
-      if (selectedOptions.length < 3) {
-        setSelectedOptions([...selectedOptions, question]);
-      }
-    };
+    // function handleQuestionClick(question: string) {
+    //   if (selectedOptions.length < 3) {
+    //     setSelectedOptions([...selectedOptions, question]);
+    //   }
+    // };
 
     return (
         <div>
