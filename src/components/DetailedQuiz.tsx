@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
+import { sendDetailedQuizQuery } from "./GPT";
 
-export default function DetailedQuiz() {
+export default function DetailedQuiz({ keyData }: { keyData: string }) {
   const defaultOption = "";
   const QuestionList = [
     "What type of career are you interested in?",
@@ -29,6 +30,11 @@ export default function DetailedQuiz() {
       newAnswers.filter((answer) => answer.length > 3).length
     );
   };
+
+  function submitAnswers() {
+    setShowReport(true);
+    sendDetailedQuizQuery(QuestionList, answers, keyData);
+  }
 
   return (
     <div>
@@ -69,7 +75,7 @@ export default function DetailedQuiz() {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button onClick={() => setShowReport(true)}>Submit</button>
+                <button onClick={() => submitAnswers()}>Submit</button>
                 <hr></hr>
               </span>
             ) : (

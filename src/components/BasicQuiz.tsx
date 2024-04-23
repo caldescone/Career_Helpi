@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { Form } from "react-bootstrap";
+import { sendBasicQuizQuery } from "./GPT";
 
-export default function BasicQuiz() {
+export default function BasicQuiz({ keyData }: { keyData: string }) {
   const QuestionList: string[] = [
     "Do you like creative tasks?",
     "Which do you favor more: working in an office or engaging in fieldwork?",
@@ -42,6 +43,11 @@ export default function BasicQuiz() {
     setQuestionsComplete(
       newSelectedOptions.filter((option) => option !== options[index][0]).length
     );
+  }
+
+  function submitAnswers() {
+    setShowReport(true);
+    sendBasicQuizQuery(QuestionList, selectedOptions, keyData);
   }
 
   return (
@@ -89,7 +95,7 @@ export default function BasicQuiz() {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button onClick={() => setShowReport(true)}>Submit</button>
+                <button onClick={() => submitAnswers()}>Submit</button>
                 <hr></hr>
               </span>
             ) : (

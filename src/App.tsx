@@ -6,8 +6,6 @@ import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
 
-import { sendChatQuery } from "./components/GPT";
-
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -35,8 +33,8 @@ function App() {
   return (
     <div className="App">
       { currentPage === "home" ? <HomePage /> : null }
-      { currentPage === "basic" ? <BasicQuiz /> : null }
-      { currentPage === "detailed" ? <DetailedQuiz /> : null }
+      { currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null }
+      { currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null }
 
 
       <Button className="Home-Button" onClick={() => setCurrentPage("home")}>
@@ -48,10 +46,6 @@ function App() {
       <Button className="Detailed-Button" onClick={() => setCurrentPage("detailed")}>
         Detailed Quiz 
       </Button>
-      < Button className = "Basic-Button" onClick={() => sendChatQuery("What does the fox say?", keyData)}>
-        Test API
-      </Button>
-
 
       <header className="App-header">
       </header>
