@@ -52,15 +52,18 @@ export default function DetailedQuiz() {
           ))}
           <hr></hr>
           {questionsComplete === answers.length ? (
-                <span>
-                  <div>All Questions Complete!</div>
-                  <div>When Ready, Please Hit Submit below</div>
-                </span>
-            ) : (
-                <span></span>
-            )}
-          <button onClick={() => setShowReport(true)}>Submit</button>
-          <hr></hr>
+                    <span>
+                      <div>All Questions Complete!</div>
+                      <div>When Ready, Please Hit Submit Below to Generate your Results!</div>
+                      <button onClick={() => setShowReport(true)}>Submit</button>
+                      <hr></hr>
+                    </span>
+                ) : (
+                    <span>
+                      <p>Once you answers all the questions, a button will appear here to submit your answers.</p>
+                      <hr></hr>
+                    </span>
+                )}
         </div>
         </div>
         ) : ( 
@@ -84,6 +87,7 @@ export default function DetailedQuiz() {
             <p>Salary: </p>
             <p>Education Required: </p>
             {/* Maybe add a picture showing the job along with the results? */}
+            <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
             <hr></hr>
           </div>
         ) 

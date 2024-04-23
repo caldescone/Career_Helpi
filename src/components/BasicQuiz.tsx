@@ -70,13 +70,16 @@ export default function BasicQuiz() {
                 {questionsComplete === selectedOptions.length ? (
                     <span>
                       <div>All Questions Complete!</div>
-                      <div>When Ready, Please Hit Submit below</div>
+                      <div>When Ready, Please Hit Submit Below to Generate your Results!</div>
+                      <button onClick={() => setShowReport(true)}>Submit</button>
+                      <hr></hr>
                     </span>
                 ) : (
-                    <span></span>
+                    <span>
+                      <p>Once you answers all the questions, a button will appear here to submit your answers.</p>
+                      <hr></hr>
+                    </span>
                 )}
-                <button onClick={() => setShowReport(true)}>Submit</button>
-              <hr></hr>
             </div>
           </div>
             ) : (
@@ -100,6 +103,8 @@ export default function BasicQuiz() {
                 <p>Salary: </p>
                 <p>Education Required: </p>
                 {/* Maybe add a picture showing the job along with the results? */}
+
+                <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
                 <hr></hr>
               </div>
             )
