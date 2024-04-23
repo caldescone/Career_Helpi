@@ -53,7 +53,7 @@ function App() {
       <header className="App-header">
       </header>
       <Form>
-        <Form.Label className="d-block text-center mt-3">API Key:</Form.Label>
+        <Form.Label className="d-block text-center mt-2">API Key:</Form.Label>
         <Form.Control
           type="password"
           placeholder="Insert API Key Here"
