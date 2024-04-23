@@ -40,13 +40,14 @@ export default function DetailedQuiz() {
           {[...Array(8)].map((_, index) => (
             <div className="column" key={index}>
               <ol start={index+1}>
-                <li>{QuestionList[index]}</li>
+              <li>{QuestionList[index]}{answers[index].length > 3 ? " ✔️" : " ❌"}
+</li>
                 <input
                   type="text"
                   value={answers[index]}
                   onChange={(e) => updateAnswer(index, e.target.value)}
+                  style={{ width: "100%", height: "auto" }}
                 />
-                {answers[index].length > 3 ? "✔️" : "❌"}
               </ol>
             </div>
           ))}
