@@ -48,7 +48,7 @@ export default function DetailedQuiz() {
           </div>
         ))}
         <hr></hr>
-        <button className="submit" onClick={() => console.log("Submitted")}>Submit</button>
+        <button className="submit" onClick={() => console.log("Submitted") }>Submit</button>
         <hr></hr>
       </div>
     </div>
