@@ -43,18 +43,16 @@ export default function BasicQuiz() {
     );
   }
 
-  return (
-    <div>
-      <ProgressBar
-        questionsComplete={questionsComplete}
-        totalQuestions={totalQuestions}
-      />
-      <h1>
-        <u>Basic Quiz</u>
-      </h1>
-      <hr />
-
-      <div className="row">
+    return (
+        <div>
+          {!showReport ? (
+          <div>
+            <ProgressBar questionsComplete={questionsComplete} totalQuestions={totalQuestions} />
+            <h1>
+                <u>Basic Quiz</u>
+            </h1>
+            <hr></hr>
+            <div className="row">
         {Array.from({ length: 8 }, (_, index) => (
           <div className="column" key={index}>
             <ol start={index + 1}>
@@ -80,10 +78,49 @@ export default function BasicQuiz() {
             </ol>
           </div>
         ))}
-        <hr></hr>
-        <button onClick={() => console.log("Submitted")}>Submit</button>
-        <hr></hr>
-      </div>
-    </div>
-  );
+              <hr></hr>
+                {questionsComplete === selectedOptions.length ? (
+                    <span>
+                      <div>All Questions Complete!</div>
+                      <div>When Ready, Please Hit Submit Below to Generate your Results!</div>
+                      <button onClick={() => setShowReport(true)}>Submit</button>
+                      <hr></hr>
+                    </span>
+                ) : (
+                    <span>
+                      <p>Once you answers all the questions, a button will appear here to submit your answers.</p>
+                      <hr></hr>
+                    </span>
+                )}
+            </div>
+          </div>
+            ) : (
+              <div>
+                <h1> <u>Basic Quiz Report</u> </h1>
+                <h4>Based on your answers to the quiz, here are some jobs that you might be interested in:</h4>
+                {/* 
+                Eventually used to make a list of recommended jobs
+                {
+                  <div>
+                    <ul>
+                    {recJobs.map((recJob,index) => )
+                      <li key={index}>{recJob}</li>
+                    }
+                    </ul>
+                  </div>
+                } */}
+                <hr></hr>
+                {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
+                <h3>Top Recommended Career:</h3>
+                <p>Salary: </p>
+                <p>Education Required: </p>
+                {/* Maybe add a picture showing the job along with the results? */}
+
+                <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
+                <hr></hr>
+              </div>
+            )
+          }
+        </div>
+    );
 }
