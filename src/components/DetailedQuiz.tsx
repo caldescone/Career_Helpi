@@ -14,6 +14,7 @@ export default function DetailedQuiz() {
 
   const [answers, setAnswers] = useState<string[]>(new Array(8).fill(defaultOption));
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
+  const [showReport, setShowReport] = useState(false);
   const totalQuestions = 8;
 
   const updateAnswer = (index: number, value: string) => {
@@ -25,40 +26,68 @@ export default function DetailedQuiz() {
 
   return (
     <div>
-      <ProgressBar
-        questionsComplete={questionsComplete}
-        totalQuestions={totalQuestions}
-      />
-      <h1> <u> Detailed Quiz </u> </h1>
+      {!showReport ? (
+      <div>
+        <ProgressBar
+          questionsComplete={questionsComplete}
+          totalQuestions={totalQuestions}
+        />
+        <h1> <u> Detailed Quiz </u> </h1>
 
-      <hr></hr>
+        <hr></hr>
 
-      <div className="row">
-        {[...Array(8)].map((_, index) => (
-          <div className="column" key={index}>
-            <ol start={index+1}>
-              <li>{QuestionList[index]}</li>
-              <input
-                type="text"
-                value={answers[index]}
-                onChange={(e) => updateAnswer(index, e.target.value)}
-              />
-              {answers[index].length > 3 ? "✔️" : "❌"}
-            </ol>
+        <div className="row">
+          {[...Array(8)].map((_, index) => (
+            <div className="column" key={index}>
+              <ol start={index+1}>
+                <li>{QuestionList[index]}</li>
+                <input
+                  type="text"
+                  value={answers[index]}
+                  onChange={(e) => updateAnswer(index, e.target.value)}
+                />
+                {answers[index].length > 3 ? "✔️" : "❌"}
+              </ol>
+            </div>
+          ))}
+          <hr></hr>
+          {questionsComplete === answers.length ? (
+                <span>
+                  <div>All Questions Complete!</div>
+                  <div>When Ready, Please Hit Submit below</div>
+                </span>
+            ) : (
+                <span></span>
+            )}
+          <button onClick={() => setShowReport(true)}>Submit</button>
+          <hr></hr>
+        </div>
+        </div>
+        ) : ( 
+          <div>
+            <h1> <u>Detailed Quiz Report</u> </h1>
+            <h4>Based on your answers to the quiz, here are some jobs that you might be interested in:</h4>
+            {/* 
+            Eventually used to make a list of recommended jobs
+            {
+              <div>
+                <ul>
+                {recJobs.map((recJob,index) => )
+                  <li key={index}>{recJob}</li>
+                }
+                </ul>
+              </div>
+            } */}
+            <hr></hr>
+            {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
+            <h3>Top Recommended Career:</h3>
+            <p>Salary: </p>
+            <p>Education Required: </p>
+            {/* Maybe add a picture showing the job along with the results? */}
+            <hr></hr>
           </div>
-        ))}
-        <hr></hr>
-        {questionsComplete === answers.length ? (
-              <span>
-                <div>All Questions Complete!</div>
-                <div>When Ready, Please Hit Submit below</div>
-              </span>
-          ) : (
-              <span></span>
-          )}
-        <button onClick={() => console.log("Submitted")}>Submit</button>
-        <hr></hr>
-      </div>
+        ) 
+        }
     </div>
   );
 };

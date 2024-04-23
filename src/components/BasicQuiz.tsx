@@ -19,6 +19,7 @@ export default function BasicQuiz() {
 
     const [selectedOptions, setSelectedOptions] = useState<string[]>(Array(8).fill(defaultOption));
     const [questionsComplete, setQuestionsComplete] = useState<number>(0);
+    const [showReport, setShowReport] = useState(false);
     const totalQuestions = selectedOptions.length;
 
     function updateSelectedOption(index: number, event: React.ChangeEvent<HTMLSelectElement>) {
@@ -36,12 +37,13 @@ export default function BasicQuiz() {
 
     return (
         <div>
+          {!showReport ? (
+          <div>
             <ProgressBar questionsComplete={questionsComplete} totalQuestions={totalQuestions} />
             <h1>
                 <u>Basic Quiz</u>
             </h1>
-            <hr />
-
+            <hr></hr>
             <div className="row">
                 {Array.from({ length: 8 }, (_, index) => (
                     <div className="column" key={index}>
@@ -57,7 +59,8 @@ export default function BasicQuiz() {
                                         ))}
                                     </Form.Select>
                                 </Form.Group>
-                                {selectedOptions[index] === "Yes" || selectedOptions[index] === "No" ? "✔️" : "❌"}
+                                {/* {selectedOptions[index] === "Yes" || selectedOptions[index] === "No" ? "✔️" : "❌"} */}
+                                {selectedOptions[index] !== "" ? "✔️" : "❌"}
                             </div>
                             <br />
                         </ol>
@@ -72,9 +75,35 @@ export default function BasicQuiz() {
                 ) : (
                     <span></span>
                 )}
-                <button onClick={() => console.log("Submitted")}>Submit</button>
+                <button onClick={() => setShowReport(true)}>Submit</button>
               <hr></hr>
             </div>
+          </div>
+            ) : (
+              <div>
+                <h1> <u>Basic Quiz Report</u> </h1>
+                <h4>Based on your answers to the quiz, here are some jobs that you might be interested in:</h4>
+                {/* 
+                Eventually used to make a list of recommended jobs
+                {
+                  <div>
+                    <ul>
+                    {recJobs.map((recJob,index) => )
+                      <li key={index}>{recJob}</li>
+                    }
+                    </ul>
+                  </div>
+                } */}
+                <hr></hr>
+                {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
+                <h3>Top Recommended Career:</h3>
+                <p>Salary: </p>
+                <p>Education Required: </p>
+                {/* Maybe add a picture showing the job along with the results? */}
+                <hr></hr>
+              </div>
+            )
+          }
         </div>
     );
 }
