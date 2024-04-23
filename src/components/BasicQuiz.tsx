@@ -30,6 +30,7 @@ export default function BasicQuiz() {
   );
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
   const totalQuestions = selectedOptions.length;
+  const [showReport, setShowReport] = useState(false);
 
   function updateSelectedOption(
     index: number,
