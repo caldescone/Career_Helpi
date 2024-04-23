@@ -4,9 +4,11 @@ import { Form } from "react-bootstrap";
 
 export default function BasicQuiz() {
 
-    const options: string[] = ["", "Yes", "No"];
+    const options: string[] = ["", "Yes", "No", "Office", "Field Work", "Individually", "Collaboratively","Tactile",
+    "Visual/Auditory", "Start-up", "Well-established", "Yes", "No", "Group", "Independent", "Technology", "Non-Technical"];
+    
     const QuestionList: string[] = ["Do you like creative tasks?", "Which do you favor more: working in an office or engaging in fieldwork?", 
-    "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?", 
+    "Do you prefer working on individual projects, or enjoy collaborating with others on projects?", 
     "Are you a tactile person or more of a visual/auditory person?", 
     "Do you lean towards working in a startup or a well-established company?", 
     "Do you possess or plan to complete a college degree?", 
@@ -25,6 +27,12 @@ export default function BasicQuiz() {
         setSelectedOptions(newSelectedOptions);
         setQuestionsComplete(newSelectedOptions.filter((option) => option !== defaultOption).length);
     }
+
+    function handleQuestionClick(question: string) {
+      if (selectedOptions.length < 3) {
+        setSelectedOptions([...selectedOptions, question]);
+      }
+    };
 
     return (
         <div>
