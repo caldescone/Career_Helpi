@@ -74,3 +74,23 @@
   display: table;
   clear: both;
 }
+
+.container {display: inline-block; }
+.text {
+  font-size: 3em;
+  letter-spacing: 10px;
+  font-family: monospace;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 2s steps(18), 
+    cursor .4s step-end infinite alternate;
+}
+
+/* cursor blinking */
+@keyframes cursor {
+  50% { border-color: transparent; }
+
+}

@@ -6,6 +6,9 @@ import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
 
+import logo from "./assets/images/logo.png";
+
+
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -31,11 +34,11 @@ function App() {
     setKey(event.target.value);
   }
   return (
+    
     <div className="App">
       { currentPage === "home" ? <HomePage /> : null }
       { currentPage === "basic" ? <BasicQuiz /> : null }
       { currentPage === "detailed" ? <DetailedQuiz /> : null }
-
 
       <Button className="Home-Button" onClick={() => setCurrentPage("home")}>
         Home Page
@@ -49,6 +52,10 @@ function App() {
 
 
       <header className="App-header">
+      <div className="middle-block">
+        <body> <div className="container"> <p className="text"> What career is best for me? </p></div></body>
+        {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
+        </div>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
