@@ -6,7 +6,7 @@ import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
 
-import logo from "./assets/images/logo.png";
+//import logo from "./assets/images/logo.png";
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -37,8 +37,8 @@ function App() {
     
     <div className="App">
       { currentPage === "home" ? <HomePage /> : null }
-      { currentPage === "basic" ? <BasicQuiz /> : null }
-      { currentPage === "detailed" ? <DetailedQuiz /> : null }
+      { currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null }
+      { currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null }
 
       <Button className="Home-Button" onClick={() => setCurrentPage("home")}>
         Home Page
@@ -49,7 +49,6 @@ function App() {
       <Button className="Detailed-Button" onClick={() => setCurrentPage("detailed")}>
         Detailed Quiz 
       </Button>
-
 
       <header className="App-header">
       <div className="middle-block">
