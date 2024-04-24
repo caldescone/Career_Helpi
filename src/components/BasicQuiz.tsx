@@ -106,9 +106,10 @@ export default function BasicQuiz() {
         </div>
       ) : (
         <div>
-          <h1>
-            <u>Basic Quiz Report</u>
-          </h1>
+          <div className="Report-Header">
+              <h1> <u>Detailed Quiz Report</u> </h1>
+              <h4>Based on your answers to the quiz, here is a job that you might be interested in: </h4>
+          </div>
           { showReport === true ? <Report /> : null }
           <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
           <hr></hr>
