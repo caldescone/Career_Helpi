@@ -5,9 +5,9 @@ import { Button, Form } from "react-bootstrap";
 import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
-
+import NavBar from "./components/NavBar";
+import logo from "./assets/images/logo.png";
 //import logo from "./assets/images/logo.png";
-
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -33,28 +33,30 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
   return (
-    
     <div className="App">
-      { currentPage === "home" ? <HomePage /> : null }
-      { currentPage === "basic" ? <BasicQuiz /> : null }
-      { currentPage === "detailed" ? <DetailedQuiz /> : null }
+      <NavBar
+        brandName="The Career Helpi"
+        imageSrcPath={logo}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
 
-      <Button className="Home-Button" onClick={() => setCurrentPage("home")}>
-        Home Page
-      </Button>
-      <Button className="Basic-Button" onClick={() => setCurrentPage("basic")}>
-        Basic Quiz
-      </Button>
-      <Button className="Detailed-Button" onClick={() => setCurrentPage("detailed")}>
-        Detailed Quiz 
-      </Button>
-
+      {currentPage === "home" ? <HomePage /> : null}
+      {currentPage === "basic" ? <BasicQuiz /> : null}
+      {currentPage === "detailed" ? <DetailedQuiz /> : null}
 
       <header className="App-header">
-      <div className="middle-block">
-        <body> <div className="container"> <p className="text"> What career is best for me? </p></div></body>
-        {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
+        <div className="middle-block">
+          <body>
+            {" "}
+            <div className="container">
+              {" "}
+              <p className="text"> What career is best for me? </p>
+            </div>
+          </body>
+          {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
         </div>
       </header>
       <Form>
