@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
-    <div className="row">
-      <div className="columnCenter">
+    <div className="row mt-5">
+      <div className="columnCenter mt-5">
         <h1>
           {" "}
           <u>Basic Quiz Description</u>{" "}
@@ -11,7 +11,7 @@ export default function HomePage() {
         <br></br>
         Estimated time: 5 Minutes
       </div>
-      <div className="columnCenter">
+      <div className="columnCenter mt-5">
         <h1>
           {" "}
           <u>Detailed Quiz Description</u>{" "}
