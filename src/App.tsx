@@ -40,28 +40,12 @@ function App() {
       {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
       {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
 
-      <Button className="Home-Button" onClick={() => setCurrentPage("home")}>
-        Home Page
-      </Button>
-      <Button className="Basic-Button" onClick={() => setCurrentPage("basic")}>
-        Basic Quiz
-      </Button>
-      <Button
-        className="Detailed-Button"
-        onClick={() => setCurrentPage("detailed")}
-      >
-        Detailed Quiz
-      </Button>
       <NavBar
         brandName="The Career Helpi"
         imageSrcPath={logo}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-
-      {currentPage === "home" ? <HomePage /> : null}
-      {currentPage === "basic" ? <BasicQuiz /> : null}
-      {currentPage === "detailed" ? <DetailedQuiz /> : null}
 
       <header className="App-header">
         <div className="middle-block">
