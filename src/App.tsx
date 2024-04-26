@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Button, Form } from "react-bootstrap";
+import { Button, CardFooter, Form } from "react-bootstrap";
 
 import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
@@ -35,42 +35,32 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {currentPage === "home" ? <HomePage /> : null}
-      {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
-      {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
-
+    <div>
       <NavBar
         brandName="The Career Helpi"
         imageSrcPath={logo}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-
-      <header className="App-header">
-        <div className="middle-block">
-          <body>
-            {" "}
-            <div className="container">
-              {" "}
-              <p className="text"> What career is best for me? </p>
-            </div>
-          </body>
-          {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
-        </div>
-      </header>
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Insert API Key Here"
-          onChange={changeKey}
-        ></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>
-          Submit
-        </Button>
-      </Form>
+      <div className="App">
+        {currentPage === "home" ? <HomePage /> : null}
+        {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
+        {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
+        <CardFooter>
+        <Form>
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Insert API Key Here"
+            onChange={changeKey}
+          ></Form.Control>
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </Form>
+        </CardFooter>
+      </div>
     </div>
   );
 }
