@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
+import { sendDetailedQuizQuery } from "./GPT";
+import Report from "./Report";
 
-export default function DetailedQuiz() {
+export default function DetailedQuiz({ keyData }: { keyData: string }) {
   const defaultOption = "";
   const QuestionList = [
     "What type of career are you interested in?",
@@ -30,6 +32,11 @@ export default function DetailedQuiz() {
     );
   };
 
+  function submitAnswers() {
+    setShowReport(true);
+    sendDetailedQuizQuery(QuestionList, answers, keyData);
+  }
+
   return (
     <div>
       {!showReport ? (
@@ -39,8 +46,7 @@ export default function DetailedQuiz() {
             totalQuestions={totalQuestions}
           />
           <h1>
-            {" "}
-            <u> Detailed Quiz </u>{" "}
+            <u> Detailed Quiz </u>
           </h1>
 
           <hr></hr>
@@ -69,7 +75,7 @@ export default function DetailedQuiz() {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button onClick={() => setShowReport(true)}>Submit</button>
+                <button onClick={() => submitAnswers()}>Submit</button>
                 <hr></hr>
               </span>
             ) : (
@@ -83,37 +89,15 @@ export default function DetailedQuiz() {
             )}
           </div>
         </div>
-      ) : (
-        <div>
-          <h1>
-            {" "}
-            <u>Detailed Quiz Report</u>{" "}
-          </h1>
-          <h4>
-            Based on your answers to the quiz, here are some jobs that you might
-            be interested in:
-          </h4>
-          {/* 
-            Eventually used to make a list of recommended jobs
-            {
-              <div>
-                <ul>
-                {recJobs.map((recJob,index) => )
-                  <li key={index}>{recJob}</li>
-                }
-                </ul>
-              </div>
-            } */}
-          <hr></hr>
-          {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
-          <h3>Top Recommended Career:</h3>
-          <p>Salary: </p>
-          <p>Education Required: </p>
-          {/* Maybe add a picture showing the job along with the results? */}
-          <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
-          <hr></hr>
-        </div>
-      )}
+        ) : ( 
+          <div>
+            <h1> <u>Detailed Quiz Report</u> </h1>
+            { showReport === true ? <Report /> : null }
+            <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
+            <hr></hr>
+          </div>
+        ) 
+        }
     </div>
   );
 }
