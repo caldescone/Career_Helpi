@@ -6,7 +6,9 @@
     Warning: validateDOMNesting(...): <body> cannot appear as a child of <div>.
         at body
         at div
-        at header
+        at div
+        at HomePage
+        at div
         at div
         at App (/home/runner/work/Career_Helpi/Career_Helpi/src/App.tsx:21:33)
 
@@ -40,7 +42,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (93 ms)
+  ✕ renders learn react link (82 ms)
 
   ● renders learn react link
 
@@ -49,43 +51,7 @@ FAIL src/App.test.tsx
     Ignored nodes: comments, script, style
     [36m<body>[39m
       [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"row mt-5"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"columnCenter mt-5"[39m
-            [36m>[39m
-              [36m<h1>[39m
-                [0m [0m
-                [36m<u>[39m
-                  [0mBasic Quiz Description[0m
-                [36m</u>[39m
-                [0m [0m
-              [36m</h1>[39m
-              [0mA quicker quiz filled with more basic questions.[0m
-              [36m<br />[39m
-              [36m<br />[39m
-              [0mEstimated time: 5 Minutes[0m
-            [36m</div>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"columnCenter mt-5"[39m
-            [36m>[39m
-              [36m<h1>[39m
-                [0m [0m
-                [36m<u>[39m
-                  [0mDetailed Quiz Description[0m
-                [36m</u>[39m
-                [0m [0m
-              [36m</h1>[39m
-              [0mA longer quiz filled with harder, more detailed questions.[0m
-              [36m<br />[39m
-              [36m<br />[39m
-              [0mEstimated time: 10 Minutes[0m
-            [36m</div>[39m
-          [36m</div>[39m
+        [36m<div>[39m
           [36m<nav[39m
             [33mclass[39m=[32m"navbar fixed-top navbar-dark bg-dark shadow"[39m
           [36m>[39m
@@ -124,48 +90,86 @@ FAIL src/App.test.tsx
               [36m</div>[39m
             [36m</div>[39m
           [36m</nav>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"App"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"middle-block"[39m
+              [33mclass[39m=[32m"row mt-5"[39m
             [36m>[39m
-              [36m<body>[39m
-                [0m [0m
-                [36m<div[39m
-                  [33mclass[39m=[32m"container"[39m
-                [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"middle-block"[39m
+              [36m>[39m
+                [36m<body>[39m
                   [0m [0m
-                  [36m<p[39m
-                    [33mclass[39m=[32m"text"[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"container"[39m
                   [36m>[39m
-                    [0m What career is best for me? [0m
-                  [36m</p>[39m
-                [36m</div>[39m
-              [36m</body>[39m
+                    [0m [0m
+                    [36m<p[39m
+                      [33mclass[39m=[32m"text"[39m
+                    [36m>[39m
+                      [0m What career is best for me? [0m
+                    [36m</p>[39m
+                  [36m</div>[39m
+                [36m</body>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"columnCenter mt-5"[39m
+              [36m>[39m
+                [36m<h1>[39m
+                  [0m [0m
+                  [36m<u>[39m
+                    [0mBasic Quiz Description[0m
+                  [36m</u>[39m
+                  [0m [0m
+                [36m</h1>[39m
+                [0mA quicker quiz filled with more basic questions.[0m
+                [36m<br />[39m
+                [36m<br />[39m
+                [0mEstimated time: 5 Minutes[0m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"columnCenter mt-5"[39m
+              [36m>[39m
+                [36m<h1>[39m
+                  [0m [0m
+                  [36m<u>[39m
+                    [0mDetailed Quiz Description[0m
+                  [36m</u>[39m
+                  [0m [0m
+                [36m</h1>[39m
+                [0mA longer quiz filled with harder, more detailed questions.[0m
+                [36m<br />[39m
+                [36m<br />[39m
+                [0mEstimated time: 10 Minutes[0m
+              [36m</div>[39m
             [36m</div>[39m
-          [36m</header>[39m
-          [36m<form[39m
-            [33mclass[39m=[32m""[39m
-          [36m>[39m
-            [36m<label[39m
-              [33mclass[39m=[32m"form-label"[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"card-footer"[39m
             [36m>[39m
-              [0mAPI Key:[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mclass[39m=[32m"form-control"[39m
-              [33mplaceholder[39m=[32m"Insert API Key Here"[39m
-              [33mtype[39m=[32m"password"[39m
-            [36m/>[39m
-            [36m<br />[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mSubmit[0m
-            [36m</button>[39m
-          [36m</form>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m""[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label"[39m
+                [36m>[39m
+                  [0mAPI Key:[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-control"[39m
+                  [33mplaceholder[39m=[32m"Insert API Key Here"[39m
+                  [33mtype[39m=[32m"password"[39m
+                [36m/>[39m
+                [36m<br />[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mSubmit[0m
+                [36m</button>[39m
+              [36m</form>[39m
+            [36m</div>[39m
+          [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -191,15 +195,15 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   11.76 |    14.28 |    9.09 |   12.04 |                   
+All files            |   11.36 |    14.28 |    9.09 |   11.62 |                   
  src                 |   31.81 |    33.33 |      20 |   31.81 |                   
   App.tsx            |   63.63 |       50 |   33.33 |   63.63 | 17,28-34          
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |    4.76 |        0 |    7.14 |    4.91 |                   
-  BasicQuiz.tsx      |       0 |        0 |       0 |       0 | 8-119             
+ src/components      |    4.54 |        0 |    7.14 |    4.68 |                   
+  BasicQuiz.tsx      |       0 |        0 |       0 |       0 | 14-147            
   DetailedQuiz.tsx   |       0 |        0 |       0 |       0 | 7-96              
-  GPT.tsx            |       0 |      100 |       0 |       0 | 4-34              
+  GPT.tsx            |       0 |      100 |       0 |       0 | 5-34              
   HomePage.tsx       |     100 |      100 |     100 |     100 |                   
   NavBar.tsx         |      20 |      100 |      20 |      20 | 20-37             
   ProgressBar.tsx    |   33.33 |      100 |       0 |   33.33 | 4-6               
@@ -208,7 +212,7 @@ All files            |   11.76 |    14.28 |    9.09 |   12.04 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.103 s
+Time:        3.001 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
