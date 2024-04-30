@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { Question } from "./BasicQuiz";
 
 async function sendChatQuery(query: string, key: string) {
   const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true }); // Create an instance of the OpenAI class
@@ -12,15 +13,14 @@ async function sendChatQuery(query: string, key: string) {
 }
 
 export async function sendBasicQuizQuery(
-  questions: string[],
-  answers: string[],
+  questions: Question[],
   key: string
 ) {
   let query =
     "Act as a career counselor. These questions were asked to the student with answers provided, but aimed at being a basic career quiz. Please provide a report on the student's career path including potential jobs, industries, and possible salaries. \n";
   for (let i = 0; i < questions.length; i++) {
     // Adds the question followed by the answer to the query
-    query += questions[i] + ". " + answers[i] + ".\n";
+    query += questions[i].question + ". " + questions[i].chosenAnswer + ".\n";
   }
   return await sendChatQuery(query, key);
 }
