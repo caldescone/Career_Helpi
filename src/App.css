@@ -71,6 +71,13 @@
 
 }
 
+.Report {
+  background-color: grey;
+  /* border:solid black; */
+  color: black;
+  width: 100%;
+}
+
 .Report-Header {
   background-color: #282c34;
   /* min-height: 100vh; */
@@ -78,10 +85,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
+
 }
 
-.Report {
+.Report-Overview {
+  background-color: lightgrey;
+  border:solid black;
+  color: black;
+  width: 60%;
+}
 
+.Report-Text {
+  background-color: lightgrey;
+  border:solid black;
+  color: black;
+
+  width: 50%;
+  /* min-height: "100vh" */
+  display: "inline-block";
+  /* verticalAlign: "bottom"; */
+
+  /* min-height: 100vh; */
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
 }

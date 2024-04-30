@@ -93,9 +93,9 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
           <div>
             <div className="Report-Header">
               <h1> <u>Detailed Quiz Report</u> </h1>
-              <h4>Based on your answers to the quiz, here is a job that you might be interested in: </h4>
+              <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
             </div>
-            { showReport === true ? <Report /> : null }
+            <Report />
             <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
             <hr></hr>
           </div>
