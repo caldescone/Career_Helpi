@@ -71,6 +71,20 @@
 
 }
 
+.navbar {
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #1d6c82;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
 .Report {
   background-color: grey;
   /* border:solid black; */
