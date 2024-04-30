@@ -17,7 +17,7 @@ export async function sendBasicQuizQuery(
   key: string
 ) {
   let query =
-    "Act as a career counselor. These questions were asked to the student with answers provided, but aimed at being a basic career quiz. Please provide a report on the student's career path including potential jobs, industries, and possible salaries. \n";
+    "Act as a career counselor. These questions were asked to the student with answers provided, but aimed at being a basic career quiz. Please provide a report on the student's career path using this template, {jobs}, {average salary}, {questions and how they apply to these jobs comma seperated} \n";
   for (let i = 0; i < questions.length; i++) {
     // Adds the question followed by the answer to the query
     query += questions[i].question + ". " + questions[i].chosenAnswer + ".\n";
