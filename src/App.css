@@ -71,20 +71,6 @@
 
 }
 
-.navbar {
-  background-color: #333;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: #1d6c82;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-
 .Report {
   background-color: grey;
   /* border:solid black; */
@@ -94,21 +80,22 @@
 
 .Report-Header {
   background-color: #282c34;
-  /* min-height: 100vh; */
+  color: white;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   /* font-size: calc(10px + 2vmin); */
-  color: white;
-
+  margin: auto;
 }
 
 .Report-Overview {
   background-color: lightgrey;
   border:solid black;
   color: black;
-  width: 60%;
+  width: 50%;
+  margin: auto;
 }
 
 .Report-Text {
@@ -117,14 +104,6 @@
   color: black;
 
   width: 50%;
-  /* min-height: "100vh" */
-  display: "inline-block";
-  /* verticalAlign: "bottom"; */
-
-  /* min-height: 100vh; */
-  /* display: flex; */
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  margin: auto;
 }
