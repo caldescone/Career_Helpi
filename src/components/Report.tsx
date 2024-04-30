@@ -2,38 +2,42 @@ export default function Report() {
 
 
     return (
+        // Overall report
         <div className="Report">
 
+            <br></br>
+
+            {/* Overview */}
             <div className="Report-Overview">
                 <h3>Overview:</h3>
                 <p>Overview here</p>
 
             </div>
 
-            <hr></hr>
+            {/* Line break */}
+            <br></br>
 
-            {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
-            <div>
-                <div className="Report-Text">
-                    <h3>Recommended Career:</h3>
-                    <p>JOB TITLE</p>
+            {/* Quiz results */}
+            <div className="Report-Text">
+                <h3>Recommended Career:</h3>
+                <p>JOB TITLE</p>
 
-                    <h3>Job Description:</h3> 
-                    <p>DESCRIPTION</p>
+                <h3>Job Description:</h3> 
+                <p>DESCRIPTION</p>
 
-                    <h3>Salary Range:</h3>
-                    <p>RANGE</p>
+                <h3>Salary Range:</h3>
+                <p>RANGE</p>
 
-                    <h3>Education Required:</h3>
-                    <p>EDUCATION</p>
+                <h3>Education Required:</h3>
+                <p>EDUCATION</p>
 
-                    <h3>How This Fits Job You:</h3>
-                    <p>HOW RELATED TO QUIZ</p>
-                </div>
+                <h3>How This Fits Job You:</h3>
+                <p>HOW RELATED TO QUIZ</p>
             </div>
 
-            <hr></hr>
+            <br></br>
 
+            {/* Secondary report details */}
             <div className="Report-Text">
                 <p>Other Recommendations:</p>
                 <p>Related Aspects:</p>

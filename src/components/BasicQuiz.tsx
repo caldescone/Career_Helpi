@@ -144,7 +144,6 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               <h1> <u>Detailed Quiz Report</u> </h1>
               <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
           </div>
-          <p></p>
           <Report />
           <p></p>
           <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
