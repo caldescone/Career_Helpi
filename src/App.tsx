@@ -58,7 +58,7 @@ function App() {
           type="password"
           placeholder="Insert API Key Here"
           onChange={changeKey}
-          style={{ width: "1000px", margin: "0 auto" }}
+          style={{ width: "800px", margin: "0 auto" }}
         ></Form.Control>
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>
