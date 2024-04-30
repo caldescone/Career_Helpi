@@ -4,36 +4,62 @@ import { Form } from "react-bootstrap";
 import { sendBasicQuizQuery } from "./GPT";
 import Report from "./Report";
 
-export default function BasicQuiz({ keyData }: { keyData: string }) {
-  const QuestionList: string[] = [
-    "Do you like creative tasks?",
-    "Which do you favor more: working in an office or engaging in fieldwork?",
-    "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?",
-    "Are you a tactile person or more of a visual/auditory person?",
-    "Do you lean towards working in a startup or a well-established company?",
-    "Do you possess or plan to complete a college degree?",
-    "Do you prefer working in a group or independently?",
-    "Are you comfortable using technology or do you prefer non-technical tasks?",
-  ];
+export type Question = {
+  question: string;
+  options: string[];
+  chosenAnswer: string;
+};
 
-  const options: string[][] = [
-    ["", "Yes", "No"],
-    ["", "Office", "Fieldwork"],
-    ["", "Aid to others", "Individual projects", "Collaborating with others"],
-    ["", "Tactile", "Visual/Auditory"],
-    ["", "Startup", "Well-established company"],
-    ["", "Yes", "No"],
-    ["", "Group", "Independently"],
-    ["", "Technology", "Non-technical tasks"],
-  ];
+export default function BasicQuiz({ keyData }: { keyData: string }) {
+  const [questions, setQuestions] = useState<Question[]>([
+    {
+      question: "Do you like creative tasks?",
+      options: ["", "Yes", "No"],
+      chosenAnswer: "",
+    },
+    {
+      question: "Which do you favor more: working in an office or engaging in fieldwork?",
+      options: ["", "Office", "Fieldwork"],
+      chosenAnswer: "",
+    },
+    {
+      question: "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?",
+      options: ["", "Aid to others", "Individual projects", "Collaborating with others"],
+      chosenAnswer: "",
+    },
+    {
+      question: "Are you a tactile person or more of a visual/auditory person?",
+      options: ["", "Tactile", "Visual/Auditory"],
+      chosenAnswer: "",
+    },
+    {
+      question: "Do you lean towards working in a startup or a well-established company?",
+      options: ["", "Startup", "Well-established company"],
+      chosenAnswer: "",
+    },
+    {
+      question: "Do you possess or plan to complete a college degree?",
+      options: ["", "Yes", "No"],
+      chosenAnswer: "",
+    },
+    {
+      question: "Do you prefer working in a group or independently?",
+      options: ["", "Group", "Independently"],
+      chosenAnswer: "",
+    },
+    {
+      question: "Are you comfortable using technology or do you prefer non-technical tasks?",
+      options: ["", "Technology", "Non-technical tasks"],
+      chosenAnswer: "",
+    },
+  ]);
 
   const [selectedOptions, setSelectedOptions] = useState<string[]>(
-    Array(8).fill("")
+    Array(questions.length).fill("")
   );
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
-  const totalQuestions = selectedOptions.length;
+  const totalQuestions = questions.length;
   const [showReport, setShowReport] = useState(false);
-
   function updateSelectedOption(
     index: number,
     event: React.ChangeEvent<HTMLSelectElement>
@@ -42,15 +68,17 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
     newSelectedOptions[index] = event.target.value;
     setSelectedOptions(newSelectedOptions);
     setQuestionsComplete(
-      newSelectedOptions.filter((option) => option !== options[index][0]).length
+      newSelectedOptions.filter((option) => option !== questions[index].options[0]).length
     );
+    const newQuestions = [...questions];
+    newQuestions[index].chosenAnswer = event.target.value;
+    setQuestions(newQuestions);
   }
-
   function submitAnswers() {
+    console.log(questions);
     setShowReport(true);
-    sendBasicQuizQuery(QuestionList, selectedOptions, keyData);
+    sendBasicQuizQuery(questions, keyData);
   }
-
   return (
     <div>
       {!showReport ? (
@@ -64,11 +92,11 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
           </h1>
           <hr></hr>
           <div className="row">
-            {Array.from({ length: 8 }, (_, index) => (
+            {questions.map((question, index) => (
               <div className="column" key={index}>
                 <ol start={index + 1}>
                   <li>
-                    {QuestionList[index]}{" "}
+                    {question.question}{" "}
                     {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
                   </li>
                   <div>
@@ -77,7 +105,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                         value={selectedOptions[index]}
                         onChange={(event) => updateSelectedOption(index, event)}
                       >
-                        {options[index].map((choice: string) => (
+                        {question.options.map((choice: string) => (
                           <option key={choice} value={choice}>
                             {choice}
                           </option>

@@ -1,6 +1,16 @@
 export default function HomePage() {
   return (
     <div className="row mt-5">
+                <div className="middle-block">
+            <body>
+              {" "}
+              <div className="container">
+                {" "}
+                <p className="text"> What career is best for me? </p>
+              </div>
+            </body>
+            {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
+          </div>
       <div className="columnCenter mt-5">
         <h1>
           {" "}
