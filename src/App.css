@@ -30,11 +30,24 @@
 
 .Detailed-Button {
   background-color: #a663cc;
+  border: 1px solid #a663cc;
+  transition: background-color 0.25, border-color 0.25s;
+  }
+
+  .Detailed-Button:hover {
+    background-color: #6f2dbd;
+    border-color: #6f2dbd;
   }
 
 .Home-Button {
-  background-color: #a663cc
-  b
+  background-color: #a663cc;
+  border: 1px solid #a663cc;
+  transition: background-color 0.25s, border-color 0.25s;
+  }
+
+  .Home-Button:hover {
+    background-color: #6f2dbd;
+    border-color: #6f2dbd;
   }
 
 .progress-bar {
@@ -99,3 +112,14 @@
   width: auto;
   justify-content: center;
 }
+
+.Submit-Button {
+  background-color: #b298dc;
+  border: 1px solid #a663cc;
+  transition: background-color 0.25s, border-color 0.25s;
+  }
+
+  .Submit-Button:hover {
+    background-color: #6f2dbd;
+    border-color: #6f2dbd;
+  }
