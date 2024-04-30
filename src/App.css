@@ -111,6 +111,7 @@
 .submit {
   width: auto;
   justify-content: center;
+  justify-self: auto;
 }
 
 .Submit-Button {

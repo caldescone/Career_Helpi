@@ -56,7 +56,7 @@ export default function BasicQuiz() {
                     </div>
                 ))}
               <hr></hr>
-                <button className="submit" onClick={() => console.log("Submitted")}>Submit</button>
+                <button className="submit mx-auto" onClick={() => console.log("Submitted")}>Submit</button>
               <hr></hr>
             </div>
         </div>
