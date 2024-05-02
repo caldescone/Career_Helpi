@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import { Question } from "./BasicQuiz";
 
-export async function isValidKey(key: string): Promise<boolean> {
+export async function isValidKey(key: string): Promise<boolean> { // Used GPT 3.5 to help validate the key
   const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true });
 
   try {
@@ -10,7 +10,7 @@ export async function isValidKey(key: string): Promise<boolean> {
       model: "gpt-4",
     });
     return true;
-  } catch (error) {
+  } catch (error) { // If the key is invalid, the API will throw an error
     console.error(error);
     return false;
   }
