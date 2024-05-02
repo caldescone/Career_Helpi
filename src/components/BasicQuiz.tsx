@@ -95,7 +95,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               <div className="column" key={index}>
                 <ol start={index + 1}> {/* uses the index to display the question number starting from 1 */}
                   <li>
-                    {question.question}{" "} {/* displays the question with space between the X and ✔️ */}
+                  <div style={ {border: '1px solid black', padding: '2px'} }>{question.question}{" "}</div> {/* displays the question with space between the X and ✔️ */}
                     {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
                   </li>
                   <div>
@@ -123,7 +123,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button onClick={() => submitAnswers()}>Submit</button> {/* calls the submitAnswers function when the button is clicked */}
+                <button className="submit mx-auto" onClick={() => submitAnswers()}>Submit</button> {/* calls the submitAnswers function when the button is clicked */}
                 <hr></hr>
               </span>
             ) : (
