@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: 80px; /* This is to make sure the content is not hidden behind the navbar */
 }
 
 .App-header {
@@ -124,3 +125,59 @@
     background-color: #6f2dbd;
     border-color: #6f2dbd;
   }
+.container {display: inline-block; }
+.text {
+  font-size: 3em;
+  letter-spacing: 10px;
+  font-family: monospace;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 2s steps(18), 
+    cursor .4s step-end infinite alternate;
+}
+
+/* cursor blinking */
+@keyframes cursor {
+  50% { border-color: transparent; }
+
+}
+
+.Report {
+  background-color: grey;
+  /* border:solid black; */
+  color: black;
+  width: 100%;
+}
+
+.Report-Header {
+  background-color: #282c34;
+  color: white;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-size: calc(10px + 2vmin); */
+  margin: auto;
+}
+
+.Report-Overview {
+  background-color: lightgrey;
+  border:solid black;
+  color: black;
+  width: 50%;
+  margin: auto;
+}
+
+.Report-Text {
+  background-color: lightgrey;
+  border:solid black;
+  color: black;
+
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}

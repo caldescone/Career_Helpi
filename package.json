@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2-base": "^25.1.35",
+    "@syncfusion/ej2-react-buttons": "^25.1.39",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,7 +14,7 @@
     "@types/react-dom": "^18.2.18",
     "bootstrap": "^5.3.2",
     "gh-pages": "^6.1.1",
-    "openai": "^4.26.0",
+    "openai": "^4.35.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
@@ -45,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }

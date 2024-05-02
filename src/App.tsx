@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Button, Form } from "react-bootstrap";
+import { Button, CardFooter, Form } from "react-bootstrap";
 
 import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
+import NavBar from "./components/NavBar";
+import logo from "./assets/images/logo.png";
+//import logo from "./assets/images/logo.png";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -30,17 +33,21 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        The Career Helpi
-      </header>
-      { currentPage === "home" ? <HomePage /> : null }
-      { currentPage === "basic" ? <BasicQuiz /> : null }
-      { currentPage === "detailed" ? <DetailedQuiz /> : null }
+    <div>
+      <NavBar
+        brandName="The Career Helpi"
+        imageSrcPath={logo}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
+      <div className="App">
+        {currentPage === "home" ? <HomePage /> : null}
+        {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
+        {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
 
-
-      <Button className="Home-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("home")}>
+        <Button className="Home-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("home")}>
         Home Page
       </Button>
       <Button className="Basic-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("basic")}>
@@ -49,76 +56,25 @@ function App() {
       <Button className="Detailed-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("detailed")}>
         Detailed Quiz 
       </Button>
-
-      <header className="App-header">
-      </header>
-      <Form>
-        <Form.Label className="d-block text-center mt-2">API Key:</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Insert API Key Here"
-          onChange={changeKey}
-          style={{ width: "800px", margin: "0 auto" }}
-        ></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>
-          Submit
-        </Button>
-      </Form>
+      
+        <CardFooter>
+        <Form>
+          <Form.Label className="d-block text-center mt-2">API Key:</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Insert API Key Here"
+            onChange={changeKey}
+            style={{ width: "800px", margin: "0 auto" }}
+          ></Form.Control>
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </Form>
+        </CardFooter>
+      </div>
     </div>
   );
 }
 
 export default App;
-
-
-// return (
-//   <div className="App">
-//     { currentPage === "basic" ? <BasicQuiz /> : null }
-//     { currentPage === "detailed" ? <DetailedQuiz /> : null }
-//     <Button className="Basic-Button" onClick={() => setCurrentPage("home")}>
-//       Home Page
-//     </Button>
-//     <Button className="Basic-Button" onClick={() => setCurrentPage("basic")}>
-//       Basic Quiz
-//     </Button>
-//     <Button className="Detailed-Button" onClick={() => setCurrentPage("detailed")}>
-//       Detailed Quiz 
-//     </Button>
-
-
-//     <div className="row">
-//       <div className="columnCenter">
-//         <h1> <u>Basic Quiz Description</u> </h1>
-//         A quicker quiz filled with more basic questions. 
-//         <br></br>
-//         <br></br>
-//         Estimated time: 5 Minutes
-//       </div>
-//       <div className="columnCenter">
-//         <h1> <u>Detailed Quiz Description</u> </h1> 
-//         A longer quiz filled with harder, more detailed questions.
-//         <br></br>
-//         <br></br>
-//         Estimated time: 10 Minutes
-//       </div>
-//     </div>
-
-
-//     <header className="App-header">
-//     </header>
-//     <Form>
-//       <Form.Label>API Key:</Form.Label>
-//       <Form.Control
-//         type="password"
-//         placeholder="Insert API Key Here"
-//         onChange={changeKey}
-//       ></Form.Control>
-//       <br></br>
-//       <Button className="Submit-Button" onClick={handleSubmit}>
-//         Submit
-//       </Button>
-//     </Form>
-//   </div>
-// );
-// }
