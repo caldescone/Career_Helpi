@@ -1,6 +1,21 @@
 import OpenAI from "openai";
 import { Question } from "./BasicQuiz";
 
+export async function isValidKey(key: string): Promise<boolean> {
+  const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true });
+
+  try {
+    await openai.chat.completions.create({
+      messages: [{ role: "user", content: "test" }],
+      model: "gpt-4",
+    });
+    return true;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+}
+
 export interface CareerRecommendation {
   overview: string;
   jobTitle: string;
@@ -28,6 +43,9 @@ function parseCareerRecommendation(apiResponse: string): CareerRecommendation {
 }
 
 async function sendChatQuery(query: string, key: string): Promise<CareerRecommendation | null> {
+  if (key === "") { // If the key is empty, return null
+    return null;
+  }
   const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true }); // Create an instance of the OpenAI class
   const completion = await openai.chat.completions.create({
     messages: [{ role: "user", content: query }],
