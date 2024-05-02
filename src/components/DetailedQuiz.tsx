@@ -96,7 +96,16 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
               <h1> <u>Detailed Quiz Report</u> </h1>
               <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
             </div>
-            <Report />
+            <Report 
+              Overview="Overview" 
+              RecCareer="Recommended Career"
+              Description="Job Description"
+              Salary="Salary Range"
+              Education="Education Required"
+              Fit="How this job fits"
+              OtherJobs="Secondary recommendations"
+              RelatedAspects="How these relate"
+            />
             <p></p>
             <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
             <hr></hr>
