@@ -58,7 +58,7 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
               <div className="column" key={index}>
                 <ol start={index + 1}>
                   <li>
-                    {QuestionList[index]}
+                  <div style={ {border: '1px solid black', padding: '2px'} }>{QuestionList[index]}</div>
                     {answers[index].length > 3 ? " ✔️" : " ❌"}
                   </li>
                   <input
@@ -77,7 +77,7 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button onClick={() => submitAnswers()}>Submit</button>
+                <button className="submit mx-auto" onClick={() => submitAnswers()}>Submit</button>
                 <hr></hr>
               </span>
             ) : (
