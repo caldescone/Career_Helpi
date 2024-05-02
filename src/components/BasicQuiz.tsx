@@ -3,6 +3,7 @@ import ProgressBar from "./ProgressBar";
 import { Form } from "react-bootstrap";
 import { sendBasicQuizQuery } from "./GPT";
 import Report from "./Report";
+import { CareerRecommendation } from "./GPT";
 
 export type Question = {
   question: string;
@@ -68,6 +69,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
   );
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
   const totalQuestions = questions.length;
+  const [recJobs, setRecJobs] = useState<CareerRecommendation | null>(null);
   const [showReport, setShowReport] = useState(false);
   function updateSelectedOption(
     index: number,
@@ -85,9 +87,10 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
     newQuestions[index].chosenAnswer = event.target.value;
     setQuestions(newQuestions);
   }
-  function submitAnswers() { // function to submit the answers and generate the quiz results
+  async function submitAnswers() {
+    console.log(questions);
     setShowReport(true);
-    sendBasicQuizQuery(questions, keyData);
+    setRecJobs(await sendBasicQuizQuery(questions, keyData));
   }
   return (
     <div>
@@ -95,38 +98,59 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
         <div>
           <ProgressBar
             questionsComplete={questionsComplete}
-            totalQuestions={totalQuestions} 
-          />  {/* This is to show the progress bar taking in the number of questions completed and the total number of questions */}
-          <h1> 
+            totalQuestions={totalQuestions}
+          />{" "}
+          {/* This is to show the progress bar taking in the number of questions completed and the total number of questions */}
+          <h1>
             <u>Basic Quiz</u>
           </h1>
           <hr></hr>
           <div className="row">
-            {questions.map((question, index) => ( // maps through the questions array to display each question and its options
-              <div className="column" key={index}>
-                <ol start={index + 1}> {/* uses the index to display the question number starting from 1 */}
-                  <li>
-                  <div style={ {border: '1px solid black', padding: '2px'} }>{question.question}{" "}</div> {/* displays the question with space between the X and ✔️ */}
-                    {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
-                  </li>
-                  <div>
-                    <Form.Group>
-                      <Form.Select
-                        value={selectedOptions[index]} // sets the value of the select to the selected option
-                        onChange={(event) => updateSelectedOption(index, event)} // calls the updateSelectedOption function when the select value changes
+            {questions.map(
+              (
+                question,
+                index // maps through the questions array to display each question and its options
+              ) => (
+                <div className="column" key={index}>
+                  <ol start={index + 1}>
+                    {" "}
+                    {/* uses the index to display the question number starting from 1 */}
+                    <li>
+                      <div
+                        style={{ border: "1px solid black", padding: "2px" }}
                       >
-                        {question.options.map((choice: string) => ( // maps through the options array to display each option
-                          <option key={choice} value={choice}> {/* sets the key and value of the option to the choice */}
-                            {choice}
-                          </option>
-                        ))}
-                      </Form.Select>
-                    </Form.Group>
-                  </div>
-                  <br />
-                </ol>
-              </div>
-            ))}
+                        {question.question}{" "}
+                      </div>{" "}
+                      {/* displays the question with space between the X and ✔️ */}
+                      {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
+                    </li>
+                    <div>
+                      <Form.Group>
+                        <Form.Select
+                          value={selectedOptions[index]} // sets the value of the select to the selected option
+                          onChange={(event) =>
+                            updateSelectedOption(index, event)
+                          } // calls the updateSelectedOption function when the select value changes
+                        >
+                          {question.options.map(
+                            (
+                              choice: string // maps through the options array to display each option
+                            ) => (
+                              <option key={choice} value={choice}>
+                                {" "}
+                                {/* sets the key and value of the option to the choice */}
+                                {choice}
+                              </option>
+                            )
+                          )}
+                        </Form.Select>
+                      </Form.Group>
+                    </div>
+                    <br />
+                  </ol>
+                </div>
+              )
+            )}
             <hr></hr>
             {questionsComplete === selectedOptions.length ? ( // checks if all questions are complete before showing the submit button
               <span>
@@ -134,7 +158,13 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button className="submit mx-auto" onClick={() => submitAnswers()}>Submit</button> {/* calls the submitAnswers function when the button is clicked */}
+                <button
+                  className="submit mx-auto"
+                  onClick={() => submitAnswers()}
+                >
+                  Submit
+                </button>{" "}
+                {/* calls the submitAnswers function when the button is clicked */}
                 <hr></hr>
               </span>
             ) : (
@@ -153,25 +183,29 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
           <div className="Report-Header">
             <h1>
               {" "}
-              <u>Detailed Quiz Report</u>{" "}
+              <u>Basic Quiz Report</u>{" "}
             </h1>
             <h4>
               Based on your answers to the quiz, here are some jobs that you
               might be interested in:{" "}
             </h4>
           </div>
-          <Report 
-            Overview="Overview" 
-            RecCareer="Recommended Career"
-            Description="Job Description"
-            Salary="Salary Range"
-            Education="Education Required"
-            Fit="How this job fits"
-            OtherJobs="Secondary recommendations"
-            RelatedAspects="How these relate"
-          /> {/* calls the Report component to display the quiz results */}
+          <Report
+            Overview={recJobs?.overview ?? null}
+            RecCareer={recJobs?.jobTitle ?? null}
+            Description={recJobs?.jobDescription ?? null}
+            Salary={recJobs?.averageSalary.join(", ") ?? null}
+            Education={recJobs?.requirements ?? null}
+            Fit={recJobs?.applicationToCareer ?? null}
+            OtherJobs={recJobs?.otherJobs ?? null}
+            RelatedAspects={recJobs?.relatedAspects ?? null}
+          />{" "}
+          {/* calls the Report component to display the quiz results */}
           <p></p>
-          <button onClick={() => setShowReport(false)}>Go Back to Quiz</button> {/* button allowing user to go back to quiz with answers still filled */}
+          <button onClick={() => setShowReport(false)}>
+            Go Back to Quiz
+          </button>{" "}
+          {/* button allowing user to go back to quiz with answers still filled */}
           <hr></hr>
         </div>
       )}
