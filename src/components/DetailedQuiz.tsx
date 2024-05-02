@@ -59,9 +59,8 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
                 <ol start={index + 1}>
                   <li>
                     <div style={{ border: "1px solid black", padding: "2px" }}>
-                      {QuestionList[index]}
+                      {QuestionList[index]}{" "}{answers[index].length > 3 ? " ✔️" : " ❌"}
                     </div>
-                    {answers[index].length > 3 ? " ✔️" : " ❌"}
                   </li>
                   <input
                     type="text"
