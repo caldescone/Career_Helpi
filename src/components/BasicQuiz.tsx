@@ -18,13 +18,20 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Which do you favor more: working in an office or engaging in fieldwork?",
+      question:
+        "Which do you favor more: working in an office or engaging in fieldwork?",
       options: ["", "Office", "Fieldwork"],
       chosenAnswer: "",
     },
     {
-      question: "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?",
-      options: ["", "Aid to others", "Individual projects", "Collaborating with others"],
+      question:
+        "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?",
+      options: [
+        "",
+        "Aid to others",
+        "Individual projects",
+        "Collaborating with others",
+      ],
       chosenAnswer: "",
     },
     {
@@ -33,7 +40,8 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Do you lean towards working in a startup or a well-established company?",
+      question:
+        "Do you lean towards working in a startup or a well-established company?",
       options: ["", "Startup", "Well-established company"],
       chosenAnswer: "",
     },
@@ -48,7 +56,8 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Are you comfortable using technology or do you prefer non-technical tasks?",
+      question:
+        "Are you comfortable using technology or do you prefer non-technical tasks?",
       options: ["", "Technology", "Non-technical tasks"],
       chosenAnswer: "",
     },
@@ -68,7 +77,9 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
     newSelectedOptions[index] = event.target.value;
     setSelectedOptions(newSelectedOptions);
     setQuestionsComplete(
-      newSelectedOptions.filter((option) => option !== questions[index].options[0]).length
+      newSelectedOptions.filter(
+        (option) => option !== questions[index].options[0]
+      ).length
     );
     const newQuestions = [...questions];
     newQuestions[index].chosenAnswer = event.target.value;
@@ -140,8 +151,14 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       ) : (
         <div>
           <div className="Report-Header">
-              <h1> <u>Detailed Quiz Report</u> </h1>
-              <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
+            <h1>
+              {" "}
+              <u>Detailed Quiz Report</u>{" "}
+            </h1>
+            <h4>
+              Based on your answers to the quiz, here are some jobs that you
+              might be interested in:{" "}
+            </h4>
           </div>
           <Report 
             Overview="Overview" 
