@@ -19,13 +19,20 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Which do you favor more: working in an office or engaging in fieldwork?",
+      question:
+        "Which do you favor more: working in an office or engaging in fieldwork?",
       options: ["", "Office", "Fieldwork"],
       chosenAnswer: "",
     },
     {
-      question: "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?",
-      options: ["", "Aid to others", "Individual projects", "Collaborating with others"],
+      question:
+        "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?",
+      options: [
+        "",
+        "Aid to others",
+        "Individual projects",
+        "Collaborating with others",
+      ],
       chosenAnswer: "",
     },
     {
@@ -34,7 +41,8 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Do you lean towards working in a startup or a well-established company?",
+      question:
+        "Do you lean towards working in a startup or a well-established company?",
       options: ["", "Startup", "Well-established company"],
       chosenAnswer: "",
     },
@@ -49,7 +57,8 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Are you comfortable using technology or do you prefer non-technical tasks?",
+      question:
+        "Are you comfortable using technology or do you prefer non-technical tasks?",
       options: ["", "Technology", "Non-technical tasks"],
       chosenAnswer: "",
     },
@@ -70,7 +79,9 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
     newSelectedOptions[index] = event.target.value;
     setSelectedOptions(newSelectedOptions);
     setQuestionsComplete(
-      newSelectedOptions.filter((option) => option !== questions[index].options[0]).length
+      newSelectedOptions.filter(
+        (option) => option !== questions[index].options[0]
+      ).length
     );
     const newQuestions = [...questions];
     newQuestions[index].chosenAnswer = event.target.value;
@@ -87,38 +98,55 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
         <div>
           <ProgressBar
             questionsComplete={questionsComplete}
-            totalQuestions={totalQuestions} 
-          />  {/* This is to show the progress bar taking in the number of questions completed and the total number of questions */}
-          <h1> 
+            totalQuestions={totalQuestions}
+          />{" "}
+          {/* This is to show the progress bar taking in the number of questions completed and the total number of questions */}
+          <h1>
             <u>Basic Quiz</u>
           </h1>
           <hr></hr>
           <div className="row">
-            {questions.map((question, index) => ( // maps through the questions array to display each question and its options
-              <div className="column" key={index}>
-                <ol start={index + 1}> {/* uses the index to display the question number starting from 1 */}
-                  <li>
-                    {question.question}{" "} {/* displays the question with space between the X and ✔️ */}
-                    {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
-                  </li>
-                  <div>
-                    <Form.Group>
-                      <Form.Select
-                        value={selectedOptions[index]} // sets the value of the select to the selected option
-                        onChange={(event) => updateSelectedOption(index, event)} // calls the updateSelectedOption function when the select value changes
-                      >
-                        {question.options.map((choice: string) => ( // maps through the options array to display each option
-                          <option key={choice} value={choice}> {/* sets the key and value of the option to the choice */}
-                            {choice}
-                          </option>
-                        ))}
-                      </Form.Select>
-                    </Form.Group>
-                  </div>
-                  <br />
-                </ol>
-              </div>
-            ))}
+            {questions.map(
+              (
+                question,
+                index // maps through the questions array to display each question and its options
+              ) => (
+                <div className="column" key={index}>
+                  <ol start={index + 1}>
+                    {" "}
+                    {/* uses the index to display the question number starting from 1 */}
+                    <li>
+                      {question.question}{" "}
+                      {/* displays the question with space between the X and ✔️ */}
+                      {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
+                    </li>
+                    <div>
+                      <Form.Group>
+                        <Form.Select
+                          value={selectedOptions[index]} // sets the value of the select to the selected option
+                          onChange={(event) =>
+                            updateSelectedOption(index, event)
+                          } // calls the updateSelectedOption function when the select value changes
+                        >
+                          {question.options.map(
+                            (
+                              choice: string // maps through the options array to display each option
+                            ) => (
+                              <option key={choice} value={choice}>
+                                {" "}
+                                {/* sets the key and value of the option to the choice */}
+                                {choice}
+                              </option>
+                            )
+                          )}
+                        </Form.Select>
+                      </Form.Group>
+                    </div>
+                    <br />
+                  </ol>
+                </div>
+              )
+            )}
             <hr></hr>
             {questionsComplete === selectedOptions.length ? ( // checks if all questions are complete before showing the submit button
               <span>
@@ -126,7 +154,8 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button onClick={() => submitAnswers()}>Submit</button> {/* calls the submitAnswers function when the button is clicked */}
+                <button onClick={() => submitAnswers()}>Submit</button>{" "}
+                {/* calls the submitAnswers function when the button is clicked */}
                 <hr></hr>
               </span>
             ) : (
@@ -143,10 +172,16 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       ) : (
         <div>
           <div className="Report-Header">
-              <h1> <u>Basic Quiz Report</u> </h1>
-              <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
+            <h1>
+              {" "}
+              <u>Basic Quiz Report</u>{" "}
+            </h1>
+            <h4>
+              Based on your answers to the quiz, here are some jobs that you
+              might be interested in:{" "}
+            </h4>
           </div>
-          <Report 
+          <Report
             Overview={recJobs?.overview ?? null}
             RecCareer={recJobs?.jobTitle ?? null}
             Description={recJobs?.jobDescription ?? null}
@@ -155,9 +190,13 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
             Fit={recJobs?.applicationToCareer ?? null}
             OtherJobs={recJobs?.otherJobs ?? null}
             RelatedAspects={recJobs?.relatedAspects ?? null}
-          /> {/* calls the Report component to display the quiz results */}
+          />{" "}
+          {/* calls the Report component to display the quiz results */}
           <p></p>
-          <button onClick={() => setShowReport(false)}>Go Back to Quiz</button> {/* button allowing user to go back to quiz with answers still filled */}
+          <button onClick={() => setShowReport(false)}>
+            Go Back to Quiz
+          </button>{" "}
+          {/* button allowing user to go back to quiz with answers still filled */}
           <hr></hr>
         </div>
       )}
