@@ -1,92 +1,78 @@
-export default function Report(
-    {
-        Summary,
-        RecCareer,
-        Description,
-        Salary,
-        Education,
-        Fit,
-        OtherJobs,
-        RelatedAspects,
-      }: {
-        Summary: string;
-        RecCareer: string;
-        Description: string;
-        Salary: string;
-        Education: string;
-        Fit: string;
-        OtherJobs: string;
-        RelatedAspects: string;
-      }
-) {
+export default function Report({
+    Summary,
+    RecCareer,
+    Description,
+    Salary,
+    Education,
+    Fit,
+    OtherJobs,
+    RelatedAspects,
+}: {
+  Summary: string | null;
+  RecCareer: string | null;
+  Description: string | null;
+  Salary: string | null;
+  Education: string | null;
+  Fit: string | null;
+  OtherJobs: string | null;
+  RelatedAspects: string | null;
+}) {
+  return (
+    // Overall report
+    <div className="Report">
+        <br></br>
+        {/* Overview */}
+        <h3 className="Report-Title"><u>Summary</u></h3>
+        <p className="Report-Text">{Summary}</p>
+        <br></br>
 
+        <br></br>
 
-    return (
-        // Overall report
-        <div className="Report">
-
+        <div className="Report-Background">
             <br></br>
             
-            <div className="Report-Background">
-                <br></br>
+            {/* Quiz results */}
+            <h3 className="Report-Title"><u>Recommended Career</u></h3>
+            <p className="Report-Text">{RecCareer}</p>
 
-                {/* Overview */}
-                <h3 className="Report-Title"><u>Summary</u></h3>
-                <p className="Report-Text">{Summary}</p>
-                <br></br>
-            </div>
+            <hr></hr>
 
-            <br></br>
+            <h3 className="Report-Title"><u>Job Description</u></h3> 
+            <p className="Report-Text">{Description}</p>
 
-            <div className="Report-Background">
-                <br></br>
-                
-                {/* Quiz results */}
-                <h3 className="Report-Title"><u>Recommended Career</u></h3>
-                <p className="Report-Text">{RecCareer}</p>
+            <hr></hr>
 
-                <hr></hr>
+            <h3 className="Report-Title"><u>Salary Range</u></h3>
+            <p className="Report-Text">{Salary}</p>
 
-                <h3 className="Report-Title"><u>Job Description</u></h3> 
-                <p className="Report-Text">{Description}</p>
+            <hr></hr>
 
-                <hr></hr>
+            <h3 className="Report-Title"><u>Education Required</u></h3>
+            <p className="Report-Text">{Education}</p>
 
-                <h3 className="Report-Title"><u>Salary Range</u></h3>
-                <p className="Report-Text">{Salary}</p>
+            <hr></hr>
 
-                <hr></hr>
+            <h3 className="Report-Title"><u>How This Fits Job You</u></h3>
+            <p className="Report-Text">{Fit}</p>
 
-                <h3 className="Report-Title"><u>Education Required</u></h3>
-                <p className="Report-Text">{Education}</p>
+            <hr></hr>
 
-                <hr></hr>
+            {/* Secondary report details */}
+            <h3 className="Report-Title"><u>Other Recommendations</u></h3>
+            <p className="Report-Text">{OtherJobs}</p>
+            
+            <hr></hr>
 
-                <h3 className="Report-Title"><u>How This Fits Job You</u></h3>
-                <p className="Report-Text">{Fit}</p>
-
-                <hr></hr>
-
-                {/* Secondary report details */}
-                <h3 className="Report-Title"><u>Other Recommendations</u></h3>
-                <p className="Report-Text">{OtherJobs}</p>
-                
-                <hr></hr>
-
-                <h3 className="Report-Title"><u>Related Aspects</u></h3>
-                <p className="Report-Text">{RelatedAspects}</p>
-                
-                <br></br>
-            </div>
-
+            <h3 className="Report-Title"><u>Related Aspects</u></h3>
+            <p className="Report-Text">{RelatedAspects}</p>
+            
             <br></br>
 
             {/* Maybe add a picture showing the job along with the results on the right side? Leave the left side for the info? 
             Put colored boxes around the two different sections of results? */}
 
-            {/* Maybe style it so that there are boxes around the difference sections or something seperating them? */}
-
+        {/* Maybe style it so that there are boxes around the difference sections or something seperating them? */}
         </div>
-
-    )
+    </div>
+);
 }

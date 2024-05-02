@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { sendDetailedQuizQuery } from "./GPT";
 import Report from "./Report";
+import { CareerRecommendation } from "./GPT";
 
 export default function DetailedQuiz({ keyData }: { keyData: string }) {
   const defaultOption = "";
@@ -20,6 +21,7 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
     new Array(8).fill(defaultOption)
   );
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
+  const [recJobs, setRecJobs] = useState<CareerRecommendation | null>(null);
   const [showReport, setShowReport] = useState(false);
   const totalQuestions = 8;
 
@@ -32,9 +34,9 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
     );
   };
 
-  function submitAnswers() {
+  async function submitAnswers() {
     setShowReport(true);
-    sendDetailedQuizQuery(QuestionList, answers, keyData);
+    setRecJobs(await sendDetailedQuizQuery(QuestionList, answers, keyData));
   }
 
   return (
@@ -56,7 +58,9 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
               <div className="column" key={index}>
                 <ol start={index + 1}>
                   <li>
-                  <div style={ {border: '1px solid black', padding: '2px'} }>{QuestionList[index]}</div>
+                    <div style={{ border: "1px solid black", padding: "2px" }}>
+                      {QuestionList[index]}
+                    </div>
                     {answers[index].length > 3 ? " ✔️" : " ❌"}
                   </li>
                   <input
@@ -75,7 +79,12 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button className="submit mx-auto" onClick={() => submitAnswers()}>Submit</button>
+                <button
+                  className="submit mx-auto"
+                  onClick={() => submitAnswers()}
+                >
+                  Submit
+                </button>
                 <hr></hr>
               </span>
             ) : (
@@ -89,28 +98,33 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
             )}
           </div>
         </div>
-        ) : ( 
-          <div>
-            <div className="Report-Header">
-              <h1> <u>Detailed Quiz Report</u> </h1>
-              <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
-            </div>
-            <Report 
-              Summary="Summary" 
-              RecCareer="Recommended Career"
-              Description="Job Description"
-              Salary="Salary Range"
-              Education="Education Required"
-              Fit="How this job fits"
-              OtherJobs="Secondary recommendations"
-              RelatedAspects="How these relate"
-            />
-            <p></p>
-            <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
-            <hr></hr>
+      ) : (
+        <div>
+          <div className="Report-Header">
+            <h1>
+              {" "}
+              <u>Detailed Quiz Report</u>{" "}
+            </h1>
+            <h4>
+              Based on your answers to the quiz, here are some jobs that you
+              might be interested in:{" "}
+            </h4>
           </div>
-        ) 
-        }
+          <Report
+            Overview={recJobs?.overview ?? null}
+            RecCareer={recJobs?.jobTitle ?? null}
+            Description={recJobs?.jobDescription ?? null}
+            Salary={recJobs?.averageSalary.join(", ") ?? null}
+            Education={recJobs?.requirements ?? null}
+            Fit={recJobs?.applicationToCareer ?? null}
+            OtherJobs={recJobs?.otherJobs ?? null}
+            RelatedAspects={recJobs?.relatedAspects ?? null}
+          />
+          <p></p>
+          <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
+          <hr></hr>
+        </div>
+      )}
     </div>
   );
 }

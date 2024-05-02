@@ -7,6 +7,8 @@ import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
 import logo from "./assets/images/logo.png";
+
+import { isValidKey } from "./components/GPT";
 //import logo from "./assets/images/logo.png";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -25,8 +27,14 @@ function App() {
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
-    localStorage.setItem(saveKeyData, JSON.stringify(key));
-    window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    isValidKey(key).then((valid) => {
+      if (valid) {
+        localStorage.setItem(saveKeyData, JSON.stringify(key));
+        window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+      } else {
+        alert("Invalid API Key");
+      }
+    });
   }
 
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
@@ -47,30 +55,41 @@ function App() {
         {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
         {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
 
-        <Button className="Home-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("home")}>
-        Home Page
-      </Button>
-      <Button className="Basic-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("basic")}>
-        Basic Quiz
-      </Button>
-      <Button className="Detailed-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("detailed")}>
-        Detailed Quiz 
-      </Button>
-      
+        <Button
+          className="Home-Button mt-5 mx-auto mb-3"
+          onClick={() => setCurrentPage("home")}
+        >
+          Home Page
+        </Button>
+        <Button
+          className="Basic-Button mt-5 mx-auto mb-3"
+          onClick={() => setCurrentPage("basic")}
+        >
+          Basic Quiz
+        </Button>
+        <Button
+          className="Detailed-Button mt-5 mx-auto mb-3"
+          onClick={() => setCurrentPage("detailed")}
+        >
+          Detailed Quiz
+        </Button>
+
         <CardFooter>
-        <Form>
-          <Form.Label className="d-block text-center mt-2">API Key:</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Insert API Key Here"
-            onChange={changeKey}
-            style={{ width: "800px", margin: "0 auto" }}
-          ></Form.Control>
-          <br></br>
-          <Button className="Submit-Button" onClick={handleSubmit}>
-            Submit
-          </Button>
-        </Form>
+          <Form>
+            <Form.Label className="d-block text-center mt-2">
+              API Key:
+            </Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Insert API Key Here"
+              onChange={changeKey}
+              style={{ width: "800px", margin: "0 auto" }}
+            ></Form.Control>
+            <br></br>
+            <Button className="Submit-Button" onClick={handleSubmit}>
+              Submit
+            </Button>
+          </Form>
         </CardFooter>
       </div>
     </div>
