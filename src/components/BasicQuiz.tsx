@@ -106,8 +106,8 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               <div className="column" key={index}>
                 <ol start={index + 1}> {/* uses the index to display the question number starting from 1 */}
                   <li>
-                  <div style={ {border: '1px solid black', padding: '2px'} }>{question.question}{" "}</div> {/* displays the question with space between the X and ✔️ */}
-                    {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
+                  <div style={ {border: '1px solid black', padding: '2px'} }>{question.question}{" "}{selectedOptions[index] !== "" ? " ✔️" : " ❌"}</div> {/* displays the question with space between the X and ✔️ */}
+                    
                   </li>
                   <div>
                     <Form.Group>
