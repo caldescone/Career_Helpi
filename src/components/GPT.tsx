@@ -34,6 +34,7 @@ async function sendChatQuery(query: string, key: string): Promise<CareerRecommen
     model: "gpt-4", // The model to use, with minimim being gpt-4
   });
   const apiResponse = completion.choices[0]?.message?.content ?? null; // Get the response from the API if it exists
+  console.log(apiResponse);
   if (apiResponse) { // If the response exists, parse it
     return parseCareerRecommendation(apiResponse);
   }
