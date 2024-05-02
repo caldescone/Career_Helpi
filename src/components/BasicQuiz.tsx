@@ -96,7 +96,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               <div className="column" key={index}>
                 <ol start={index + 1}>
                   <li>
-                    {question.question}{" "}
+                  <div style={ {border: '1px solid black', padding: '2px'} }>{question.question}{" "}</div>
                     {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
                   </li>
                   <div>
