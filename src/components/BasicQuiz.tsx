@@ -119,10 +119,10 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                       <div
                         style={{ border: "1px solid black", padding: "2px" }}
                       >
-                        {question.question}{" "}
+                        {question.question}{" "}{selectedOptions[index] !== "" ? " ✔️" : " ❌"}
+
                       </div>{" "}
                       {/* displays the question with space between the X and ✔️ */}
-                      {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
                     </li>
                     <div>
                       <Form.Group>
