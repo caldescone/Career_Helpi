@@ -4,7 +4,6 @@ import { Form } from "react-bootstrap";
 import { sendBasicQuizQuery } from "./GPT";
 import Report from "./Report";
 import { CareerRecommendation } from "./GPT";
-import { send } from "process";
 
 export type Question = {
   question: string;
@@ -148,14 +147,14 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
           </div>
           <Report 
-            Overview="Overview" 
-            RecCareer="Recommended Career"
-            Description="Job Description"
-            Salary="Salary Range"
-            Education="Education Required"
-            Fit="How this job fits"
-            OtherJobs="Secondary recommendations"
-            RelatedAspects="How these relate"
+            Overview={recJobs?.overview ?? null}
+            RecCareer={recJobs?.jobTitle ?? null}
+            Description={recJobs?.jobDescription ?? null}
+            Salary={recJobs?.averageSalary.join(", ") ?? null}
+            Education={recJobs?.requirements ?? null}
+            Fit={recJobs?.applicationToCareer ?? null}
+            OtherJobs={recJobs?.otherJobs ?? null}
+            RelatedAspects={recJobs?.relatedAspects ?? null}
           /> {/* calls the Report component to display the quiz results */}
           <p></p>
           <button onClick={() => setShowReport(false)}>Go Back to Quiz</button> {/* button allowing user to go back to quiz with answers still filled */}

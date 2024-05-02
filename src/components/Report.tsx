@@ -9,14 +9,14 @@ export default function Report(
         OtherJobs,
         RelatedAspects,
       }: {
-        Overview: string;
-        RecCareer: string;
-        Description: string;
-        Salary: string;
-        Education: string;
-        Fit: string;
-        OtherJobs: string;
-        RelatedAspects: string;
+        Overview: string | null;
+        RecCareer: string | null;
+        Description: string | null;
+        Salary: string | null;
+        Education: string | null;
+        Fit: string | null;
+        OtherJobs: string | null;
+        RelatedAspects: string | null;
       }
 ) {
 
@@ -51,7 +51,7 @@ export default function Report(
                 <h3>Education Required:</h3>
                 <p>{Education}</p>
 
-                <h3>How This Fits Job You:</h3>
+                <h3>How This Job Fits You:</h3>
                 <p>{Fit}</p>
             </div>
 

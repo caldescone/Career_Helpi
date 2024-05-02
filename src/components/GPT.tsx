@@ -2,22 +2,28 @@ import OpenAI from "openai";
 import { Question } from "./BasicQuiz";
 
 export interface CareerRecommendation {
+  overview: string;
   jobTitle: string;
   jobDescription: string;
   averageSalary: string[];
   requirements: string;
   applicationToCareer: string;
+  otherJobs: string;
+  relatedAspects: string;
 }
 
 function parseCareerRecommendation(apiResponse: string): CareerRecommendation {
   const matches = apiResponse.match(/\{(.*?)\}/g)?.map(match => match.slice(1, -1)) ?? []; // Get the matches from the response
 
   return {
-      jobTitle: matches[0],
-      jobDescription: matches[1],
-      averageSalary: matches[2]?.split(', ') ?? [],
-      requirements: matches[3],
-      applicationToCareer: matches[4]
+      overview: matches[0],
+      jobTitle: matches[1],
+      jobDescription: matches[2],
+      averageSalary: matches[3]?.split(', ') ?? [],
+      requirements: matches[4],
+      applicationToCareer: matches[5],
+      otherJobs: matches[6],
+      relatedAspects: matches[7]
   };
 }
 
@@ -44,7 +50,7 @@ export async function sendBasicQuizQuery(
     // Adds the question followed by the answer to the query
     query += questions[i].question + ". " + questions[i].chosenAnswer + ".\n";
   }
-  query += "Please provide a report on the student's career path using this template, {reccomended job}, {job description}, {lower salary, median salary, upper salary}, {education required}, {how this job relates to the quiz}";
+  query += "Please provide a report on the student's career path using this template with the answers inside the curly brackets replacing what is currently there, {overview}, {reccomended job}, {job description}, {lower salary, median salary, upper salary}, {education required}, {how this job relates to the quiz}, {other jobs in the field}, {related aspects of the job}.";
   return await sendChatQuery(query, key);
 }
 
