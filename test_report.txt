@@ -10,7 +10,7 @@
         at HomePage
         at div
         at div
-        at App (/home/runner/work/Career_Helpi/Career_Helpi/src/App.tsx:21:33)
+        at App (/home/runner/work/Career_Helpi/Career_Helpi/src/App.tsx:23:33)
 
       4 |
       5 | test('renders learn react link', () => {
@@ -42,7 +42,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (88 ms)
+  ✕ renders learn react link (90 ms)
 
   ● renders learn react link
 
@@ -214,24 +214,24 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   11.11 |    16.66 |    8.33 |   11.36 |                   
- src                 |      28 |    33.33 |    12.5 |      28 |                   
-  App.tsx            |      50 |       50 |   16.66 |      50 | 17,28-34,50-56    
+All files            |       9 |     5.88 |     7.5 |    9.25 |                   
+ src                 |      25 |    28.57 |   11.11 |      25 |                   
+  App.tsx            |   41.17 |       40 |   14.28 |   41.17 | 19,30-42,60-72    
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |    4.61 |        0 |    7.14 |    4.76 |                   
-  BasicQuiz.tsx      |       0 |        0 |       0 |       0 | 14-174            
-  DetailedQuiz.tsx   |       0 |        0 |       0 |       0 | 7-109             
-  GPT.tsx            |       0 |      100 |       0 |       0 | 5-34              
+ src/components      |    3.61 |        0 |    6.45 |    3.75 |                   
+  BasicQuiz.tsx      |       0 |        0 |       0 |       0 | 15-205            
+  DetailedQuiz.tsx   |       0 |        0 |       0 |       0 | 8-124             
+  GPT.tsx            |       0 |        0 |       0 |       0 | 6-94              
   HomePage.tsx       |     100 |      100 |     100 |     100 |                   
   NavBar.tsx         |      20 |      100 |      20 |      20 | 20-37             
   ProgressBar.tsx    |   33.33 |      100 |       0 |   33.33 | 4-6               
-  Report.tsx         |       0 |      100 |       0 |       0 | 24                
+  Report.tsx         |       0 |      100 |       0 |       0 | 20                
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.099 s
+Time:        3.217 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
