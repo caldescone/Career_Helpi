@@ -1,6 +1,6 @@
 export default function Report(
     {
-        Overview,
+        Summary,
         RecCareer,
         Description,
         Salary,
@@ -9,7 +9,7 @@ export default function Report(
         OtherJobs,
         RelatedAspects,
       }: {
-        Overview: string;
+        Summary: string;
         RecCareer: string;
         Description: string;
         Salary: string;
@@ -26,45 +26,61 @@ export default function Report(
         <div className="Report">
 
             <br></br>
+            
+            <div className="Report-Background">
+                <br></br>
 
-            {/* Overview */}
-            <div className="Report-Overview">
-                <h3>Overview:</h3>
-                <p>{Overview}</p>
-
-            </div>
-
-            {/* Line break */}
-            <br></br>
-
-            {/* Quiz results */}
-            <div className="Report-Text">
-                <h3>Recommended Career:</h3>
-                <p>{RecCareer}</p>
-
-                <h3>Job Description:</h3> 
-                <p>{Description}</p>
-
-                <h3>Salary Range:</h3>
-                <p>{Salary}</p>
-
-                <h3>Education Required:</h3>
-                <p>{Education}</p>
-
-                <h3>How This Fits Job You:</h3>
-                <p>{Fit}</p>
+                {/* Overview */}
+                <h3 className="Report-Title"><u>Summary</u></h3>
+                <p className="Report-Text">{Summary}</p>
+                <br></br>
             </div>
 
             <br></br>
 
-            {/* Secondary report details */}
-            <div className="Report-Text">
-                <h3>Other Recommendations:</h3>
-                <p>{OtherJobs}</p>
+            <div className="Report-Background">
+                <br></br>
                 
-                <h3>Related Aspects:</h3>
-                <p>{RelatedAspects}</p>
+                {/* Quiz results */}
+                <h3 className="Report-Title"><u>Recommended Career</u></h3>
+                <p className="Report-Text">{RecCareer}</p>
+
+                <hr></hr>
+
+                <h3 className="Report-Title"><u>Job Description</u></h3> 
+                <p className="Report-Text">{Description}</p>
+
+                <hr></hr>
+
+                <h3 className="Report-Title"><u>Salary Range</u></h3>
+                <p className="Report-Text">{Salary}</p>
+
+                <hr></hr>
+
+                <h3 className="Report-Title"><u>Education Required</u></h3>
+                <p className="Report-Text">{Education}</p>
+
+                <hr></hr>
+
+                <h3 className="Report-Title"><u>How This Fits Job You</u></h3>
+                <p className="Report-Text">{Fit}</p>
+
+                <hr></hr>
+
+                {/* Secondary report details */}
+                <h3 className="Report-Title"><u>Other Recommendations</u></h3>
+                <p className="Report-Text">{OtherJobs}</p>
+                
+                <hr></hr>
+
+                <h3 className="Report-Title"><u>Related Aspects</u></h3>
+                <p className="Report-Text">{RelatedAspects}</p>
+                
+                <br></br>
             </div>
+
+            <br></br>
+
             {/* Maybe add a picture showing the job along with the results on the right side? Leave the left side for the info? 
             Put colored boxes around the two different sections of results? */}
 

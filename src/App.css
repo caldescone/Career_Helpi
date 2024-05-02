@@ -79,6 +79,14 @@
   width: 100%;
 }
 
+.Report-Background {
+  background-color: white;
+  border:solid black;
+  color: black;
+  width: 50%;
+  margin: auto;
+}
+
 .Report-Header {
   background-color: #282c34;
   color: white;
@@ -91,20 +99,22 @@
   margin: auto;
 }
 
-.Report-Overview {
-  background-color: lightgrey;
-  border:solid black;
+.Report-Title {
+  background-color: white;
+  /* border:solid black; */
   color: black;
-  width: 50%;
-  margin: auto;
-}
-
-.Report-Text {
-  background-color: lightgrey;
-  border:solid black;
-  color: black;
-
   width: 50%;
   text-align: center;
   margin: auto;
+  padding-bottom: 10px;
+}
+
+.Report-Text {
+  background-color: white;
+  /* border:solid black; */
+  color: black;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  /* padding-left: 80px; */
 }

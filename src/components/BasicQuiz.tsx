@@ -140,11 +140,11 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       ) : (
         <div>
           <div className="Report-Header">
-              <h1> <u>Detailed Quiz Report</u> </h1>
+              <h1> <u>Basic Quiz Report</u> </h1>
               <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
           </div>
           <Report 
-            Overview="Overview" 
+            Summary="Summary" 
             RecCareer="Recommended Career"
             Description="Job Description"
             Salary="Salary Range"
