@@ -3,6 +3,8 @@ import ProgressBar from "./ProgressBar";
 import { Form } from "react-bootstrap";
 import { sendBasicQuizQuery } from "./GPT";
 import Report from "./Report";
+import { CareerRecommendation } from "./GPT";
+import { send } from "process";
 
 export type Question = {
   question: string;
@@ -59,6 +61,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
   );
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
   const totalQuestions = questions.length;
+  const [recJobs, setRecJobs] = useState<CareerRecommendation | null>(null);
   const [showReport, setShowReport] = useState(false);
   function updateSelectedOption(
     index: number,
@@ -74,10 +77,10 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
     newQuestions[index].chosenAnswer = event.target.value;
     setQuestions(newQuestions);
   }
-  function submitAnswers() {
+  async function submitAnswers() {
     console.log(questions);
     setShowReport(true);
-    sendBasicQuizQuery(questions, keyData);
+    setRecJobs(await sendBasicQuizQuery(questions, keyData));
   }
   return (
     <div>
