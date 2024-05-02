@@ -116,8 +116,12 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                     {" "}
                     {/* uses the index to display the question number starting from 1 */}
                     <li>
-                    <div style={ {border: '1px solid black', padding: '2px'} }>{question.question}{" "}
-                     </div> {/* displays the question with space between the X and ✔️ */}
+                      <div
+                        style={{ border: "1px solid black", padding: "2px" }}
+                      >
+                        {question.question}{" "}
+                      </div>{" "}
+                      {/* displays the question with space between the X and ✔️ */}
                       {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
                     </li>
                     <div>
@@ -154,7 +158,12 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button className="submit mx-auto" onClick={() => submitAnswers()}>Submit</button>{" "}
+                <button
+                  className="submit mx-auto"
+                  onClick={() => submitAnswers()}
+                >
+                  Submit
+                </button>{" "}
                 {/* calls the submitAnswers function when the button is clicked */}
                 <hr></hr>
               </span>
@@ -203,4 +212,3 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
     </div>
   );
 }
-
