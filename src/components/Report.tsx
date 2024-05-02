@@ -1,42 +1,69 @@
-export default function Report() {
+export default function Report(
+    {
+        Overview,
+        RecCareer,
+        Description,
+        Salary,
+        Education,
+        Fit,
+        OtherJobs,
+        RelatedAspects,
+      }: {
+        Overview: string;
+        RecCareer: string;
+        Description: string;
+        Salary: string;
+        Education: string;
+        Fit: string;
+        OtherJobs: string;
+        RelatedAspects: string;
+      }
+) {
 
 
     return (
+        // Overall report
         <div className="Report">
 
+            <br></br>
+
+            {/* Overview */}
             <div className="Report-Overview">
                 <h3>Overview:</h3>
-                <p>Overview here</p>
+                <p>{Overview}</p>
 
             </div>
 
-            <hr></hr>
+            {/* Line break */}
+            <br></br>
 
-            {/* <h1>Top Recommended Career: {recJobs[0]}</h1> */}
-            <div>
-                <div className="Report-Text">
-                    <h3>Recommended Career:</h3>
-                    <p>JOB TITLE</p>
-
-                    <h3>Job Description:</h3> 
-                    <p>DESCRIPTION</p>
-
-                    <h3>Salary Range:</h3>
-                    <p>RANGE</p>
-
-                    <h3>Education Required:</h3>
-                    <p>EDUCATION</p>
-
-                    <h3>How This Fits Job You:</h3>
-                    <p>HOW RELATED TO QUIZ</p>
-                </div>
-            </div>
-
-            <hr></hr>
-
+            {/* Quiz results */}
             <div className="Report-Text">
-                <p>Other Recommendations:</p>
-                <p>Related Aspects:</p>
+                <h3>Recommended Career:</h3>
+                <p>{RecCareer}</p>
+
+                <h3>Job Description:</h3> 
+                <p>{Description}</p>
+
+                <h3>Salary Range:</h3>
+                <p>{Salary}</p>
+
+                <h3>Education Required:</h3>
+                <p>{Education}</p>
+
+                <h3>How This Fits Job You:</h3>
+                <p>{Fit}</p>
+            </div>
+
+            <br></br>
+
+            {/* Secondary report details */}
+            <div className="Report-Text">
+                <h3>Other Recommendations:</h3>
+                <p>{OtherJobs}</p>
+                
+                <h3>Related Aspects:</h3>
+                <p>{RelatedAspects}</p>
             </div>
             {/* Maybe add a picture showing the job along with the results on the right side? Leave the left side for the info? 
             Put colored boxes around the two different sections of results? */}

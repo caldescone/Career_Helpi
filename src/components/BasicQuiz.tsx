@@ -84,32 +84,32 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
   }
   return (
     <div>
-      {!showReport ? (
+      {!showReport ? ( // flag to show the report, defaults to only showing the quiz
         <div>
           <ProgressBar
             questionsComplete={questionsComplete}
-            totalQuestions={totalQuestions}
-          />
-          <h1>
+            totalQuestions={totalQuestions} 
+          />  {/* This is to show the progress bar taking in the number of questions completed and the total number of questions */}
+          <h1> 
             <u>Basic Quiz</u>
           </h1>
           <hr></hr>
           <div className="row">
-            {questions.map((question, index) => (
+            {questions.map((question, index) => ( // maps through the questions array to display each question and its options
               <div className="column" key={index}>
-                <ol start={index + 1}>
+                <ol start={index + 1}> {/* uses the index to display the question number starting from 1 */}
                   <li>
-                    {question.question}{" "}
+                    {question.question}{" "} {/* displays the question with space between the X and ✔️ */}
                     {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
                   </li>
                   <div>
                     <Form.Group>
                       <Form.Select
-                        value={selectedOptions[index]}
-                        onChange={(event) => updateSelectedOption(index, event)}
+                        value={selectedOptions[index]} // sets the value of the select to the selected option
+                        onChange={(event) => updateSelectedOption(index, event)} // calls the updateSelectedOption function when the select value changes
                       >
-                        {question.options.map((choice: string) => (
-                          <option key={choice} value={choice}>
+                        {question.options.map((choice: string) => ( // maps through the options array to display each option
+                          <option key={choice} value={choice}> {/* sets the key and value of the option to the choice */}
                             {choice}
                           </option>
                         ))}
@@ -121,13 +121,13 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               </div>
             ))}
             <hr></hr>
-            {questionsComplete === selectedOptions.length ? (
+            {questionsComplete === selectedOptions.length ? ( // checks if all questions are complete before showing the submit button
               <span>
                 <div>All Questions Complete!</div>
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button onClick={() => submitAnswers()}>Submit</button>
+                <button onClick={() => submitAnswers()}>Submit</button> {/* calls the submitAnswers function when the button is clicked */}
                 <hr></hr>
               </span>
             ) : (
@@ -147,9 +147,18 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               <h1> <u>Detailed Quiz Report</u> </h1>
               <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
           </div>
-          <Report />
+          <Report 
+            Overview="Overview" 
+            RecCareer="Recommended Career"
+            Description="Job Description"
+            Salary="Salary Range"
+            Education="Education Required"
+            Fit="How this job fits"
+            OtherJobs="Secondary recommendations"
+            RelatedAspects="How these relate"
+          /> {/* calls the Report component to display the quiz results */}
           <p></p>
-          <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
+          <button onClick={() => setShowReport(false)}>Go Back to Quiz</button> {/* button allowing user to go back to quiz with answers still filled */}
           <hr></hr>
         </div>
       )}
