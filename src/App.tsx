@@ -46,13 +46,25 @@ function App() {
         {currentPage === "home" ? <HomePage /> : null}
         {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
         {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
+
+        <Button className="Home-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("home")}>
+        Home Page
+      </Button>
+      <Button className="Basic-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("basic")}>
+        Basic Quiz
+      </Button>
+      <Button className="Detailed-Button mt-5 mx-auto mb-3" onClick={() => setCurrentPage("detailed")}>
+        Detailed Quiz 
+      </Button>
+      
         <CardFooter>
         <Form>
-          <Form.Label>API Key:</Form.Label>
+          <Form.Label className="d-block text-center mt-2">API Key:</Form.Label>
           <Form.Control
             type="password"
             placeholder="Insert API Key Here"
             onChange={changeKey}
+            style={{ width: "800px", margin: "0 auto" }}
           ></Form.Control>
           <br></br>
           <Button className="Submit-Button" onClick={handleSubmit}>

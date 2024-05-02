@@ -18,13 +18,20 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Which do you favor more: working in an office or engaging in fieldwork?",
+      question:
+        "Which do you favor more: working in an office or engaging in fieldwork?",
       options: ["", "Office", "Fieldwork"],
       chosenAnswer: "",
     },
     {
-      question: "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?",
-      options: ["", "Aid to others", "Individual projects", "Collaborating with others"],
+      question:
+        "Do you like providing aid to others in need, prefer working on individual projects, or enjoy collaborating with others on projects?",
+      options: [
+        "",
+        "Aid to others",
+        "Individual projects",
+        "Collaborating with others",
+      ],
       chosenAnswer: "",
     },
     {
@@ -33,7 +40,8 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Do you lean towards working in a startup or a well-established company?",
+      question:
+        "Do you lean towards working in a startup or a well-established company?",
       options: ["", "Startup", "Well-established company"],
       chosenAnswer: "",
     },
@@ -48,7 +56,8 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       chosenAnswer: "",
     },
     {
-      question: "Are you comfortable using technology or do you prefer non-technical tasks?",
+      question:
+        "Are you comfortable using technology or do you prefer non-technical tasks?",
       options: ["", "Technology", "Non-technical tasks"],
       chosenAnswer: "",
     },
@@ -68,7 +77,9 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
     newSelectedOptions[index] = event.target.value;
     setSelectedOptions(newSelectedOptions);
     setQuestionsComplete(
-      newSelectedOptions.filter((option) => option !== questions[index].options[0]).length
+      newSelectedOptions.filter(
+        (option) => option !== questions[index].options[0]
+      ).length
     );
     const newQuestions = [...questions];
     newQuestions[index].chosenAnswer = event.target.value;
@@ -95,7 +106,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               <div className="column" key={index}>
                 <ol start={index + 1}> {/* uses the index to display the question number starting from 1 */}
                   <li>
-                    {question.question}{" "} {/* displays the question with space between the X and ✔️ */}
+                  <div style={ {border: '1px solid black', padding: '2px'} }>{question.question}{" "}</div> {/* displays the question with space between the X and ✔️ */}
                     {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
                   </li>
                   <div>
@@ -123,7 +134,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                 <div>
                   When Ready, Please Hit Submit Below to Generate your Results!
                 </div>
-                <button onClick={() => submitAnswers()}>Submit</button> {/* calls the submitAnswers function when the button is clicked */}
+                <button className="submit mx-auto" onClick={() => submitAnswers()}>Submit</button> {/* calls the submitAnswers function when the button is clicked */}
                 <hr></hr>
               </span>
             ) : (
@@ -140,8 +151,13 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       ) : (
         <div>
           <div className="Report-Header">
-              <h1> <u>Basic Quiz Report</u> </h1>
-              <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
+            <h1>
+              <u>Detailed Quiz Report</u>
+            </h1>
+            <h4>
+              Based on your answers to the quiz, here are some jobs that you
+              might be interested in:{" "}
+            </h4>
           </div>
           <Report 
             Summary="Summary" 

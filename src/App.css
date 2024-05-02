@@ -4,19 +4,76 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #6f2dbd;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
 }
 
 .App-link {
   color: #61dafb;
 }
+
+.Basic-Button {
+  background-color: #a663cc;
+  border: 1px solid #a663cc;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+.Basic-Button:hover {
+  background-color: #6f2dbd;
+  border-color: #6f2dbd;
+}
+
+.Detailed-Button {
+  background-color: #a663cc;
+  border: 1px solid #a663cc;
+  transition: background-color 0.25, border-color 0.25s;
+  }
+
+  .Detailed-Button:hover {
+    background-color: #6f2dbd;
+    border-color: #6f2dbd;
+  }
+
+.Home-Button {
+  background-color: #a663cc;
+  border: 1px solid #a663cc;
+  transition: background-color 0.25s, border-color 0.25s;
+  }
+
+  .Home-Button:hover {
+    background-color: #6f2dbd;
+    border-color: #6f2dbd;
+  }
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  border-radius: 50px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background-color: #b8d0e8;
+  border-radius: inherit;
+  transition: width 0.4s ease-in-out;
+}
+
+.progress-bar__text {
+  padding-left: 10px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+
 
 /*
   It's giving me an error so I commented it off for now since it's not used yet
@@ -52,6 +109,22 @@
   clear: both;
 }
 
+.submit {
+  width: auto;
+  justify-content: center;
+  justify-self: auto;
+}
+
+.Submit-Button {
+  background-color: #b298dc;
+  border: 1px solid #b298dc;
+  transition: background-color 0.25s, border-color 0.25s;
+  }
+
+  .Submit-Button:hover {
+    background-color: #6f2dbd;
+    border-color: #6f2dbd;
+  }
 .container {display: inline-block; }
 .text {
   font-size: 3em;
