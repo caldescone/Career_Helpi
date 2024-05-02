@@ -56,14 +56,15 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
               <div className="column" key={index}>
                 <ol start={index + 1}>
                   <li>
-                  <div style={ {border: '1px solid black', padding: '2px'} }>{QuestionList[index]}</div>
-                    {answers[index].length > 3 ? " ✔️" : " ❌"}
+                  <div style={ {border: '1px solid black', padding: '1px'} }>{QuestionList[index]}{answers[index].length > 3 ? " ✔️" : " ❌"}</div>
+                    
                   </li>
-                  <input
-                    type="text"
+                  <textarea
                     value={answers[index]}
-                    onChange={(e) => updateAnswer(index, e.target.value)}
-                    style={{ width: "100%", height: "auto" }}
+                    onChange={(e) => {
+                      updateAnswer(index, e.target.value);
+                    }}
+                    style={{ width: "100%", minHeight: "30px"}}
                   />
                 </ol>
               </div>
