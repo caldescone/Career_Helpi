@@ -56,7 +56,7 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
               <div className="column" key={index}>
                 <ol start={index + 1}>
                   <li>
-                  <div style={ {border: '1px solid black', padding: '1px'} }>{QuestionList[index]}{answers[index].length > 3 ? " ✔️" : " ❌"}</div>
+                  <div style={ {border: '1px solid black', padding: '2px'} }>{QuestionList[index]}{answers[index].length > 3 ? " ✔️" : " ❌"}</div>
                     
                   </li>
                   <textarea
@@ -96,16 +96,7 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
               <h1> <u>Detailed Quiz Report</u> </h1>
               <h4>Based on your answers to the quiz, here are some jobs that you might be interested in: </h4>
             </div>
-            <Report 
-              Overview="Overview" 
-              RecCareer="Recommended Career"
-              Description="Job Description"
-              Salary="Salary Range"
-              Education="Education Required"
-              Fit="How this job fits"
-              OtherJobs="Secondary recommendations"
-              RelatedAspects="How these relate"
-            />
+            <Report />
             <p></p>
             <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
             <hr></hr>
