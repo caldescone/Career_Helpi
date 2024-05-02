@@ -1,5 +1,5 @@
 export default function Report({
-    Summary,
+    Overview,
     RecCareer,
     Description,
     Salary,
@@ -8,14 +8,14 @@ export default function Report({
     OtherJobs,
     RelatedAspects,
 }: {
-  Summary: string | null;
-  RecCareer: string | null;
-  Description: string | null;
-  Salary: string | null;
-  Education: string | null;
-  Fit: string | null;
-  OtherJobs: string | null;
-  RelatedAspects: string | null;
+    Overview: string | null;
+    RecCareer: string | null;
+    Description: string | null;
+    Salary: string | null;
+    Education: string | null;
+    Fit: string | null;
+    OtherJobs: string | null;
+    RelatedAspects: string | null;
 }) {
   return (
     // Overall report
@@ -23,7 +23,7 @@ export default function Report({
         <br></br>
         {/* Overview */}
         <h3 className="Report-Title"><u>Summary</u></h3>
-        <p className="Report-Text">{Summary}</p>
+        <p className="Report-Text">{Overview}</p>
         <br></br>
 
         <br></br>
