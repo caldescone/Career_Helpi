@@ -145,16 +145,28 @@
 
 }
 
+/* Report Styling */
 .Report {
-  background-color: grey;
+  background-color: lightgray;
   /* border:solid black; */
   color: black;
-  width: 100%;
+  width: 60%;
+  margin: auto;
 }
 
+/* Text box where answers are put*/
+.Report-Background {
+  background-color: whitesmoke;
+  border:solid black;
+  color: black;
+  width: 50%;
+  margin: auto;
+}
+
+/* Area around top box saying which report it is */
 .Report-Header {
   background-color: #282c34;
-  color: white;
+  color: whitesmoke;
   height: 25vh;
   display: flex;
   flex-direction: column;
@@ -164,20 +176,47 @@
   margin: auto;
 }
 
-.Report-Overview {
-  background-color: lightgrey;
-  border:solid black;
-  color: black;
-  width: 50%;
-  margin: auto;
+/* Area to the sides of the report */
+.Report-Back-Color {
+  background-color: #282c34;
 }
 
-.Report-Text {
-  background-color: lightgrey;
-  border:solid black;
+/* Top box saying which report it is */
+.Report-Intro {
+  background-color: lightgray;
   color: black;
+  border:solid black;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
+/* Titles for each answer category */
+.Report-Title {
+  background-color: whitesmoke;
+  /* border:solid black; */
+  color: black;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+/* Answer boxes */
+.Report-Text {
+  background-color: white;
+  /* border:solid black; */
+  color: black;
   width: 50%;
   text-align: center;
   margin: auto;
+  /* padding-left: 80px; */
+}
+
+/* Back to Quiz Button */
+.Back-to-Quiz {
+  background-color: #282c34;
+  /* color: white */
 }

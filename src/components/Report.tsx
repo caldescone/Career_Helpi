@@ -1,68 +1,83 @@
 export default function Report({
-  Overview,
-  RecCareer,
-  Description,
-  Salary,
-  Education,
-  Fit,
-  OtherJobs,
-  RelatedAspects,
+    Overview,
+    RecCareer,
+    Description,
+    Salary,
+    Education,
+    Fit,
+    OtherJobs,
+    RelatedAspects,
 }: {
-  Overview: string | null;
-  RecCareer: string | null;
-  Description: string | null;
-  Salary: string | null;
-  Education: string | null;
-  Fit: string | null;
-  OtherJobs: string | null;
-  RelatedAspects: string | null;
+    Overview: string | null;
+    RecCareer: string | null;
+    Description: string | null;
+    Salary: string | null;
+    Education: string | null;
+    Fit: string | null;
+    OtherJobs: string | null;
+    RelatedAspects: string | null;
 }) {
   return (
     // Overall report
-    <div className="Report">
-      <br></br>
+    <div className="Report-Back-Color">
+        <div className="Report">
+            <br></br>
+            <div className="Report-Background">
+                {/* Summary */}
+                <h3 className="Report-Title"><u>Summary</u></h3>
+                <p className="Report-Text">{Overview}</p>
+                <br></br>
+            </div>
 
-      {/* Overview */}
-      <div className="Report-Overview">
-        <h3>Overview:</h3>
-        <p>{Overview}</p>
-      </div>
+            <br></br>
 
-      {/* Line break */}
-      <br></br>
+            <div className="Report-Background">
+                <br></br>
+                
+                {/* Quiz results */}
+                <h3 className="Report-Title"><u>Recommended Career</u></h3>
+                <p className="Report-Text">{RecCareer}</p>
 
-      {/* Quiz results */}
-      <div className="Report-Text">
-        <h3>Recommended Career:</h3>
-        <p>{RecCareer}</p>
+                <hr></hr>
 
-        <h3>Job Description:</h3>
-        <p>{Description}</p>
+                <h3 className="Report-Title"><u>Job Description</u></h3> 
+                <p className="Report-Text">{Description}</p>
 
-        <h3>Salary Range:</h3>
-        <p>{Salary}</p>
+                <hr></hr>
 
-        <h3>Education Required:</h3>
-        <p>{Education}</p>
+                <h3 className="Report-Title"><u>Salary Range</u></h3>
+                <p className="Report-Text">{Salary}</p>
 
-        <h3>How This Job Fits You:</h3>
-        <p>{Fit}</p>
-      </div>
+                <hr></hr>
 
-      <br></br>
+                <h3 className="Report-Title"><u>Education Required</u></h3>
+                <p className="Report-Text">{Education}</p>
 
-      {/* Secondary report details */}
-      <div className="Report-Text">
-        <h3>Other Recommendations:</h3>
-        <p>{OtherJobs}</p>
+                <hr></hr>
 
-        <h3>Related Aspects:</h3>
-        <p>{RelatedAspects}</p>
-      </div>
-      {/* Maybe add a picture showing the job along with the results on the right side? Leave the left side for the info? 
-            Put colored boxes around the two different sections of results? */}
+                <h3 className="Report-Title"><u>How This Fits Job You</u></h3>
+                <p className="Report-Text">{Fit}</p>
 
-      {/* Maybe style it so that there are boxes around the difference sections or something seperating them? */}
+                <hr></hr>
+
+                {/* Secondary report details */}
+                <h3 className="Report-Title"><u>Other Recommendations</u></h3>
+                <p className="Report-Text">{OtherJobs}</p>
+                
+                <hr></hr>
+
+                <h3 className="Report-Title"><u>Related Aspects</u></h3>
+                <p className="Report-Text">{RelatedAspects}</p>
+                
+                <br></br>
+
+                {/* Maybe add a picture showing the job along with the results on the right side? Leave the left side for the info? 
+                Put colored boxes around the two different sections of results? */}
+
+            {/* Maybe style it so that there are boxes around the difference sections or something seperating them? */}
+            </div>
+            <br></br>
+        </div>
     </div>
-  );
+);
 }
