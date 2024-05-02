@@ -56,9 +56,10 @@ export async function sendBasicQuizQuery(
 
 export async function sendDetailedQuizQuery(questions: string[], answers: string[], key: string) {
   let query =
-  "Act as a career counselor. These questions were asked to the student with answers provided, but aimed at being a detailed career quiz. Please provide a report on the student's career path including potential jobs, industries, and possible salaries. \n";
+  "Act as a career counselor. These questions were asked to the student with answers provided, but aimed at being a detailed career quiz. \n";
   for (let i = 0; i < questions.length; i++) {
     query += questions[i] + ". " + answers[i] + ".\n";
   }
+  query += "Please provide a report on the student's career path using this template with the answers inside the curly brackets replacing what is currently there, {overview}, {reccomended job}, {job description}, {lower salary, median salary, upper salary}, {education required}, {how this job relates to the quiz}, {other jobs in the field}, {related aspects of the job}.";
   return await sendChatQuery(query, key);
 }
