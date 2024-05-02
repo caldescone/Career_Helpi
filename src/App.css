@@ -145,15 +145,17 @@
 
 }
 
+/* Report Styling */
 .Report {
-  background-color: grey;
+  background-color: silver;
   /* border:solid black; */
   color: black;
-  width: 100%;
+  width: 60%;
+  margin: auto;
 }
 
 .Report-Background {
-  background-color: white;
+  background-color: whitesmoke;
   border:solid black;
   color: black;
   width: 50%;
@@ -162,7 +164,7 @@
 
 .Report-Header {
   background-color: #282c34;
-  color: white;
+  color: whitesmoke;
   height: 25vh;
   display: flex;
   flex-direction: column;
@@ -172,8 +174,18 @@
   margin: auto;
 }
 
+.Report-Back-Color {
+  background-color: #282c34;
+}
+
+.Report-Intro {
+  background-color: silver;
+  color: black;
+  border:solid black;
+}
+
 .Report-Title {
-  background-color: white;
+  background-color: whitesmoke;
   /* border:solid black; */
   color: black;
   width: 50%;
@@ -190,4 +202,9 @@
   text-align: center;
   margin: auto;
   /* padding-left: 80px; */
+}
+
+.Back-to-Quiz {
+  background-color: #282c34;
+  /* color: white */
 }

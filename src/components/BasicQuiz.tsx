@@ -181,15 +181,17 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
       ) : (
         <div>
           <div className="Report-Header">
-            <h1>
-              {" "}
-              <u>Basic Quiz Report</u>{" "}
-            </h1>
-            <h4>
-              Based on your answers to the quiz, here are some jobs that you
-              might be interested in:{" "}
-            </h4>
+            <div className="Report-Intro">
+              <h1>
+                <u>Basic Quiz Report</u>
+              </h1>
+              <h4>
+                Based on your answers to the quiz, here are some jobs that you
+                might be interested in
+              </h4>
+            </div>
           </div>
+          {/* calls the Report component to display the quiz results */}
           <Report
             Overview={recJobs?.overview ?? null}
             RecCareer={recJobs?.jobTitle ?? null}
@@ -199,14 +201,15 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
             Fit={recJobs?.applicationToCareer ?? null}
             OtherJobs={recJobs?.otherJobs ?? null}
             RelatedAspects={recJobs?.relatedAspects ?? null}
-          />{" "}
-          {/* calls the Report component to display the quiz results */}
-          <p></p>
-          <button onClick={() => setShowReport(false)}>
-            Go Back to Quiz
-          </button>{" "}
+          />
           {/* button allowing user to go back to quiz with answers still filled */}
-          <hr></hr>
+          <div className="Back-to-Quiz">
+            <br></br>
+            <button onClick={() => setShowReport(false)}>
+              Go Back to Quiz
+            </button>
+            <hr></hr>
+          </div>
         </div>
       )}
     </div>

@@ -101,14 +101,15 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
       ) : (
         <div>
           <div className="Report-Header">
-            <h1>
-              {" "}
-              <u>Detailed Quiz Report</u>{" "}
-            </h1>
-            <h4>
-              Based on your answers to the quiz, here are some jobs that you
-              might be interested in:{" "}
-            </h4>
+            <div className="Report-Intro">
+              <h1>
+                <u>Detailed Quiz Report</u>
+              </h1>
+              <h4>
+                Based on your answers to the quiz, here are some jobs that you
+                might be interested in
+              </h4>
+              </div>
           </div>
           <Report
             Overview={recJobs?.overview ?? null}
@@ -120,9 +121,14 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
             OtherJobs={recJobs?.otherJobs ?? null}
             RelatedAspects={recJobs?.relatedAspects ?? null}
           />
-          <p></p>
-          <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
-          <hr></hr>
+          {/* button allowing user to go back to quiz with answers still filled */}
+          <div className="Back-to-Quiz">
+            <br></br>
+            <button onClick={() => setShowReport(false)}>
+              Go Back to Quiz
+            </button>
+            <hr></hr>
+          </div>
         </div>
       )}
     </div>
