@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { sendDetailedQuizQuery } from "./GPT";
 import Report from "./Report";
 import { CareerRecommendation } from "./GPT";
+import Loading from "./Loading";
 
 export default function DetailedQuiz({ keyData }: { keyData: string }) {
   const defaultOption = "";
@@ -38,6 +39,12 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
     setShowReport(true);
     setRecJobs(await sendDetailedQuizQuery(QuestionList, answers, keyData));
   }
+
+  useEffect(() => {
+    if (!showReport) {
+      setRecJobs(null);
+    }
+  }, [showReport]);
 
   return (
     <div>
@@ -99,18 +106,6 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
         </div>
       ) : (
         recJobs ? (
-          <div>
-            <div className="Report-Header">
-              <div className="Report-Intro">
-                <h1>
-                  <u>Detailed Quiz Report</u>
-                </h1>
-                <h4>
-                  Based on your answers to the quiz, here are some jobs that you
-                  might be interested in
-                </h4>
-              </div>
-            </div>
             <Report
               Overview={recJobs.overview}
               RecCareer={recJobs.jobTitle}
@@ -120,18 +115,10 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
               Fit={recJobs.applicationToCareer}
               OtherJobs={recJobs.otherJobs}
               RelatedAspects={recJobs.relatedAspects}
+              setShowReport={setShowReport}
             />
-            {/* button allowing user to go back to quiz with answers still filled */}
-            <div className="Back-to-Quiz">
-              <br></br>
-              <button onClick={() => setShowReport(false)}>
-                Go Back to Quiz
-              </button>
-              <hr></hr>
-            </div>
-          </div>
         ) : (
-          <div>Loading...</div>
+          <Loading />
         )
       )}
     </div>
