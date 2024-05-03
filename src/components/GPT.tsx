@@ -31,21 +31,26 @@ export interface CareerRecommendation {
 }
 
 function parseCareerRecommendation(apiResponse: string): CareerRecommendation {
-  const parsedResponse = JSON.parse(apiResponse);
-  return {
-    overview: parsedResponse.CareerPath.Overview,
-    jobTitle: parsedResponse.CareerPath.RecommendedJob,
-    jobDescription: parsedResponse.CareerPath.JobDescription,
-    averageSalary: [
-      parsedResponse.CareerPath.Salary.Low,
-      parsedResponse.CareerPath.Salary.Median,
-      parsedResponse.CareerPath.Salary.High,
-    ],
-    requirements: parsedResponse.CareerPath.EducationRequired,
-    applicationToCareer: parsedResponse.CareerPath.RelatesToQuiz,
-    otherJobs: parsedResponse.CareerPath.OtherJobsInField,
-    relatedAspects: parsedResponse.CareerPath.RelatedAspectsOfJob,
-  };
+  try {
+    const parsedResponse = JSON.parse(apiResponse);
+    return {
+      overview: parsedResponse.CareerPath.Overview,
+      jobTitle: parsedResponse.CareerPath.RecommendedJob,
+      jobDescription: parsedResponse.CareerPath.JobDescription,
+      averageSalary: [
+        parsedResponse.CareerPath.Salary.Low,
+        parsedResponse.CareerPath.Salary.Median,
+        parsedResponse.CareerPath.Salary.High,
+      ],
+      requirements: parsedResponse.CareerPath.EducationRequired,
+      applicationToCareer: parsedResponse.CareerPath.RelatesToQuiz,
+      otherJobs: parsedResponse.CareerPath.OtherJobsInField,
+      relatedAspects: parsedResponse.CareerPath.RelatedAspectsOfJob,
+    };
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to parse API response");
+  }
 }
 
 const example_json = {
