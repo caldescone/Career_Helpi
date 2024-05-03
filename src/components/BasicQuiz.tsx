@@ -179,38 +179,41 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
           </div>
         </div>
       ) : (
-        <div>
-          <div className="Report-Header">
-            <div className="Report-Intro">
-              <h1>
-                <u>Basic Quiz Report</u>
-              </h1>
-              <h4>
-                Based on your answers to the quiz, here are some jobs that you
-                might be interested in
-              </h4>
+        recJobs ? (
+          <div>
+            <div className="Report-Header">
+              <div className="Report-Intro">
+                <h1>
+                  <u>Detailed Quiz Report</u>
+                </h1>
+                <h4>
+                  Based on your answers to the quiz, here are some jobs that you
+                  might be interested in
+                </h4>
+              </div>
+            </div>
+            <Report
+              Overview={recJobs.overview}
+              RecCareer={recJobs.jobTitle}
+              Description={recJobs.jobDescription}
+              Salary={recJobs.averageSalary}
+              Education={recJobs.requirements}
+              Fit={recJobs.applicationToCareer}
+              OtherJobs={recJobs.otherJobs}
+              RelatedAspects={recJobs.relatedAspects}
+            />
+            {/* button allowing user to go back to quiz with answers still filled */}
+            <div className="Back-to-Quiz">
+              <br></br>
+              <button onClick={() => setShowReport(false)}>
+                Go Back to Quiz
+              </button>
+              <hr></hr>
             </div>
           </div>
-          {/* calls the Report component to display the quiz results */}
-          <Report
-            Overview={recJobs?.overview ?? null}
-            RecCareer={recJobs?.jobTitle ?? null}
-            Description={recJobs?.jobDescription ?? null}
-            Salary={recJobs?.averageSalary.join(", ") ?? null}
-            Education={recJobs?.requirements ?? null}
-            Fit={recJobs?.applicationToCareer ?? null}
-            OtherJobs={recJobs?.otherJobs ?? null}
-            RelatedAspects={recJobs?.relatedAspects ?? null}
-          />
-          {/* button allowing user to go back to quiz with answers still filled */}
-          <div className="Back-to-Quiz">
-            <br></br>
-            <button onClick={() => setShowReport(false)}>
-              Go Back to Quiz
-            </button>
-            <hr></hr>
-          </div>
-        </div>
+        ) : (
+          <div>Loading...</div>
+        )
       )}
     </div>
   );

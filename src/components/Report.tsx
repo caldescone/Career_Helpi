@@ -8,14 +8,14 @@ export default function Report({
     OtherJobs,
     RelatedAspects,
 }: {
-    Overview: string | null;
-    RecCareer: string | null;
-    Description: string | null;
-    Salary: string | null;
-    Education: string | null;
-    Fit: string | null;
-    OtherJobs: string | null;
-    RelatedAspects: string | null;
+    Overview: string;
+    RecCareer: string;
+    Description: string;
+    Salary: string[];
+    Education: string;
+    Fit: string;
+    OtherJobs: string[];
+    RelatedAspects: string[];
 }) {
   return (
     // Overall report
@@ -46,7 +46,9 @@ export default function Report({
                 <hr></hr>
 
                 <h3 className="Report-Title"><u>Salary Range</u></h3>
-                <p className="Report-Text">{Salary}</p>
+                <p className="Report-Text">Low: {Salary[0]}</p>
+                <p className="Report-Text">Low: {Salary[1]}</p>
+                <p className="Report-Text">Low: {Salary[2]}</p>
 
                 <hr></hr>
 
@@ -62,12 +64,16 @@ export default function Report({
 
                 {/* Secondary report details */}
                 <h3 className="Report-Title"><u>Other Recommendations</u></h3>
-                <p className="Report-Text">{OtherJobs}</p>
+                <p className="Report-Text">{OtherJobs.map((job) => (
+                    <li>{job}</li>
+                ))}</p>
                 
                 <hr></hr>
 
                 <h3 className="Report-Title"><u>Related Aspects</u></h3>
-                <p className="Report-Text">{RelatedAspects}</p>
+                <p className="Report-Text">{RelatedAspects.map((aspect) => (
+                    <li>{aspect}</li>
+                ))}</p>
                 
                 <br></br>
 
