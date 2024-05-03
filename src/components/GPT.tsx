@@ -13,8 +13,6 @@ export async function isValidKey(key: string): Promise<boolean> {
     });
     return true;
   } catch (error) {
-    // If the key is invalid, the API will throw an error
-    console.error(error);
     return false;
   }
 }
