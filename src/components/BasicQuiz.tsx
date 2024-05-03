@@ -200,9 +200,9 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
           RelatedAspects={recJobs.relatedAspects}
           setShowReport={setShowReport}
         />
-      ) : (
-        <Loading submitAnswers={submitAnswers} setShowReport={setShowReport} />
-      )}
-    </div>
-  );
+          ) : (
+            <Loading submitAnswers={submitAnswers} setShowReport={setShowReport} recJobs={recJobs} />
+          )}
+        </div>
+      );
 }

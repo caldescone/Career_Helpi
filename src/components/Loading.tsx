@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import Spinner from "react-bootstrap/Spinner";
+import { CareerRecommendation } from "./GPT";
 
 export default function Loading({
   submitAnswers,
   setShowReport,
+  recJobs,
 }: {
   submitAnswers: () => void;
   setShowReport: (showReport: boolean) => void;
+  recJobs: CareerRecommendation | null;
+
 }) {
   const [showRetry, setShowRetry] = useState(false);
 
@@ -18,6 +22,12 @@ export default function Loading({
 
     return () => clearTimeout(timer);
   }, [setShowRetry]); // Include setShowRetry as a dependency
+
+  useEffect(() => {
+    if (recJobs) {
+      setShowRetry(false);
+    }
+  } , [recJobs]);
 
   const handleRetry = () => {
     submitAnswers();
@@ -36,7 +46,7 @@ export default function Loading({
       </Spinner>
       {showRetry && (
         <div className="popup">
-          <p>This took longer than expected.</p>
+          <p>This took longer than expected. Please wait or try again using the buttons below.</p>
           <button onClick={handleRetry}>Click here to try again</button>
           <button onClick={handleGoBack}>Click here to go back</button>
         </div>
