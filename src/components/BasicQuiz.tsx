@@ -200,7 +200,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
               setShowReport={setShowReport}
             />
           ) : (
-            <Loading />
+            <Loading submitAnswers={submitAnswers} setShowReport={setShowReport} />
           )
       )}
     </div>

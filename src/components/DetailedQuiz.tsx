@@ -118,7 +118,7 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
               setShowReport={setShowReport}
             />
         ) : (
-          <Loading />
+          <Loading submitAnswers={submitAnswers} setShowReport={setShowReport} />
         )
       )}
     </div>

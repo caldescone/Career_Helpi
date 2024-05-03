@@ -1,5 +1,6 @@
 import OpenAI from "openai";
 import { Question } from "./BasicQuiz";
+import { sleep } from "openai/core";
 
 export async function isValidKey(key: string): Promise<boolean> {
   // Used GPT 3.5 to help validate the key
@@ -94,6 +95,7 @@ async function sendChatQuery(
 
   const apiResponse = completion.choices[0]?.message?.content ?? null; // Get the response from the API if it exists
   console.log(apiResponse);
+  sleep(1000);
   if (apiResponse) {
     // If the response exists, parse it
     return parseCareerRecommendation(apiResponse);
