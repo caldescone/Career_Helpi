@@ -66,10 +66,13 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
                 <ol start={index + 1}>
                   <li>
                     <div style={{ border: "1px solid black", padding: "2px" }}>
-                      {QuestionList[index]}{" "}{answers[index].length > 3 ? " ✔️" : " ❌"}
+                      {QuestionList[index]}{" "}
+                      {answers[index].length > 3 ? " ✔️" : " ❌"}
                     </div>
                   </li>
                   <input
+                    id={`answer-${index}`} // unique id for each input from chrome suggestions
+                    name={`answer-${index}`} // unique name for each input from chrome suggestions
                     type="text"
                     value={answers[index]}
                     onChange={(e) => updateAnswer(index, e.target.value)}
@@ -104,22 +107,20 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
             )}
           </div>
         </div>
+      ) : recJobs ? (
+        <Report
+          Overview={recJobs.overview}
+          RecCareer={recJobs.jobTitle}
+          Description={recJobs.jobDescription}
+          Salary={recJobs.averageSalary}
+          Education={recJobs.requirements}
+          Fit={recJobs.applicationToCareer}
+          OtherJobs={recJobs.otherJobs}
+          RelatedAspects={recJobs.relatedAspects}
+          setShowReport={setShowReport}
+        />
       ) : (
-        recJobs ? (
-            <Report
-              Overview={recJobs.overview}
-              RecCareer={recJobs.jobTitle}
-              Description={recJobs.jobDescription}
-              Salary={recJobs.averageSalary}
-              Education={recJobs.requirements}
-              Fit={recJobs.applicationToCareer}
-              OtherJobs={recJobs.otherJobs}
-              RelatedAspects={recJobs.relatedAspects}
-              setShowReport={setShowReport}
-            />
-        ) : (
-          <Loading submitAnswers={submitAnswers} setShowReport={setShowReport} />
-        )
+        <Loading submitAnswers={submitAnswers} setShowReport={setShowReport} />
       )}
     </div>
   );
