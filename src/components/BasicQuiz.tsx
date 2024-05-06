@@ -127,14 +127,16 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                       <div
                         style={{ border: "1px solid black", padding: "2px" }}
                       >
-                        {question.question}{" "}{selectedOptions[index] !== "" ? " ✔️" : " ❌"}
-
+                        {question.question}{" "}
+                        {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
                       </div>{" "}
                       {/* displays the question with space between the X and ✔️ */}
                     </li>
                     <div>
                       <Form.Group>
                         <Form.Select
+                          id={`question-${index}`} // unique id for each select from chrome suggestions
+                          name={`question-${index}`} // unique name for each select from chrome suggestions
                           value={selectedOptions[index]} // sets the value of the select to the selected option
                           onChange={(event) =>
                             updateSelectedOption(index, event)
@@ -186,23 +188,21 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
             )}
           </div>
         </div>
-      ) : (
-        recJobs ? (
-            <Report
-              Overview={recJobs.overview}
-              RecCareer={recJobs.jobTitle}
-              Description={recJobs.jobDescription}
-              Salary={recJobs.averageSalary}
-              Education={recJobs.requirements}
-              Fit={recJobs.applicationToCareer}
-              OtherJobs={recJobs.otherJobs}
-              RelatedAspects={recJobs.relatedAspects}
-              setShowReport={setShowReport}
-            />
+      ) : recJobs ? (
+        <Report
+          Overview={recJobs.overview}
+          RecCareer={recJobs.jobTitle}
+          Description={recJobs.jobDescription}
+          Salary={recJobs.averageSalary}
+          Education={recJobs.requirements}
+          Fit={recJobs.applicationToCareer}
+          OtherJobs={recJobs.otherJobs}
+          RelatedAspects={recJobs.relatedAspects}
+          setShowReport={setShowReport}
+        />
           ) : (
-            <Loading />
-          )
-      )}
-    </div>
-  );
+            <Loading submitAnswers={submitAnswers} setShowReport={setShowReport} recJobs={recJobs} />
+          )}
+        </div>
+      );
 }

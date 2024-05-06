@@ -59,13 +59,15 @@ function App() {
           <Form>
             <Form.Label className="d-block text-center mt-2">
               API Key:
+              <Form.Control
+                id={`api`} // unique id for each input from chrome suggestions
+                name={`api`} // unique name for each input from chrome suggestions
+                type="password"
+                placeholder="Insert API Key Here"
+                onChange={changeKey}
+                style={{ width: "800px", margin: "0 auto" }}
+              ></Form.Control>
             </Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Insert API Key Here"
-              onChange={changeKey}
-              style={{ width: "800px", margin: "0 auto" }}
-            ></Form.Control>
             <br></br>
             <Button className="Submit-Button" onClick={handleSubmit}>
               Submit
