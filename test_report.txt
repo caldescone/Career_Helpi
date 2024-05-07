@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (57 ms)
+  ✕ renders learn react link (69 ms)
 
   ● renders learn react link
 
@@ -55,66 +55,83 @@ FAIL src/App.test.tsx
             [33mclass[39m=[32m"App"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"row mt-5"[39m
+              [33mclass[39m=[32m"Home-Page"[39m
             [36m>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"middle-block"[39m
+                [33mclass[39m=[32m"row mt-5"[39m
               [36m>[39m
-                [36m<div>[39m
-                  [0m [0m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"container"[39m
-                  [36m>[39m
-                    [0m [0m
-                    [36m<p[39m
-                      [33mclass[39m=[32m"text"[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"middle-block"[39m
+                [36m>[39m
+                  [36m<br />[39m
+                  [36m<br />[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"container"[39m
                     [36m>[39m
-                      [0m What career is best for me? [0m
-                    [36m</p>[39m
+                      [36m<p[39m
+                        [33mclass[39m=[32m"text"[39m
+                      [36m>[39m
+                        [0m What career is best for me? [0m
+                      [36m</p>[39m
+                    [36m</div>[39m
                   [36m</div>[39m
                 [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"columnCenter mt-5"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"Quiz-Description"[39m
+                  [36m>[39m
+                    [36m<h1>[39m
+                      [36m<u>[39m
+                        [0mBasic Quiz[0m
+                      [36m</u>[39m
+                    [36m</h1>[39m
+                    [36m<h4>[39m
+                      [0mA quicker quiz filled with more basic questions.[0m
+                    [36m</h4>[39m
+                    [0mThe basic quiz is a shorter quiz that provides you with options to each question. The questions will ask you about personal traits and preferences in and out of the office. This quiz is designed to be a quick way to get a general idea of what career paths might interest you.[0m
+                    [36m<br />[39m
+                    [36m<br />[39m
+                    [0mEstimated time: 5 Minutes[0m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"columnCenter mt-5"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"Quiz-Description"[39m
+                  [36m>[39m
+                    [36m<h1>[39m
+                      [36m<u>[39m
+                        [0mDetailed Quiz[0m
+                      [36m</u>[39m
+                    [36m</h1>[39m
+                    [36m<h4>[39m
+                      [0mA longer quiz filled with harder, more detailed questions.[0m
+                    [36m</h4>[39m
+                    [0mThe detailed quiz is a longer quiz that provides you with fill in the blank questions. The questions will ask you about your strengths, interests, work environment preferences, and more. This quiz is designed to give you a more in depth idea of what career paths might interest you.[0m
+                    [36m<br />[39m
+                    [36m<br />[39m
+                    [0mEstimated time: 10 Minutes[0m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"EmptySpace"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"Statement"[39m
+                [36m>[39m
+                  [36m<h4>[39m
+                    [0mA detailed report will be generated using ChatGPT and provided to you after you complete the quiz.[0m
+                  [36m</h4>[39m
+                [36m</div>[39m
               [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"columnCenter mt-5"[39m
-              [36m>[39m
-                [36m<h1>[39m
-                  [0m [0m
-                  [36m<u>[39m
-                    [0mBasic Quiz[0m
-                  [36m</u>[39m
-                  [0m [0m
-                [36m</h1>[39m
-                [36m<h4>[39m
-                  [0mA quicker quiz filled with more basic questions.[0m
-                [36m</h4>[39m
-                [0mThe basic quiz is a shorter quiz that provides you with options to each question. The questions will ask you about personal traits and preferences in and out of the office. This quiz is designed to be a quick way to get a general idea of what career paths might interest you.[0m
-                [36m<br />[39m
-                [36m<br />[39m
-                [0mEstimated time: 5 Minutes[0m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"columnCenter mt-5"[39m
-              [36m>[39m
-                [36m<h1>[39m
-                  [0m [0m
-                  [36m<u>[39m
-                    [0mDetailed Quiz[0m
-                  [36m</u>[39m
-                  [0m [0m
-                [36m</h1>[39m
-                [36m<h4>[39m
-                  [0mA longer quiz filled with harder, more detailed questions.[0m
-                [36m</h4>[39m
-                [0mThe detailed quiz is a longer quiz that provides you with fill in the blank questions. The questions will ask you about your strengths, interests, work environment preferences, and more. This quiz is designed to give you a more in depth idea of what career paths might interest you.[0m
-                [36m<br />[39m
-                [36m<br />[39m
-                [0mEstimated time: 10 Minutes[0m
-              [36m</div>[39m
-              [36m<center>[39m
-                [0mA detailed report will be provided to you after you complete the quiz.[0m
-                [0m [0m
-              [36m</center>[39m
             [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"EmptySpace"[39m
+            [36m/>[39m
             [36m<div[39m
               [33mclass[39m=[32m"card-footer"[39m
             [36m>[39m
@@ -134,7 +151,6 @@ FAIL src/App.test.tsx
                     [33mtype[39m=[32m"password"[39m
                   [36m/>[39m
                 [36m</label>[39m
-                [36m<br />[39m
                 [36m<button[39m
                   [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -166,6 +182,18 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
@@ -187,17 +215,5 @@ All files            |    8.27 |     8.33 |    6.52 |    8.46 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.091 s
+Time:        3.294 s
 Ran all test suites.
-[0;33mOne of your dependencies, babel-preset-react-app, is importing the
-"@babel/plugin-proposal-private-property-in-object" package without
-declaring it in its dependencies. This is currently working because
-"@babel/plugin-proposal-private-property-in-object" is already in your
-node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
-
-babel-preset-react-app is part of the create-react-app project, [1mwhich
-is not maintianed anymore[0;33m. It is thus unlikely that this bug will
-ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
-your devDependencies to work around this error. This will make this message
-go away.[0m
-  
