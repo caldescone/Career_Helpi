@@ -18,7 +18,7 @@ export default function Loading({
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowRetry(true);
-    }, 15000); // 15 seconds
+    }, 20000); // 15 seconds
 
     return () => clearTimeout(timer);
   }, [setShowRetry]); // Include setShowRetry as a dependency

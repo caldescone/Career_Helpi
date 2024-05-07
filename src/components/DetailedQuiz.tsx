@@ -59,53 +59,69 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
           </h1>
 
           <hr></hr>
-
-          <div className="row">
-            {[...Array(8)].map((_, index) => (
-              <div className="column" key={index}>
-                <ol start={index + 1}>
-                  <li>
-                    <div style={{ border: "1px solid black", padding: "2px" }}>
-                      {QuestionList[index]}{" "}
-                      {answers[index].length > 3 ? " ✔️" : " ❌"}
-                    </div>
-                  </li>
-                  <input
-                    id={`answer-${index}`} // unique id for each input from chrome suggestions
-                    name={`answer-${index}`} // unique name for each input from chrome suggestions
-                    type="text"
-                    value={answers[index]}
-                    onChange={(e) => updateAnswer(index, e.target.value)}
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                </ol>
-              </div>
-            ))}
-            <hr></hr>
-            {questionsComplete === answers.length ? (
-              <span>
-                <div>All Questions Complete!</div>
-                <div>
-                  When Ready, Please Hit Submit Below to Generate your Results!
+          {keyData !== "" ? (
+            <div className="row">
+              {[...Array(8)].map((_, index) => (
+                <div className="column" key={index}>
+                  <ol start={index + 1}>
+                    <li>
+                      <div
+                        style={{ border: "1px solid black", padding: "2px" }}
+                      >
+                        {QuestionList[index]}{" "}
+                        {answers[index].length > 3 ? " ✔️" : " ❌"}
+                      </div>
+                    </li>
+                    <input
+                      id={`answer-${index}`} // unique id for each input from chrome suggestions
+                      name={`answer-${index}`} // unique name for each input from chrome suggestions
+                      type="text"
+                      value={answers[index]}
+                      onChange={(e) => updateAnswer(index, e.target.value)}
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                  </ol>
                 </div>
-                <button
-                  className="submit mx-auto"
-                  onClick={() => submitAnswers()}
-                >
-                  Submit
-                </button>
-                <hr></hr>
-              </span>
-            ) : (
-              <span>
-                <p>
-                  Once you answers all the questions, a button will appear here
-                  to submit your answers.
-                </p>
-                <hr></hr>
-              </span>
-            )}
-          </div>
+              ))}
+              <hr></hr>
+              {questionsComplete === answers.length ? (
+                <span>
+                  <div>All Questions Complete!</div>
+                  <div>
+                    When Ready, Please Hit Submit Below to Generate your
+                    Results!
+                  </div>
+                  <button
+                    className="submit mx-auto"
+                    onClick={() => submitAnswers()}
+                  >
+                    Submit
+                  </button>
+                  <hr></hr>
+                </span>
+              ) : (
+                <span>
+                  <p>
+                    Once you answers all the questions, a button will appear
+                    here to submit your answers.
+                  </p>
+                  <hr></hr>
+                </span>
+              )}
+            </div>
+          ) : (
+            <div>
+              <h1>API Key Required</h1>
+              <p>
+                Please enter an API key to continue. If you do not have an API
+                key, you can get one by signing up for an account at{" "}
+                <a href="https://platform.openai.com/signup">
+                  https://platform.openai.com/signup
+                </a>
+                .
+              </p>
+            </div>
+          )}
         </div>
       ) : recJobs ? (
         <Report
@@ -120,7 +136,11 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
           setShowReport={setShowReport}
         />
       ) : (
-        <Loading submitAnswers={submitAnswers} setShowReport={setShowReport} recJobs={recJobs}></Loading> 
+        <Loading
+          submitAnswers={submitAnswers}
+          setShowReport={setShowReport}
+          recJobs={recJobs}
+        ></Loading>
       )}
     </div>
   );
