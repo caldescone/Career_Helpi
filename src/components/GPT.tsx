@@ -1,5 +1,6 @@
 import OpenAI from "openai";
 import { Question } from "./BasicQuiz";
+import { sleep } from "openai/core";
 
 export async function isValidKey(key: string): Promise<boolean> {
   // Used GPT 3.5 to help validate the key
@@ -12,8 +13,6 @@ export async function isValidKey(key: string): Promise<boolean> {
     });
     return true;
   } catch (error) {
-    // If the key is invalid, the API will throw an error
-    console.error(error);
     return false;
   }
 }
@@ -30,21 +29,26 @@ export interface CareerRecommendation {
 }
 
 function parseCareerRecommendation(apiResponse: string): CareerRecommendation {
-  const parsedResponse = JSON.parse(apiResponse);
-  return {
-    overview: parsedResponse.CareerPath.Overview,
-    jobTitle: parsedResponse.CareerPath.RecommendedJob,
-    jobDescription: parsedResponse.CareerPath.JobDescription,
-    averageSalary: [
-      parsedResponse.CareerPath.Salary.Low,
-      parsedResponse.CareerPath.Salary.Median,
-      parsedResponse.CareerPath.Salary.High,
-    ],
-    requirements: parsedResponse.CareerPath.EducationRequired,
-    applicationToCareer: parsedResponse.CareerPath.RelatesToQuiz,
-    otherJobs: parsedResponse.CareerPath.OtherJobsInField,
-    relatedAspects: parsedResponse.CareerPath.RelatedAspectsOfJob,
-  };
+  try {
+    const parsedResponse = JSON.parse(apiResponse);
+    return {
+      overview: parsedResponse.CareerPath.Overview,
+      jobTitle: parsedResponse.CareerPath.RecommendedJob,
+      jobDescription: parsedResponse.CareerPath.JobDescription,
+      averageSalary: [
+        parsedResponse.CareerPath.Salary.Low,
+        parsedResponse.CareerPath.Salary.Median,
+        parsedResponse.CareerPath.Salary.High,
+      ],
+      requirements: parsedResponse.CareerPath.EducationRequired,
+      applicationToCareer: parsedResponse.CareerPath.RelatesToQuiz,
+      otherJobs: parsedResponse.CareerPath.OtherJobsInField,
+      relatedAspects: parsedResponse.CareerPath.RelatedAspectsOfJob,
+    };
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to parse API response");
+  }
 }
 
 const example_json = {
@@ -94,6 +98,7 @@ async function sendChatQuery(
 
   const apiResponse = completion.choices[0]?.message?.content ?? null; // Get the response from the API if it exists
   console.log(apiResponse);
+  sleep(1000);
   if (apiResponse) {
     // If the response exists, parse it
     return parseCareerRecommendation(apiResponse);

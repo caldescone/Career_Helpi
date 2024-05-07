@@ -113,81 +113,97 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
             <u>Basic Quiz</u>
           </h1>
           <hr></hr>
-          <div className="row">
-            {questions.map(
-              (
-                question,
-                index // maps through the questions array to display each question and its options
-              ) => (
-                <div className="column" key={index}>
-                  <ol start={index + 1}>
-                    {" "}
-                    {/* uses the index to display the question number starting from 1 */}
-                    <li>
-                      <div
-                        style={{ border: "1px solid black", padding: "2px" }}
-                      >
-                        {question.question}{" "}{selectedOptions[index] !== "" ? " ✔️" : " ❌"}
-
-                      </div>{" "}
-                      {/* displays the question with space between the X and ✔️ */}
-                    </li>
-                    <div>
-                      <Form.Group>
-                        <Form.Select
-                          value={selectedOptions[index]} // sets the value of the select to the selected option
-                          onChange={(event) =>
-                            updateSelectedOption(index, event)
-                          } // calls the updateSelectedOption function when the select value changes
+          {keyData !== "" ? (
+            <div className="row">
+              {questions.map(
+                (
+                  question,
+                  index // maps through the questions array to display each question and its options
+                ) => (
+                  <div className="column" key={index}>
+                    <ol start={index + 1}>
+                      {" "}
+                      {/* uses the index to display the question number starting from 1 */}
+                      <li>
+                        <div
+                          style={{ border: "1px solid black", padding: "2px" }}
                         >
-                          {question.options.map(
-                            (
-                              choice: string // maps through the options array to display each option
-                            ) => (
-                              <option key={choice} value={choice}>
-                                {" "}
-                                {/* sets the key and value of the option to the choice */}
-                                {choice}
-                              </option>
-                            )
-                          )}
-                        </Form.Select>
-                      </Form.Group>
-                    </div>
-                    <br />
-                  </ol>
-                </div>
-              )
-            )}
-            <hr></hr>
-            {questionsComplete === selectedOptions.length ? ( // checks if all questions are complete before showing the submit button
-              <span>
-                <div>All Questions Complete!</div>
-                <div>
-                  When Ready, Please Hit Submit Below to Generate your Results!
-                </div>
-                <button
-                  className="submit mx-auto"
-                  onClick={() => submitAnswers()}
-                >
-                  Submit
-                </button>{" "}
-                {/* calls the submitAnswers function when the button is clicked */}
-                <hr></hr>
-              </span>
-            ) : (
-              <span>
-                <p>
-                  Once you answers all the questions, a button will appear here
-                  to submit your answers.
-                </p>
-                <hr></hr>
-              </span>
-            )}
-          </div>
+                          {question.question}{" "}
+                          {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
+                        </div>{" "}
+                        {/* displays the question with space between the X and ✔️ */}
+                      </li>
+                      <div>
+                        <Form.Group>
+                          <Form.Select
+                            id={`question-${index}`} // unique id for each select from chrome suggestions
+                            name={`question-${index}`} // unique name for each select from chrome suggestions
+                            value={selectedOptions[index]} // sets the value of the select to the selected option
+                            onChange={(event) =>
+                              updateSelectedOption(index, event)
+                            } // calls the updateSelectedOption function when the select value changes
+                          >
+                            {question.options.map(
+                              (
+                                choice: string // maps through the options array to display each option
+                              ) => (
+                                <option key={choice} value={choice}>
+                                  {" "}
+                                  {/* sets the key and value of the option to the choice */}
+                                  {choice}
+                                </option>
+                              )
+                            )}
+                          </Form.Select>
+                        </Form.Group>
+                      </div>
+                      <br />
+                    </ol>
+                  </div>
+                )
+              )}
+              <hr></hr>
+              {questionsComplete === selectedOptions.length ? ( // checks if all questions are complete before showing the submit button
+                <span>
+                  <div>All Questions Complete!</div>
+                  <div>
+                    When Ready, Please Hit Submit Below to Generate your
+                    Results!
+                  </div>
+                  <button
+                    className="submit mx-auto"
+                    onClick={() => submitAnswers()}
+                  >
+                    Submit
+                  </button>{" "}
+                  {/* calls the submitAnswers function when the button is clicked */}
+                  <hr></hr>
+                </span>
+              ) : (
+                <span>
+                  <p>
+                    Once you answers all the questions, a button will appear
+                    here to submit your answers.
+                  </p>
+                  <hr></hr>
+                </span>
+              )}
+            </div>
+          ) : (
+            <div>
+              <h1>API Key Required</h1>
+              <p>
+                Please enter an API key to continue. If you do not have an API
+                key, you can get one by signing up for an account at{" "}
+                <a href="https://platform.openai.com/signup">
+                  https://platform.openai.com/signup
+                </a>
+                .
+              </p>
+            </div>
+          )}
         </div>
-      ) : (
-        recJobs ? (
+      ) : recJobs ? (
           <div>
             <div className="Report-Header">
               <div className="Report-Intro">
@@ -199,21 +215,24 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                 </h4>
               </div>
             </div>
-            <Report
-              Overview={recJobs.overview}
-              RecCareer={recJobs.jobTitle}
-              Description={recJobs.jobDescription}
-              Salary={recJobs.averageSalary}
-              Education={recJobs.requirements}
-              Fit={recJobs.applicationToCareer}
-              OtherJobs={recJobs.otherJobs}
-              RelatedAspects={recJobs.relatedAspects}
-              setShowReport={setShowReport}
-            />
+        <Report
+          Overview={recJobs.overview}
+          RecCareer={recJobs.jobTitle}
+          Description={recJobs.jobDescription}
+          Salary={recJobs.averageSalary}
+          Education={recJobs.requirements}
+          Fit={recJobs.applicationToCareer}
+          OtherJobs={recJobs.otherJobs}
+          RelatedAspects={recJobs.relatedAspects}
+          setShowReport={setShowReport}
+        />
           </div>
-          ) : (
-            <Loading />
-          )
+      ) : (
+        <Loading
+          submitAnswers={submitAnswers}
+          setShowReport={setShowReport}
+          recJobs={recJobs}
+        />
       )}
     </div>
   );
