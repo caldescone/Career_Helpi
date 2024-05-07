@@ -8,7 +8,7 @@ import Loading from "./Loading";
 export default function DetailedQuiz({ keyData }: { keyData: string }) {
   const defaultOption = "";
   const QuestionList = [
-    "What type of career are you interested in?",
+    "What achievement are you most proud of in your professional life, and what did it teach you about yourself?",
     "In your ideal work environment, what type of schedule dynamic would you like for yourself?",
     "What is the highest level of education you have and would like to achieve?",
     "Reflecting on your skills and strengths, what types of roles or careers do you think would allow you to leverage them most effectively?",
