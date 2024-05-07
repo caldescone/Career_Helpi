@@ -43,7 +43,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div style={{backgroundImage: "../assets/images/background.jpg"}}>
       <NavBar
         brandName="The Career Helpi"
         imageSrcPath={logo}
