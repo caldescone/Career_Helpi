@@ -22,17 +22,6 @@ export default function Report({
   return (
     // Overall report
     <div>
-      <div className="Report-Header">
-        <div className="Report-Intro">
-          <h1>
-            <u>Detailed Quiz Report</u>
-          </h1>
-          <h4>
-            Based on your answers to the quiz, here are some jobs that you might
-            be interested in
-          </h4>
-        </div>
-      </div>
       <div className="Report-Back-Color">
         <div className="Report">
           <br></br>

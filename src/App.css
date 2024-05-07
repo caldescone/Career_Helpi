@@ -145,10 +145,13 @@
 
 }
 
+
 /* Report Styling */
+
 .Report {
   background-color: lightgray;
-  /* border:solid black; */
+  border:solid darkcyan;
+  border-width: thick;
   color: black;
   width: 60%;
   margin: auto;
@@ -185,7 +188,8 @@
 .Report-Intro {
   background-color: lightgray;
   color: black;
-  border:solid black;
+  border:solid darkcyan;
+  border-width: thick;
   margin: auto;
   padding-left: 10px;
   padding-right: 10px;
@@ -206,7 +210,7 @@
 
 /* Answer boxes */
 .Report-Text {
-  background-color: white;
+  background-color: whitesmoke;
   /* border:solid black; */
   color: black;
   width: 80%;
