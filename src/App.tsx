@@ -55,6 +55,8 @@ function App() {
         {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
         {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
 
+        <div className="EmptySpace"></div>
+
         <CardFooter>
           <Form>
             <Form.Label className="d-block text-center mt-2">
@@ -68,7 +70,7 @@ function App() {
                 style={{ width: "800px", margin: "0 auto" }}
               ></Form.Control>
             </Form.Label>
-            <br></br>
+            
             <Button className="Submit-Button" onClick={handleSubmit}>
               Submit
             </Button>
