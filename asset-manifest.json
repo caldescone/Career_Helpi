@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Career_Helpi/static/css/main.d6c6fc3d.css",
-    "main.js": "/Career_Helpi/static/js/main.37d2927d.js",
+    "main.css": "/Career_Helpi/static/css/main.2789b5da.css",
+    "main.js": "/Career_Helpi/static/js/main.40d363a7.js",
     "static/js/453.bad6c33a.chunk.js": "/Career_Helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/logo.png": "/Career_Helpi/static/media/logo.1746cc9263c1d9b49cda.png",
     "index.html": "/Career_Helpi/index.html",
-    "main.d6c6fc3d.css.map": "/Career_Helpi/static/css/main.d6c6fc3d.css.map",
-    "main.37d2927d.js.map": "/Career_Helpi/static/js/main.37d2927d.js.map",
+    "main.2789b5da.css.map": "/Career_Helpi/static/css/main.2789b5da.css.map",
+    "main.40d363a7.js.map": "/Career_Helpi/static/js/main.40d363a7.js.map",
     "453.bad6c33a.chunk.js.map": "/Career_Helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6c6fc3d.css",
-    "static/js/main.37d2927d.js"
+    "static/css/main.2789b5da.css",
+    "static/js/main.40d363a7.js"
   ]
 }
