@@ -55,6 +55,8 @@ function App() {
         {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
         {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
 
+        <div className="EmptySpace"></div>
+
         <CardFooter>
           <Form>
             <Form.Label className="d-block text-center mt-2">

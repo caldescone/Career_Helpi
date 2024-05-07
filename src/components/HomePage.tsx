@@ -12,24 +12,28 @@ export default function HomePage() {
             {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
           </div>
       <div className="columnCenter mt-5">
-        <h1>
-          {" "}
-          <u>Basic Quiz Description</u>{" "}
-        </h1>
+        <div>
+            <h1>
+            {" "}
+            <u>Basic Quiz Description</u>{" "}
+            </h1>
         A quicker quiz filled with more basic questions.
         <br></br>
         <br></br>
         Estimated time: 5 Minutes
+        </div>
       </div>
       <div className="columnCenter mt-5">
-        <h1>
-          {" "}
-          <u>Detailed Quiz Description</u>{" "}
-        </h1>
-        A longer quiz filled with harder, more detailed questions.
-        <br></br>
-        <br></br>
-        Estimated time: 10 Minutes
+        <div>
+            <h1>
+            {" "}
+            <u>Detailed Quiz Description</u>{" "}
+            </h1>
+            A longer quiz filled with harder, more detailed questions.
+            <br></br>
+            <br></br>
+            Estimated time: 10 Minutes
+        </div>
       </div>
     </div>
   );

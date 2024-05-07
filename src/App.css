@@ -18,6 +18,10 @@
   color: #61dafb;
 }
 
+.EmptySpace{
+  height: 15vh
+}
+
 .Basic-Button {
   background-color: #a663cc;
   border: 1px solid #a663cc;
