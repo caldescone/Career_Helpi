@@ -1,22 +1,26 @@
 export default function HomePage() {
   return (
     <div className="row mt-5">
-                <div className="middle-block">
-            <div>
-              {" "}
-              <div className="container">
-                {" "}
-                <p className="text"> What career is best for me? </p>
-              </div>
-            </div>
-            {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
+      <div className="middle-block">
+        <div>
+          {" "}
+          <div className="container">
+            {" "}
+            <p className="text"> What career is best for me? </p>
           </div>
+        </div>
+        {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
+      </div>
       <div className="columnCenter mt-5">
         <h1>
           {" "}
-          <u>Basic Quiz Description</u>{" "}
+          <u>Basic Quiz</u>{" "}
         </h1>
-        A quicker quiz filled with more basic questions.
+        <h4>A quicker quiz filled with more basic questions.</h4>
+        The basic quiz is a shorter quiz that provides you with options to each
+        question. The questions will ask you about personal traits and
+        preferences in and out of the office. This quiz is designed to be a
+        quick way to get a general idea of what career paths might interest you.
         <br></br>
         <br></br>
         Estimated time: 5 Minutes
@@ -24,13 +28,21 @@ export default function HomePage() {
       <div className="columnCenter mt-5">
         <h1>
           {" "}
-          <u>Detailed Quiz Description</u>{" "}
+          <u>Detailed Quiz</u>{" "}
         </h1>
-        A longer quiz filled with harder, more detailed questions.
+        <h4>A longer quiz filled with harder, more detailed questions.</h4>
+        The detailed quiz is a longer quiz that provides you with fill in the
+        blank questions. The questions will ask you about your strengths,
+        interests, work environment preferences, and more. This quiz is designed
+        to give you a more in depth idea of what career paths might interest
+        you.
         <br></br>
         <br></br>
         Estimated time: 10 Minutes
       </div>
+      <center>
+        A detailed report will be provided to you after you complete the quiz.{" "}
+      </center>
     </div>
   );
 }
