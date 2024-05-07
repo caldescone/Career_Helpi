@@ -150,7 +150,8 @@
   color: black;
   width: 90%;
   margin: auto;
-  height: 37vh;
+  /* height: 37vh; */
+  height: 100%;
   padding-left: 10px;
   padding-right: 10px;
 }
