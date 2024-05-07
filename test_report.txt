@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (55 ms)
+  ✕ renders learn react link (57 ms)
 
   ● renders learn react link
 
@@ -80,11 +80,14 @@ FAIL src/App.test.tsx
                 [36m<h1>[39m
                   [0m [0m
                   [36m<u>[39m
-                    [0mBasic Quiz Description[0m
+                    [0mBasic Quiz[0m
                   [36m</u>[39m
                   [0m [0m
                 [36m</h1>[39m
-                [0mA quicker quiz filled with more basic questions.[0m
+                [36m<h4>[39m
+                  [0mA quicker quiz filled with more basic questions.[0m
+                [36m</h4>[39m
+                [0mThe basic quiz is a shorter quiz that provides you with options to each question. The questions will ask you about personal traits and preferences in and out of the office. This quiz is designed to be a quick way to get a general idea of what career paths might interest you.[0m
                 [36m<br />[39m
                 [36m<br />[39m
                 [0mEstimated time: 5 Minutes[0m
@@ -95,15 +98,22 @@ FAIL src/App.test.tsx
                 [36m<h1>[39m
                   [0m [0m
                   [36m<u>[39m
-                    [0mDetailed Quiz Description[0m
+                    [0mDetailed Quiz[0m
                   [36m</u>[39m
                   [0m [0m
                 [36m</h1>[39m
-                [0mA longer quiz filled with harder, more detailed questions.[0m
+                [36m<h4>[39m
+                  [0mA longer quiz filled with harder, more detailed questions.[0m
+                [36m</h4>[39m
+                [0mThe detailed quiz is a longer quiz that provides you with fill in the blank questions. The questions will ask you about your strengths, interests, work environment preferences, and more. This quiz is designed to give you a more in depth idea of what career paths might interest you.[0m
                 [36m<br />[39m
                 [36m<br />[39m
                 [0mEstimated time: 10 Minutes[0m
               [36m</div>[39m
+              [36m<center>[39m
+                [0mA detailed report will be provided to you after you complete the quiz.[0m
+                [0m [0m
+              [36m</center>[39m
             [36m</div>[39m
             [36m<div[39m
               [33mclass[39m=[32m"card-footer"[39m
@@ -177,7 +187,7 @@ All files            |    8.27 |     8.33 |    6.52 |    8.46 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.549 s
+Time:        3.091 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
