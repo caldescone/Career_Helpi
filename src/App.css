@@ -19,7 +19,7 @@
 }
 
 .EmptySpace{
-  height: 15vh
+  height: 8vh
 }
 
 .Basic-Button {
@@ -78,22 +78,6 @@
   width: 100%;
 }
 
-
-/*
-  It's giving me an error so I commented it off for now since it's not used yet
-
-  .quiz {
-  background-color: #00000;
-  top: 0;
-  left: 0;  
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-} */
-
 .column {
   float: left;
   width: 50%;
@@ -147,6 +131,41 @@
 @keyframes cursor {
   50% { border-color: transparent; }
 
+}
+
+
+/* Home Page Styling */
+
+/* 
+.Home-Page{
+  background-color: whitesmoke;
+  color: black;
+  margin: auto;
+} */
+
+.Quiz-Description{
+  background-color: whitesmoke;
+  border:solid darkcyan;
+  border-width: thick;
+  color: black;
+  width: 90%;
+  margin: auto;
+  height: 37vh;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.Statement{
+  background-color: whitesmoke;
+  border:solid darkcyan;
+  border-width: thick;
+  color: black;
+  width: 52%;
+  margin: auto;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
