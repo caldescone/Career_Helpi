@@ -2,13 +2,13 @@ export default function HomePage() {
   return (
     <div className="row mt-5">
                 <div className="middle-block">
-            <body>
+            <div>
               {" "}
               <div className="container">
                 {" "}
                 <p className="text"> What career is best for me? </p>
               </div>
-            </body>
+            </div>
             {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
           </div>
       <div className="columnCenter mt-5">

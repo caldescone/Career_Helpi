@@ -145,16 +145,28 @@
 
 }
 
+/* Report Styling */
 .Report {
-  background-color: grey;
+  background-color: lightgray;
   /* border:solid black; */
   color: black;
-  width: 100%;
+  width: 60%;
+  margin: auto;
 }
 
+/* Text box where answers are put*/
+.Report-Background {
+  background-color: whitesmoke;
+  border:solid black;
+  color: black;
+  width: 80%;
+  margin: auto;
+}
+
+/* Area around top box saying which report it is */
 .Report-Header {
   background-color: #282c34;
-  color: white;
+  color: whitesmoke;
   height: 25vh;
   display: flex;
   flex-direction: column;
@@ -172,12 +184,79 @@
   margin: auto;
 }
 
-.Report-Text {
-  background-color: lightgrey;
-  border:solid black;
+/* Top box saying which report it is */
+.Report-Intro {
+  background-color: lightgray;
   color: black;
+  border:solid black;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-  width: 50%;
+/* Titles for each answer category */
+.Report-Title {
+  background-color: whitesmoke;
+  /* border:solid black; */
+  color: black;
+  width: 60%;
   text-align: center;
   margin: auto;
+  padding-bottom: 10px;
+}
+
+/* Answer boxes */
+.Report-Text {
+  background-color: white;
+  /* border:solid black; */
+  color: black;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  /* padding-left: 80px; */
+}
+
+/* Back to Quiz Button */
+.Back-to-Quiz {
+  background-color: #282c34;
+  /* color: white */
+}
+
+/* Loading Animation Chat GPT was used */
+.Loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #f5f5f5;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    z-index: 9999;
+}
+
+.popup button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: black;
+}
+
+@keyframes loading {
+  0% { color: #333; }
+  50% { color: transparent; }
+  100% { color: #333; }
 }
