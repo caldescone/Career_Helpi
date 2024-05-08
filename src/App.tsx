@@ -70,7 +70,7 @@ function App() {
                 style={{ width: "800px", margin: "0 auto" }}
               ></Form.Control>
             </Form.Label>
-            
+
             <Button className="Submit-Button" onClick={handleSubmit}>
               Submit
             </Button>
