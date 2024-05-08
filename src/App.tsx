@@ -6,7 +6,7 @@ import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
-import logo from "./assets/images/logo.png";
+import logo from "./assets/images/logo2.png";
 
 import { isValidKey } from "./components/GPT";
 //import logo from "./assets/images/logo.png";
@@ -45,7 +45,7 @@ function App() {
   return (
     <div>
       <NavBar
-        brandName="The Career Helpi"
+        brandName="         The Career Helpi"
         imageSrcPath={logo}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
