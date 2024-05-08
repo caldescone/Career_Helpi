@@ -129,7 +129,7 @@
 
 /* cursor blinking */
 @keyframes cursor {
-  50% { border-color: transparent; }
+  40% { border-color: transparent; }
 
 }
 
