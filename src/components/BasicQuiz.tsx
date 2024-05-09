@@ -204,29 +204,30 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
           )}
         </div>
       ) : recJobs ? (
-          <div>
-            <div className="Report-Header">
-              <div className="Report-Intro">
-                <h1>
-                  <u>Basic Quiz Report</u>
-                </h1>
-                <h4>
-                  Based on your answers to the quiz, here is a job you might be interested in:
-                </h4>
-              </div>
+        <div>
+          <div className="Report-Header">
+            <div className="Report-Intro">
+              <h1>
+                <u>Basic Quiz Report</u>
+              </h1>
+              <h4>
+                Based on your answers to the quiz, here is a job you might be
+                interested in:
+              </h4>
             </div>
-        <Report
-          Overview={recJobs.overview}
-          RecCareer={recJobs.jobTitle}
-          Description={recJobs.jobDescription}
-          Salary={recJobs.averageSalary}
-          Education={recJobs.requirements}
-          Fit={recJobs.applicationToCareer}
-          OtherJobs={recJobs.otherJobs}
-          RelatedAspects={recJobs.relatedAspects}
-          setShowReport={setShowReport}
-        />
           </div>
+          <Report
+            Overview={recJobs.overview}
+            RecCareer={recJobs.jobTitle}
+            Description={recJobs.jobDescription}
+            Salary={recJobs.averageSalary}
+            Education={recJobs.requirements}
+            Fit={recJobs.applicationToCareer}
+            OtherJobs={recJobs.otherJobs}
+            RelatedAspects={recJobs.relatedAspects}
+            setShowReport={setShowReport}
+          />
+        </div>
       ) : (
         <Loading
           submitAnswers={submitAnswers}
