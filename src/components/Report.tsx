@@ -17,7 +17,7 @@ export default function Report({
   Fit: string;
   OtherJobs: string[];
   RelatedAspects: string[];
-    setShowReport: (showReport: boolean) => void;
+  setShowReport: (showReport: boolean) => void;
 }) {
   return (
     // Overall report
@@ -71,7 +71,7 @@ export default function Report({
             <hr></hr>
 
             <h3 className="Report-Title">
-              <u>How This Fits Job You</u>
+              <u>How This Job Fits You</u>
             </h3>
             <p className="Report-Text">{Fit}</p>
 
