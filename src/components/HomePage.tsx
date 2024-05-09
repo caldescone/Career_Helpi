@@ -1,4 +1,16 @@
+import React, { useState } from "react";
+
 export default function HomePage() {
+
+    const [currentPage, setCurrentPage] = useState<
+    | "detailed"
+    | "basic"
+    | "home"
+    | "basicSpanish"
+    | "detailedSpanish"
+    | "homeSpanish"
+  >("home");
+
   return (
     <div className="Home-Page">
       <div className="row mt-5">
@@ -26,6 +38,11 @@ export default function HomePage() {
             <br></br>
             <br></br>
             Estimated time: 5 Minutes
+            <br></br>
+            <br></br>
+            <button className="Submit-Button" onClick={() => setCurrentPage("basic")}>
+                Go To Basic Quiz
+            </button>
           </div>
         </div>
         <div className="columnCenter mt-5">
@@ -42,6 +59,11 @@ export default function HomePage() {
             <br></br>
             <br></br>
             Estimated time: 10 Minutes
+            <br></br>
+            <br></br>
+            <button className="Submit-Button" onClick={() => setCurrentPage("detailed")}>
+                Go To Detailed Quiz
+            </button>
           </div>
         </div>
         <div className="EmptySpace"></div>
