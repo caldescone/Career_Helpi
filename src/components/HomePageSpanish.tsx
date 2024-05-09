@@ -7,7 +7,7 @@ export default function HomePageSpanish() {
           <br></br>
           <div>
             <div className="container">
-              <p className="text"> ¿Cuál es la mejor carrera para mí? </p>
+              <p className="text"> ¿Cuál es la mejor carrera para mí?</p>
             </div>
           </div>
           {/* <img src={logo} className="App-logo" alt="The-Career-Helpi" /> */}
