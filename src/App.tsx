@@ -5,12 +5,13 @@ import { Button, CardFooter, Form } from "react-bootstrap";
 import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
+import BasicQuizSpanish from "./components/BasicQuizSpanish";
+import DetailedQuizSpanish from "./components/DetailedQuizSpanish";
+import HomePageSpanish from "./components/HomePageSpanish";
 import NavBar from "./components/NavBar";
 import logo from "./assets/images/logo2.png";
 
 import { isValidKey } from "./components/GPT";
-//import logo from "./assets/images/logo.png";
-
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -21,9 +22,14 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [currentPage, setCurrentPage] = useState<"detailed" | "basic" | "home">(
-    "home"
-  );
+  const [currentPage, setCurrentPage] = useState<
+    | "detailed"
+    | "basic"
+    | "home"
+    | "basicSpanish"
+    | "detailedSpanish"
+    | "homeSpanish"
+  >("home");
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -54,6 +60,13 @@ function App() {
         {currentPage === "home" ? <HomePage /> : null}
         {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
         {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
+        {currentPage === "basicSpanish" ? (
+          <BasicQuizSpanish keyData={keyData} />
+        ) : null}
+        {currentPage === "detailedSpanish" ? (
+          <DetailedQuizSpanish keyData={keyData} />
+        ) : null}
+        {currentPage === "homeSpanish" ? <HomePageSpanish /> : null}
 
         <div className="EmptySpace"></div>
 
@@ -70,7 +83,7 @@ function App() {
                 style={{ width: "800px", margin: "0 auto" }}
               ></Form.Control>
             </Form.Label>
-            
+
             <Button className="Submit-Button" onClick={handleSubmit}>
               Submit
             </Button>
@@ -80,5 +93,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
