@@ -11,7 +11,13 @@ function NavBar({
 }: {
   brandName: string;
   imageSrcPath: string;
-  currentPage: "detailed" | "basic" | "home";
+  currentPage:
+    | "detailed"
+    | "basic"
+    | "home"
+    | "basicSpanish"
+    | "detailedSpanish"
+    | "homeSpanish";
   setCurrentPage: (page: "detailed" | "basic" | "home") => void;
 }) {
   return (
