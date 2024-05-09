@@ -34,12 +34,11 @@ export default function HomePage() {
               <u>Detailed Quiz</u>
             </h1>
             <h4>A longer quiz filled with harder, more detailed questions.</h4>
-            The detailed quiz is a longer quiz that provides you with fill in
-            the blank questions. The questions will ask you about your
-            strengths, interests, work environment preferences, and more. This
-            quiz is designed to give you a more in depth idea of what career
-            paths might interest you. You can access the quiz from the menu
-            above.
+            The detailed quiz is a longer quiz that involves fill in the blank
+            questions. The questions will ask you about your strengths,
+            interests, work environment preferences, and more. This quiz is
+            designed to give you an in depth idea of what career paths might
+            interest you. You can access the quiz from the menu above.
             <br></br>
             <br></br>
             Estimated time: 10 Minutes
