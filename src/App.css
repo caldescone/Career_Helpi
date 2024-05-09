@@ -284,3 +284,7 @@
   50% { color: transparent; }
   100% { color: #333; }
 }
+
+.white-label {
+  color: white;
+}

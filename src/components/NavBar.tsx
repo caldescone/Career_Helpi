@@ -1,6 +1,8 @@
 // import HomePage from "./HomePage";
 // import BasicQuiz from "./BasicQuiz";
 // import DetailedQuiz from "./DetailedQuiz";
+import { useState } from "react";
+import { Form } from "react-bootstrap";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar({
@@ -11,9 +13,30 @@ function NavBar({
 }: {
   brandName: string;
   imageSrcPath: string;
-  currentPage: "detailed" | "basic" | "home";
-  setCurrentPage: (page: "detailed" | "basic" | "home") => void;
+  currentPage:
+    | "detailed"
+    | "basic"
+    | "home"
+    | "basicSpanish"
+    | "detailedSpanish"
+    | "homeSpanish";
+  setCurrentPage: (
+    page:
+      | "detailed"
+      | "basic"
+      | "home"
+      | "basicSpanish"
+      | "detailedSpanish"
+      | "homeSpanish"
+  ) => void;
 }) {
+  const [isSpanish, setIsSpanish] = useState<boolean>(true);
+
+  // This is the Control
+  function updateLanguage(event: React.ChangeEvent<HTMLInputElement>) {
+    setCurrentPage(isSpanish ? "homeSpanish" : "home");
+    setIsSpanish(!isSpanish);
+  }
   return (
     <nav className="navbar fixed-top navbar-dark bg-dark shadow">
       <div className="container-fluid">
@@ -27,6 +50,14 @@ function NavBar({
           />
           <span className="fw-bolder fs-4">{brandName}</span>
         </div>
+        <Form.Check
+          type="switch"
+          id="is-spanish-check"
+          label={isSpanish ? "English" : "Español"}
+          checked={isSpanish}
+          onChange={updateLanguage}
+          className="white-label" // Add a CSS class for styling
+        />
         <NavDropdown title="Menu" id="basic-nav-dropdown">
           <NavDropdown.Item onClick={() => setCurrentPage("home")}>
             Home
@@ -34,8 +65,14 @@ function NavBar({
           <NavDropdown.Item onClick={() => setCurrentPage("basic")}>
             Basic Quiz
           </NavDropdown.Item>
+          <NavDropdown.Item onClick={() => setCurrentPage("basicSpanish")}>
+            Quiz Básico
+          </NavDropdown.Item>
           <NavDropdown.Item onClick={() => setCurrentPage("detailed")}>
             Detailed Quiz
+          </NavDropdown.Item>
+          <NavDropdown.Item onClick={() => setCurrentPage("detailedSpanish")}>
+            Quiz Detallado
           </NavDropdown.Item>
         </NavDropdown>
       </div>
