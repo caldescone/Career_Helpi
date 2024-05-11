@@ -49,7 +49,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="parallax">
       <NavBar
         brandName="         The Career Helpi"
         imageSrcPath={logo}
