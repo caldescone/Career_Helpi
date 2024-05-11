@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (63 ms)
+  ✕ renders learn react link (60 ms)
 
   ● renders learn react link
 
@@ -12,7 +12,9 @@ FAIL src/App.test.tsx
     Ignored nodes: comments, script, style
     [36m<body>[39m
       [36m<div>[39m
-        [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"parallax"[39m
+        [36m>[39m
           [36m<nav[39m
             [33mclass[39m=[32m"navbar fixed-top navbar-dark bg-dark shadow"[39m
           [36m>[39m
@@ -235,5 +237,5 @@ All files                 |    6.45 |    11.62 |    4.47 |    6.55 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.433 s
+Time:        3.33 s
 Ran all test suites.
