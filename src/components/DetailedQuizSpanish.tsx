@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { sendDetailedSpanishQuizQuery } from "./GPTSpanish";
-import Report from "./Report";
+import ReportSpanish from "./ReportSpanish";
 import { CareerRecommendation } from "./GPTSpanish";
 import Loading from "./Loading";
 
@@ -139,7 +139,7 @@ export default function DetailedQuizSpanish({ keyData }: { keyData: string }) {
               </h4>
             </div>
           </div>
-          <Report
+          <ReportSpanish
             Overview={recJobs.overview}
             RecCareer={recJobs.jobTitle}
             Description={recJobs.jobDescription}
