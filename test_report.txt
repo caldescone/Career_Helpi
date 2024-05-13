@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (60 ms)
+  ✕ renders learn react link (69 ms)
 
   ● renders learn react link
 
@@ -160,12 +160,12 @@ FAIL src/App.test.tsx
                 [36m<label[39m
                   [33mclass[39m=[32m"d-block text-center mt-2 form-label"[39m
                 [36m>[39m
-                  [0mAPI Key:[0m
+                  [0mAPI Key / Clave de API:[0m
                   [36m<input[39m
                     [33mclass[39m=[32m"form-control"[39m
                     [33mid[39m=[32m"api"[39m
                     [33mname[39m=[32m"api"[39m
-                    [33mplaceholder[39m=[32m"Insert API Key Here"[39m
+                    [33mplaceholder[39m=[32m"Insert API Key Here / Inserte la Clave de API Aquí"[39m
                     [33mstyle[39m=[32m"width: 800px; margin: 0px auto;"[39m
                     [33mtype[39m=[32m"password"[39m
                   [36m/>[39m
@@ -174,7 +174,7 @@ FAIL src/App.test.tsx
                   [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
-                  [0mSubmit[0m
+                  [0mSubmit / Enviar[0m
                 [36m</button>[39m
               [36m</form>[39m
             [36m</div>[39m
@@ -216,26 +216,28 @@ go away.[0m
 --------------------------|---------|----------|---------|---------|-------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------|---------|----------|---------|---------|-------------------
-All files                 |    6.45 |    11.62 |    4.47 |    6.55 |                   
+All files                 |    5.82 |    10.86 |    3.94 |    5.96 |                   
  src                      |      28 |       35 |   16.66 |      28 |                   
   App.tsx                 |      50 |    43.75 |      25 |      50 | 20,36-48          
   index.tsx               |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts      |       0 |        0 |       0 |       0 | 3-10              
- src/components           |     3.1 |     4.54 |    3.27 |    3.16 |                   
+ src/components           |    3.03 |     4.16 |    2.85 |     3.1 |                   
   BasicQuiz.tsx           |       0 |        0 |       0 |       0 | 16-175            
   BasicQuizSpanish.tsx    |       0 |        0 |       0 |       0 | 16-175            
   DetailedQuiz.tsx        |       0 |        0 |       0 |       0 | 9-96              
-  DetailedQuizSpanish.tsx |       0 |        0 |       0 |       0 | 9-96              
+  DetailedQuizSpanish.tsx |       0 |        0 |       0 |       0 | 9-98              
   GPT.tsx                 |    3.03 |        0 |       0 |    3.22 | 7-50,86-133       
+  GPTSpanish.tsx          |    3.03 |        0 |       0 |    3.22 | 7-52,91-146       
   HomePage.tsx            |     100 |      100 |     100 |     100 |                   
   HomePageSpanish.tsx     |       0 |      100 |       0 |       0 | 2                 
-  Loading.tsx             |       0 |        0 |       0 |       0 | 16-41             
+  Loading.tsx             |       0 |        0 |       0 |       0 | 15-40             
   NavBar.tsx              |      20 |     37.5 |    12.5 |      20 | 37-38,43-76       
   ProgressBar.tsx         |   33.33 |      100 |       0 |   33.33 | 4-6               
   Report.tsx              |       0 |      100 |       0 |       0 | 22-114            
+  ReportSpanish.tsx       |       0 |      100 |       0 |       0 | 22-114            
 --------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.33 s
+Time:        3.74 s
 Ran all test suites.
