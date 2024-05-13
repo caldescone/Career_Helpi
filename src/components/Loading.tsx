@@ -11,7 +11,6 @@ export default function Loading({
   submitAnswers: () => void;
   setShowReport: (showReport: boolean) => void;
   recJobs: CareerRecommendation | null;
-
 }) {
   const [showRetry, setShowRetry] = useState(false);
 
@@ -27,7 +26,7 @@ export default function Loading({
     if (recJobs) {
       setShowRetry(false);
     }
-  } , [recJobs]);
+  }, [recJobs]);
 
   const handleRetry = () => {
     submitAnswers();
@@ -46,9 +45,12 @@ export default function Loading({
       </Spinner>
       {showRetry && (
         <div className="popup">
-          <p>This took longer than expected. Please wait or try again using the buttons below.</p>
-          <button onClick={handleRetry}>Click here to try again</button>
-          <button onClick={handleGoBack}>Click here to go back</button>
+          <p>
+            This took longer than expected / Esto tomó más tiempo de lo
+            esperado.
+          </p>
+          <button onClick={handleRetry}>Try Again / Intentar de nuevo</button>
+          <button onClick={handleGoBack}>Go Back / Volver</button>
         </div>
       )}
     </div>
