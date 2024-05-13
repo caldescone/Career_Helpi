@@ -73,19 +73,19 @@ function App() {
         <CardFooter>
           <Form>
             <Form.Label className="d-block text-center mt-2">
-              API Key:
+              API Key / Clave de API:
               <Form.Control
                 id={`api`} // unique id for each input from chrome suggestions
                 name={`api`} // unique name for each input from chrome suggestions
                 type="password"
-                placeholder="Insert API Key Here"
+                placeholder="Insert API Key Here / Inserte la Clave de API Aquí"
                 onChange={changeKey}
                 style={{ width: "800px", margin: "0 auto" }}
               ></Form.Control>
             </Form.Label>
 
             <Button className="Submit-Button" onClick={handleSubmit}>
-              Submit
+              Submit / Enviar
             </Button>
           </Form>
         </CardFooter>
