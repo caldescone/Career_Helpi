@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ProgressBar from "./ProgressBar";
-import { sendDetailedQuizQuery } from "./GPT";
+import { sendDetailedSpanishQuizQuery } from "./GPTSpanish";
 import Report from "./Report";
-import { CareerRecommendation } from "./GPT";
+import { CareerRecommendation } from "./GPTSpanish";
 import Loading from "./Loading";
 
 export default function DetailedQuizSpanish({ keyData }: { keyData: string }) {
@@ -37,7 +37,9 @@ export default function DetailedQuizSpanish({ keyData }: { keyData: string }) {
 
   async function submitAnswers() {
     setShowReport(true);
-    setRecJobs(await sendDetailedQuizQuery(QuestionList, answers, keyData));
+    setRecJobs(
+      await sendDetailedSpanishQuizQuery(QuestionList, answers, keyData)
+    );
   }
 
   useEffect(() => {
@@ -129,11 +131,11 @@ export default function DetailedQuizSpanish({ keyData }: { keyData: string }) {
           <div className="Report-Header">
             <div className="Report-Intro">
               <h1>
-                <u>Detailed Quiz Report</u>
+                <u>Informe del Quiz Detallado</u>
               </h1>
               <h4>
-                Based on your answers to the quiz, here is a job you might be
-                interested in:
+                Basado en tus respuestas al quiz, aquí tienes un trabajo en el
+                que podrías estar interesado:
               </h4>
             </div>
           </div>
