@@ -19,10 +19,10 @@ export default function Loading({
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowRetry(true);
-    }, 30000); // 30 seconds
+    }, { isSpanish } ? 30000 : 20000);
 
     return () => clearTimeout(timer);
-  }, [setShowRetry]); // Include setShowRetry as a dependency
+  }, [setShowRetry, isSpanish]); // Include setShowRetry as a dependency
 
   useEffect(() => {
     if (recJobs) {
