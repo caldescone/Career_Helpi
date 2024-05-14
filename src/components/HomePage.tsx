@@ -1,4 +1,24 @@
-export default function HomePage() {
+export default function HomePage({
+  currentPage,
+  setCurrentPage,
+}: {
+  currentPage:
+    | "detailed"
+    | "basic"
+    | "home"
+    | "basicSpanish"
+    | "detailedSpanish"
+    | "homeSpanish";
+  setCurrentPage: (
+    page:
+      | "detailed"
+      | "basic"
+      | "home"
+      | "basicSpanish"
+      | "detailedSpanish"
+      | "homeSpanish"
+  ) => void;
+}) {
   return (
     <div className="Home-Page">
       <div className="row mt-5">
@@ -26,6 +46,14 @@ export default function HomePage() {
             <br></br>
             <br></br>
             Estimated time: 5 Minutes
+            <br></br>
+            <br></br>
+            <button
+              className="Submit-Button"
+              onClick={() => setCurrentPage("basic")}
+            >
+              To Basic Quiz
+            </button>
           </div>
         </div>
         <div className="columnCenter mt-5">
@@ -42,6 +70,14 @@ export default function HomePage() {
             <br></br>
             <br></br>
             Estimated time: 10 Minutes
+            <br></br>
+            <br></br>
+            <button
+              className="Submit-Button"
+              onClick={() => setCurrentPage("detailed")}
+            >
+              To Detailed Quiz
+            </button>
           </div>
         </div>
         <div className="EmptySpace"></div>

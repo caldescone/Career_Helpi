@@ -57,7 +57,7 @@ function App() {
         setCurrentPage={setCurrentPage}
       />
       <div className="App">
-        {currentPage === "home" ? <HomePage /> : null}
+        {currentPage === "home" ? <HomePage currentPage={currentPage} setCurrentPage={setCurrentPage}/> : null}
         {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
         {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
         {currentPage === "basicSpanish" ? (
@@ -66,7 +66,7 @@ function App() {
         {currentPage === "detailedSpanish" ? (
           <DetailedQuizSpanish keyData={keyData} />
         ) : null}
-        {currentPage === "homeSpanish" ? <HomePageSpanish /> : null}
+        {currentPage === "homeSpanish" ? <HomePageSpanish currentPage={currentPage} setCurrentPage={setCurrentPage}/> : null}
 
         <div className="EmptySpace"></div>
 

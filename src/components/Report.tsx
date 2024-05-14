@@ -22,7 +22,7 @@ export default function Report({
   return (
     // Overall report
     <div>
-      <div className="Report-Back-Color">
+      <div className="parallax">
         <div className="Report">
           <br></br>
           <div className="Report-Background">

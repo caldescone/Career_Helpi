@@ -1,4 +1,24 @@
-export default function HomePageSpanish() {
+export default function HomePageSpanish({
+  currentPage,
+  setCurrentPage,
+}: {
+  currentPage:
+    | "detailed"
+    | "basic"
+    | "home"
+    | "basicSpanish"
+    | "detailedSpanish"
+    | "homeSpanish";
+  setCurrentPage: (
+    page:
+      | "detailed"
+      | "basic"
+      | "home"
+      | "basicSpanish"
+      | "detailedSpanish"
+      | "homeSpanish"
+  ) => void;
+}) {
   return (
     <div className="Home-Page">
       <div className="row mt-5">
@@ -27,6 +47,14 @@ export default function HomePageSpanish() {
             <br></br>
             <br></br>
             Tiempo estimado: 5 minutos
+            <br></br>
+            <br></br>
+            <button
+              className="Submit-Button"
+              onClick={() => setCurrentPage("basicSpanish")}
+            >
+              Al cuestionario básico
+            </button>
           </div>
         </div>
         <div className="columnCenter mt-5">
@@ -47,6 +75,14 @@ export default function HomePageSpanish() {
             <br></br>
             <br></br>
             Tiempo estimado: 10 minutos
+            <br></br>
+            <br></br>
+            <button
+              className="Submit-Button"
+              onClick={() => setCurrentPage("detailedSpanish")}
+            >
+              Ir al cuestionario detallado
+            </button>
           </div>
         </div>
         <div className="EmptySpace"></div>

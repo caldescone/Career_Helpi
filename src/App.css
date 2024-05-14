@@ -167,9 +167,11 @@
   color: black;
   width: 90%;
   margin: auto;
-  height: 37vh;
+  /* height: 37vh; */
+  height: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .Statement{
@@ -208,8 +210,16 @@
 
 /* Area around top box saying which report it is */
 .Report-Header {
+  background-image: url("assets/images/Scene-1.jpg");
+  height: 100%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+/*   
   background-color: #282c34;
-  color: whitesmoke;
+  color: whitesmoke; */
   height: 25vh;
   display: flex;
   flex-direction: column;
@@ -261,8 +271,15 @@
 
 /* Back to Quiz Button */
 .Back-to-Quiz {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   /* color: white */
+  background-image: url("assets/images/Scene-1.jpg");
+  height: 100%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Loading Animation Chat GPT was used */
