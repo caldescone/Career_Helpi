@@ -51,14 +51,20 @@ function NavBar({
           <span className="fw-bolder fs-4">{brandName}</span>
         </div>
         {currentPage === "home" || currentPage === "homeSpanish" ? (
-          <Form.Check
-            type="switch"
-            id="is-spanish-check"
-            label={isSpanish ? "English" : "Español"}
-            checked={isSpanish}
-            onChange={updateLanguage}
-            className="white-label" // Add a CSS class for styling
-          />
+          <>
+            <div className="ms-auto">
+              {" "}
+              {/* Add this div to push the switch to the right */}
+              <Form.Check
+                type="switch"
+                id="is-spanish-check"
+                label={isSpanish ? "English" : "Español"}
+                checked={isSpanish}
+                onChange={updateLanguage}
+                className="white-label" // Add a CSS class for styling
+              />
+            </div>
+          </>
         ) : null}
         <NavDropdown title="Menu" id="basic-nav-dropdown">
           <NavDropdown.Item onClick={() => setCurrentPage("home")}>
