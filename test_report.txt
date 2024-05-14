@@ -38,21 +38,26 @@ FAIL src/App.test.tsx
                 [36m</span>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"white-label form-check form-switch"[39m
+                [33mclass[39m=[32m"ms-auto"[39m
               [36m>[39m
-                [36m<input[39m
-                  [33mchecked[39m=[32m""[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mid[39m=[32m"is-spanish-check"[39m
-                  [33mtype[39m=[32m"checkbox"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mfor[39m=[32m"is-spanish-check"[39m
-                  [33mtitle[39m=[32m""[39m
+                [0m [0m
+                [36m<div[39m
+                  [33mclass[39m=[32m"white-label form-check form-switch"[39m
                 [36m>[39m
-                  [0mEnglish[0m
-                [36m</label>[39m
+                  [36m<input[39m
+                    [33mchecked[39m=[32m""[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"is-spanish-check"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"is-spanish-check"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [0mEnglish[0m
+                  [36m</label>[39m
+                [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"nav-item dropdown"[39m
@@ -245,7 +250,7 @@ All files                 |    5.72 |    10.86 |    3.75 |    5.85 |
   HomePage.tsx            |   33.33 |      100 |   33.33 |   33.33 | 53-77             
   HomePageSpanish.tsx     |       0 |      100 |       0 |       0 | 22-82             
   Loading.tsx             |       0 |        0 |       0 |       0 | 15-40             
-  NavBar.tsx              |      20 |     37.5 |    12.5 |      20 | 37-38,43-76       
+  NavBar.tsx              |      20 |     37.5 |    12.5 |      20 | 37-38,43-82       
   ProgressBar.tsx         |   33.33 |      100 |       0 |   33.33 | 4-6               
   Report.tsx              |       0 |      100 |       0 |       0 | 22-114            
   ReportSpanish.tsx       |       0 |      100 |       0 |       0 | 22-114            
@@ -253,5 +258,5 @@ All files                 |    5.72 |    10.86 |    3.75 |    5.85 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.595 s
+Time:        3.912 s
 Ran all test suites.

@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Career_Helpi/static/css/main.fcd0bcbc.css",
-    "main.js": "/Career_Helpi/static/js/main.e990999b.js",
+    "main.js": "/Career_Helpi/static/js/main.b173ee1c.js",
     "static/js/453.bad6c33a.chunk.js": "/Career_Helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/Scene-1.jpg": "/Career_Helpi/static/media/Scene-1.744fa74992c7d54b54ab.jpg",
     "static/media/logo2.png": "/Career_Helpi/static/media/logo2.97d7e9e772720dc74fb1.png",
     "index.html": "/Career_Helpi/index.html",
     "main.fcd0bcbc.css.map": "/Career_Helpi/static/css/main.fcd0bcbc.css.map",
-    "main.e990999b.js.map": "/Career_Helpi/static/js/main.e990999b.js.map",
+    "main.b173ee1c.js.map": "/Career_Helpi/static/js/main.b173ee1c.js.map",
     "453.bad6c33a.chunk.js.map": "/Career_Helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fcd0bcbc.css",
-    "static/js/main.e990999b.js"
+    "static/js/main.b173ee1c.js"
   ]
 }
