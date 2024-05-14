@@ -61,15 +61,15 @@ function NavBar({
           </div>
           </>
         ) : null}
-        <NavDropdown title="Menu" id="basic-nav-dropdown">
+        <NavDropdown title={isSpanish ? "Menú" : "Menu"} id="basic-nav-dropdown">
           <NavDropdown.Item onClick={() => setCurrentPage("home")}>
-            Home
+            {isSpanish ? "Inicio" : "Home"}
           </NavDropdown.Item>
           <NavDropdown.Item onClick={() => setCurrentPage("basic")}>
-            Basic Quiz
+            {isSpanish ? "Quiz Básico" : "Basic Quiz"}
           </NavDropdown.Item>
           <NavDropdown.Item onClick={() => setCurrentPage("detailed")}>
-            Detailed Quiz
+            {isSpanish ? "Quiz Detallado" : "Detailed Quiz"}
           </NavDropdown.Item>
         </NavDropdown>
       </div>

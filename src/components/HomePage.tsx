@@ -34,8 +34,8 @@ export default function HomePage({
             <h4>
               {isSpanish
                 ? "Un cuestionario más rápido lleno de preguntas más básicas."
-                : "A quicker quiz filled with more basic questions."}{" "}
-            </h4>{" "}
+                : "A quicker quiz filled with more basic questions."}
+            </h4>
             {isSpanish
               ? "El cuestionario básico es un cuestionario más corto que te proporciona opciones para cada pregunta. Las preguntas te preguntarán sobre rasgos personales y preferencias dentro y fuera de la oficina. Este cuestionario está diseñado para ser una forma rápida de tener una idea general de qué carreras podrían interesarte. Puedes acceder al cuestionario desde el menú de arriba."
               : "The basic quiz is a shorter quiz that provides you with options to each question. The questions will ask you about personal traits and preferences in and out of the office. This quiz is designed to be a quick way to get a general idea of what career paths might interest you. You can access the quiz from the menu above."}
@@ -60,11 +60,10 @@ export default function HomePage({
               <u> {isSpanish ? "Quiz Detallado" : "Detailed Quiz"}</u>
             </h1>
             <h4>
-              {" "}
               {isSpanish
                 ? "Un cuestionario más largo lleno de preguntas más difíciles y detalladas."
                 : "A longer quiz filled with harder, more detailed questions."}
-            </h4>{" "}
+            </h4>
             {isSpanish
               ? "El cuestionario detallado es un cuestionario más largo que involucra preguntas de completar espacios en blanco. Las preguntas te preguntarán sobre tus fortalezas, intereses, preferencias de entorno de trabajo y más. Este cuestionario está diseñado para darte una idea detallada de qué carreras podrían interesarte. Puedes acceder al cuestionario desde el menú de arriba."
               : "The detailed quiz is a longer quiz that involves fill in the blank questions. The questions will ask you about your strengths, interests, work environment preferences, and more. This quiz is designed to give you an in depth idea of what career paths might interest you. You can access the quiz from the menu above."}
