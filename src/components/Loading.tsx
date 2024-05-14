@@ -41,7 +41,7 @@ export default function Loading({
 
   return (
     <div className="Loading">
-      <h1 style={{ marginRight: "10px" }}>Loading</h1>
+      <h1 style={{ marginRight: "10px" }}>{isSpanish ? "Cargando" : "Loading"}</h1>
       <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>

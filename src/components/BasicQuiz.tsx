@@ -287,6 +287,7 @@ export default function BasicQuiz({
             OtherJobs={recJobs.otherJobs}
             RelatedAspects={recJobs.relatedAspects}
             setShowReport={setShowReport}
+            isSpanish={isSpanish}
           />
         </div>
       ) : (

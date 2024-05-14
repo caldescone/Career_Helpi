@@ -8,6 +8,7 @@ export default function Report({
   OtherJobs,
   RelatedAspects,
   setShowReport,
+  isSpanish,
 }: {
   Overview: string;
   RecCareer: string;
@@ -18,6 +19,7 @@ export default function Report({
   OtherJobs: string[];
   RelatedAspects: string[];
   setShowReport: (showReport: boolean) => void;
+  isSpanish: boolean;
 }) {
   return (
     // Overall report
@@ -28,7 +30,7 @@ export default function Report({
           <div className="Report-Background">
             {/* Summary */}
             <h3 className="Report-Title">
-              <u>Summary</u>
+              <u>{isSpanish ? "Resumen" : "Summary"}</u>
             </h3>
             <p className="Report-Text">{Overview}</p>
             <br></br>
@@ -41,37 +43,37 @@ export default function Report({
 
             {/* Quiz results */}
             <h3 className="Report-Title">
-              <u>Recommended Career</u>
+              <u>{isSpanish ? "Carrera recomendada" : "Recommended Career"}</u>
             </h3>
             <p className="Report-Text">{RecCareer}</p>
 
             <hr></hr>
 
             <h3 className="Report-Title">
-              <u>Job Description</u>
+              <u>{isSpanish ? "Descripción del trabajo" : "Job Description"}</u>
             </h3>
             <p className="Report-Text">{Description}</p>
 
             <hr></hr>
 
             <h3 className="Report-Title">
-              <u>Salary Range</u>
+              <u>{isSpanish ? "Rango salarial" : "Salary Range"}</u>
             </h3>
-            <p className="Report-Text">Low: {Salary[0]}</p>
-            <p className="Report-Text">Median: {Salary[1]}</p>
-            <p className="Report-Text">High: {Salary[2]}</p>
+            <p className="Report-Text">{isSpanish ? "Bajo" : "Low"}: {Salary[0]}</p>
+            <p className="Report-Text">{isSpanish ? "Medio" : "Medium"}: {Salary[1]}</p>
+            <p className="Report-Text">{isSpanish ? "Alto" : "High"}: {Salary[2]}</p>
 
             <hr></hr>
 
             <h3 className="Report-Title">
-              <u>Education Required</u>
+              <u>{isSpanish ? "Educación requerida" : "Education Required"}</u>
             </h3>
             <p className="Report-Text">{Education}</p>
 
             <hr></hr>
 
             <h3 className="Report-Title">
-              <u>How This Job Fits You</u>
+              <u>{isSpanish ? "Cómo se ajusta este trabajo a ti" : "How this job fits you"}</u>
             </h3>
             <p className="Report-Text">{Fit}</p>
 
@@ -79,7 +81,7 @@ export default function Report({
 
             {/* Secondary report details */}
             <h3 className="Report-Title">
-              <u>Other Recommendations</u>
+              <u>{isSpanish ? "Otras recomendaciones" : "Other Recommendations"}</u>
             </h3>
             <p className="Report-Text">
               {OtherJobs.map((job, index) => (
@@ -90,7 +92,7 @@ export default function Report({
             <hr></hr>
 
             <h3 className="Report-Title">
-              <u>Related Aspects</u>
+              <u>{isSpanish ? "Aspectos relacionados" : "Related Aspects"}</u>
             </h3>
             <p className="Report-Text">
               {RelatedAspects.map((aspect, index) => (
@@ -111,7 +113,7 @@ export default function Report({
       {/* button allowing user to go back to quiz with answers still filled */}
       <div className="Back-to-Quiz">
         <br></br>
-        <button onClick={() => setShowReport(false)}>Go Back to Quiz</button>
+        <button onClick={() => setShowReport(false)}>{isSpanish ? "Volver al cuestionario" : "Back to Quiz"}</button>
         <hr></hr>
       </div>
     </div>

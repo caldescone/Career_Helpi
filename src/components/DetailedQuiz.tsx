@@ -216,6 +216,7 @@ export default function DetailedQuiz({
             OtherJobs={recJobs.otherJobs}
             RelatedAspects={recJobs.relatedAspects}
             setShowReport={setShowReport}
+            isSpanish={isSpanish}
           />
         </div>
       ) : (

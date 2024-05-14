@@ -37,6 +37,7 @@ function NavBar({
           />
           <span className="fw-bolder fs-4 p-4">{brandName}</span>
         </div>
+        {currentPage === "home" ? (
           <>
             <div className="ms-auto">
               {/* Add this div to push the switch to the right */}
@@ -50,6 +51,7 @@ function NavBar({
               />
             </div>
           </>
+        ) : ( null )}
         <NavDropdown
           title={isSpanish ? "Menú" : "Menu"}
           id="basic-nav-dropdown"
