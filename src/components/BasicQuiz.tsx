@@ -124,7 +124,7 @@ export default function BasicQuiz({
   async function submitAnswers() {
     console.log(questions);
     setShowReport(true);
-    setRecJobs(await sendBasicQuizQuery(questions, keyData));
+    setRecJobs(await sendBasicQuizQuery(questions, keyData, isSpanish));
   }
 
   useEffect(() => {
@@ -294,6 +294,7 @@ export default function BasicQuiz({
           submitAnswers={submitAnswers}
           setShowReport={setShowReport}
           recJobs={recJobs}
+          isSpanish={isSpanish}
         />
       )}
     </div>

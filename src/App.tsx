@@ -60,8 +60,12 @@ function App() {
             setIsSpanish={setIsSpanish}
           />
         ) : null}
-        {currentPage === "basic" ? <BasicQuiz keyData={keyData} isSpanish={isSpanish} /> : null}
-        {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
+        {currentPage === "basic" ? (
+          <BasicQuiz keyData={keyData} isSpanish={isSpanish} />
+        ) : null}
+        {currentPage === "detailed" ? (
+          <DetailedQuiz keyData={keyData} isSpanish={isSpanish} />
+        ) : null}
         <div className="EmptySpace"></div>
 
         <CardFooter>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 import Spinner from "react-bootstrap/Spinner";
 import { CareerRecommendation } from "./GPT";
@@ -7,10 +7,12 @@ export default function Loading({
   submitAnswers,
   setShowReport,
   recJobs,
+  isSpanish,
 }: {
   submitAnswers: () => void;
   setShowReport: (showReport: boolean) => void;
   recJobs: CareerRecommendation | null;
+  isSpanish: boolean;
 }) {
   const [showRetry, setShowRetry] = useState(false);
 
@@ -45,12 +47,10 @@ export default function Loading({
       </Spinner>
       {showRetry && (
         <div className="popup">
-          <p>
-            This took longer than expected / Esto tomó más tiempo de lo
-            esperado.
+          <p> {isSpanish ? "Esto tomó más tiempo de lo esperado." : "This took longer than expected."}
           </p>
-          <button onClick={handleRetry}>Try Again / Intentar de nuevo</button>
-          <button onClick={handleGoBack}>Go Back / Volver</button>
+          <button onClick={handleRetry}>{isSpanish ? "Reintentar" : "Retry"}</button>
+          <button onClick={handleGoBack}>{isSpanish ? "Volver" : "Go Back"}</button>
         </div>
       )}
     </div>
