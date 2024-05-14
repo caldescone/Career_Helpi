@@ -1,23 +1,21 @@
 export default function HomePage({
   currentPage,
   setCurrentPage,
+  isSpanish,
+  setIsSpanish,
 }: {
   currentPage:
     | "detailed"
     | "basic"
     | "home"
-    | "basicSpanish"
-    | "detailedSpanish"
-    | "homeSpanish";
   setCurrentPage: (
     page:
       | "detailed"
       | "basic"
       | "home"
-      | "basicSpanish"
-      | "detailedSpanish"
-      | "homeSpanish"
   ) => void;
+  isSpanish: boolean;
+  setIsSpanish: (isSpanish: boolean) => void;
 }) {
   return (
     <div className="Home-Page">

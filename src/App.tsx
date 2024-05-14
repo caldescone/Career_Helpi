@@ -5,9 +5,6 @@ import { Button, CardFooter, Form } from "react-bootstrap";
 import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
-import BasicQuizSpanish from "./components/BasicQuizSpanish";
-import DetailedQuizSpanish from "./components/DetailedQuizSpanish";
-import HomePageSpanish from "./components/HomePageSpanish";
 import NavBar from "./components/NavBar";
 import logo from "./assets/images/logo2.png";
 
@@ -22,14 +19,10 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [currentPage, setCurrentPage] = useState<
-    | "detailed"
-    | "basic"
-    | "home"
-    | "basicSpanish"
-    | "detailedSpanish"
-    | "homeSpanish"
-  >("home");
+  const [isSpanish, setIsSpanish] = useState<boolean>(false); //for spanish translation
+  const [currentPage, setCurrentPage] = useState<"detailed" | "basic" | "home">(
+    "home"
+  );
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -57,17 +50,16 @@ function App() {
         setCurrentPage={setCurrentPage}
       />
       <div className="App">
-        {currentPage === "home" ? <HomePage currentPage={currentPage} setCurrentPage={setCurrentPage}/> : null}
+        {currentPage === "home" ? (
+          <HomePage
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            isSpanish={isSpanish}
+            setIsSpanish={setIsSpanish}
+          />
+        ) : null}
         {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
         {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
-        {currentPage === "basicSpanish" ? (
-          <BasicQuizSpanish keyData={keyData} />
-        ) : null}
-        {currentPage === "detailedSpanish" ? (
-          <DetailedQuizSpanish keyData={keyData} />
-        ) : null}
-        {currentPage === "homeSpanish" ? <HomePageSpanish currentPage={currentPage} setCurrentPage={setCurrentPage}/> : null}
-
         <div className="EmptySpace"></div>
 
         <CardFooter>

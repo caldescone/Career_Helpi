@@ -17,24 +17,18 @@ function NavBar({
     | "detailed"
     | "basic"
     | "home"
-    | "basicSpanish"
-    | "detailedSpanish"
-    | "homeSpanish";
   setCurrentPage: (
     page:
       | "detailed"
       | "basic"
       | "home"
-      | "basicSpanish"
-      | "detailedSpanish"
-      | "homeSpanish"
   ) => void;
 }) {
   const [isSpanish, setIsSpanish] = useState<boolean>(true);
 
   // This is the Control
   function updateLanguage(event: React.ChangeEvent<HTMLInputElement>) {
-    setCurrentPage(isSpanish ? "homeSpanish" : "home");
+    setCurrentPage("home");
     setIsSpanish(!isSpanish);
   }
   return (
@@ -50,20 +44,19 @@ function NavBar({
           />
           <span className="fw-bolder fs-4">{brandName}</span>
         </div>
-        {currentPage === "home" || currentPage === "homeSpanish" ? (
+        {currentPage === "home" ? (
           <>
-            <div className="ms-auto">
-              {" "}
-              {/* Add this div to push the switch to the right */}
-              <Form.Check
-                type="switch"
-                id="is-spanish-check"
-                label={isSpanish ? "English" : "Español"}
-                checked={isSpanish}
-                onChange={updateLanguage}
-                className="white-label" // Add a CSS class for styling
-              />
-            </div>
+          <div className="ms-auto">
+            {/* Add this div to push the switch to the right */}
+          <Form.Check
+            type="switch"
+            id="is-spanish-check"
+            label={isSpanish ? "English" : "Español"}
+            checked={isSpanish}
+            onChange={updateLanguage}
+            className="white-label" // Add a CSS class for styling
+          />
+          </div>
           </>
         ) : null}
         <NavDropdown title="Menu" id="basic-nav-dropdown">
@@ -73,14 +66,8 @@ function NavBar({
           <NavDropdown.Item onClick={() => setCurrentPage("basic")}>
             Basic Quiz
           </NavDropdown.Item>
-          <NavDropdown.Item onClick={() => setCurrentPage("basicSpanish")}>
-            Quiz Básico
-          </NavDropdown.Item>
           <NavDropdown.Item onClick={() => setCurrentPage("detailed")}>
             Detailed Quiz
-          </NavDropdown.Item>
-          <NavDropdown.Item onClick={() => setCurrentPage("detailedSpanish")}>
-            Quiz Detallado
           </NavDropdown.Item>
         </NavDropdown>
       </div>
