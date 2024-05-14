@@ -14,20 +14,11 @@ function NavBar({
 }: {
   brandName: string;
   imageSrcPath: string;
-  currentPage:
-    | "detailed"
-    | "basic"
-    | "home"
-  setCurrentPage: (
-    page:
-      | "detailed"
-      | "basic"
-      | "home"
-  ) => void;
+  currentPage: "detailed" | "basic" | "home";
+  setCurrentPage: (page: "detailed" | "basic" | "home") => void;
   isSpanish: boolean;
   setIsSpanish: (isSpanish: boolean) => void;
 }) {
-
   // This is the Control
   function updateLanguage(event: React.ChangeEvent<HTMLInputElement>) {
     setIsSpanish(!isSpanish);
@@ -46,22 +37,23 @@ function NavBar({
           />
           <span className="fw-bolder fs-4 p-4">{brandName}</span>
         </div>
-        {currentPage === "home" ? (
           <>
-          <div className="ms-auto">
-            {/* Add this div to push the switch to the right */}
-          <Form.Check
-            type="switch"
-            id="is-spanish-check"
-            label={isSpanish ? "English" : "Español"}
-            checked={isSpanish}
-            onChange={updateLanguage}
-            className="white-label" // Add a CSS class for styling
-          />
-          </div>
+            <div className="ms-auto">
+              {/* Add this div to push the switch to the right */}
+              <Form.Check
+                type="switch"
+                id="is-spanish-check"
+                label={isSpanish ? "English" : "Español"}
+                checked={isSpanish}
+                onChange={updateLanguage}
+                className="white-label" // Add a CSS class for styling
+              />
+            </div>
           </>
-        ) : null}
-        <NavDropdown title={isSpanish ? "Menú" : "Menu"} id="basic-nav-dropdown">
+        <NavDropdown
+          title={isSpanish ? "Menú" : "Menu"}
+          id="basic-nav-dropdown"
+        >
           <NavDropdown.Item onClick={() => setCurrentPage("home")}>
             {isSpanish ? "Inicio" : "Home"}
           </NavDropdown.Item>

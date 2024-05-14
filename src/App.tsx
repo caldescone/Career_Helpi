@@ -72,14 +72,18 @@ function App() {
                 id={`api`} // unique id for each input from chrome suggestions
                 name={`api`} // unique name for each input from chrome suggestions
                 type="password"
-                placeholder={isSpanish ? "Inserte la clave API aquí" : "Insert API Key Here"}
+                placeholder={
+                  isSpanish
+                    ? "Inserte la clave API aquí"
+                    : "Insert API Key Here"
+                }
                 onChange={changeKey}
                 style={{ width: "800px", margin: "0 auto" }}
               ></Form.Control>
             </Form.Label>
 
             <Button className="Submit-Button" onClick={handleSubmit}>
-              {isSpanish ? "Enviar": "Submit"}
+              {isSpanish ? "Enviar" : "Submit"}
             </Button>
           </Form>
         </CardFooter>
