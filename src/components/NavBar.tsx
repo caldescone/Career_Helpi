@@ -1,7 +1,6 @@
 // import HomePage from "./HomePage";
 // import BasicQuiz from "./BasicQuiz";
 // import DetailedQuiz from "./DetailedQuiz";
-import { useState } from "react";
 import { Form } from "react-bootstrap";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
@@ -10,6 +9,8 @@ function NavBar({
   imageSrcPath,
   currentPage,
   setCurrentPage,
+  isSpanish,
+  setIsSpanish,
 }: {
   brandName: string;
   imageSrcPath: string;
@@ -23,14 +24,15 @@ function NavBar({
       | "basic"
       | "home"
   ) => void;
+  isSpanish: boolean;
+  setIsSpanish: (isSpanish: boolean) => void;
 }) {
-  const [isSpanish, setIsSpanish] = useState<boolean>(true);
 
   // This is the Control
   function updateLanguage(event: React.ChangeEvent<HTMLInputElement>) {
-    setCurrentPage("home");
     setIsSpanish(!isSpanish);
   }
+
   return (
     <nav className="navbar fixed-top navbar-dark bg-dark shadow">
       <div className="container-fluid">
@@ -42,7 +44,7 @@ function NavBar({
             className="d-inline-block align-center"
             alt=""
           />
-          <span className="fw-bolder fs-4">{brandName}</span>
+          <span className="fw-bolder fs-4 p-4">{brandName}</span>
         </div>
         {currentPage === "home" ? (
           <>

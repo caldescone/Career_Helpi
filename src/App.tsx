@@ -44,10 +44,12 @@ function App() {
   return (
     <div className="parallax">
       <NavBar
-        brandName="         The Career Helpi"
+        brandName={isSpanish ? "La ayuda profesional" : "The Career Helpi"}
         imageSrcPath={logo}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
+        isSpanish={isSpanish}
+        setIsSpanish={setIsSpanish}
       />
       <div className="App">
         {currentPage === "home" ? (
