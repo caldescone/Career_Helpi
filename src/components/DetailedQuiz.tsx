@@ -70,7 +70,7 @@ export default function DetailedQuiz({
   ];
 
   const [answers, setAnswers] = useState<string[]>(
-    new Array(8).fill(defaultOption)
+    new Array(questions.length).fill(defaultOption)
   );
   const [questionsComplete, setQuestionsComplete] = useState<number>(0);
   const [recJobs, setRecJobs] = useState<CareerRecommendation | null>(null);
@@ -82,7 +82,7 @@ export default function DetailedQuiz({
     newAnswers[index] = value;
     setAnswers(newAnswers);
     setQuestionsComplete(
-      newAnswers.filter((answer) => answer.length > 3).length
+      newAnswers.filter((answer) => answer.length > 1).length
     );
   };
 
@@ -124,7 +124,7 @@ export default function DetailedQuiz({
                         }}
                       >
                         {isSpanish ? questions[index].spanishQuestion : questions[index].question}{" "}
-                        {answers[index].length > 3 ? " ✔️" : " ❌"}
+                        {answers[index].length > 1 ? " ✔️" : " ❌"}
                       </div>
                     </li>
                     <input
@@ -224,7 +224,7 @@ export default function DetailedQuiz({
           submitAnswers={submitAnswers}
           setShowReport={setShowReport}
           recJobs={recJobs}
-          isSpanish={false}
+          isSpanish={isSpanish}
         ></Loading>
       )}
     </div>
