@@ -66,7 +66,7 @@ export default function DetailedQuiz({ keyData }: { keyData: string }) {
                   <ol start={index + 1}>
                     <li>
                       <div
-                        style={{ border: "1px solid black", padding: "2px" }}
+                        style={{ border: "1px solid black", padding: "2px", background: 'whitesmoke'}}
                       >
                         {QuestionList[index]}{" "}
                         {answers[index].length > 3 ? " ✔️" : " ❌"}

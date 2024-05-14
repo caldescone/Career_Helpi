@@ -126,7 +126,7 @@ export default function BasicQuiz({ keyData }: { keyData: string }) {
                       {/* uses the index to display the question number starting from 1 */}
                       <li>
                         <div
-                          style={{ border: "1px solid black", padding: "2px" }}
+                          style={{ border: "1px solid black", padding: "2px", background: 'whitesmoke' }}
                         >
                           {question.question}{" "}
                           {selectedOptions[index] !== "" ? " ✔️" : " ❌"}
