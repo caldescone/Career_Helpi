@@ -1,7 +1,6 @@
 // import HomePage from "./HomePage";
 // import BasicQuiz from "./BasicQuiz";
 // import DetailedQuiz from "./DetailedQuiz";
-import { useState } from "react";
 import { Form } from "react-bootstrap";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
@@ -10,33 +9,21 @@ function NavBar({
   imageSrcPath,
   currentPage,
   setCurrentPage,
+  isSpanish,
+  setIsSpanish,
 }: {
   brandName: string;
   imageSrcPath: string;
-  currentPage:
-    | "detailed"
-    | "basic"
-    | "home"
-    | "basicSpanish"
-    | "detailedSpanish"
-    | "homeSpanish";
-  setCurrentPage: (
-    page:
-      | "detailed"
-      | "basic"
-      | "home"
-      | "basicSpanish"
-      | "detailedSpanish"
-      | "homeSpanish"
-  ) => void;
+  currentPage: "detailed" | "basic" | "home";
+  setCurrentPage: (page: "detailed" | "basic" | "home") => void;
+  isSpanish: boolean;
+  setIsSpanish: (isSpanish: boolean) => void;
 }) {
-  const [isSpanish, setIsSpanish] = useState<boolean>(true);
-
   // This is the Control
   function updateLanguage(event: React.ChangeEvent<HTMLInputElement>) {
-    setCurrentPage(isSpanish ? "homeSpanish" : "home");
     setIsSpanish(!isSpanish);
   }
+
   return (
     <nav className="navbar fixed-top navbar-dark bg-dark shadow">
       <div className="container-fluid">
@@ -48,12 +35,11 @@ function NavBar({
             className="d-inline-block align-center"
             alt=""
           />
-          <span className="fw-bolder fs-4">{brandName}</span>
+          <span className="fw-bolder fs-4 p-4">{brandName}</span>
         </div>
-        {currentPage === "home" || currentPage === "homeSpanish" ? (
+        {currentPage === "home" ? (
           <>
             <div className="ms-auto">
-              {" "}
               {/* Add this div to push the switch to the right */}
               <Form.Check
                 type="switch"
@@ -65,22 +51,19 @@ function NavBar({
               />
             </div>
           </>
-        ) : null}
-        <NavDropdown title="Menu" id="basic-nav-dropdown">
+        ) : ( null )}
+        <NavDropdown
+          title={isSpanish ? "Menú" : "Menu"}
+          id="basic-nav-dropdown"
+        >
           <NavDropdown.Item onClick={() => setCurrentPage("home")}>
-            Home
+            {isSpanish ? "Inicio" : "Home"}
           </NavDropdown.Item>
           <NavDropdown.Item onClick={() => setCurrentPage("basic")}>
-            Basic Quiz
-          </NavDropdown.Item>
-          <NavDropdown.Item onClick={() => setCurrentPage("basicSpanish")}>
-            Quiz Básico
+            {isSpanish ? "Quiz Básico" : "Basic Quiz"}
           </NavDropdown.Item>
           <NavDropdown.Item onClick={() => setCurrentPage("detailed")}>
-            Detailed Quiz
-          </NavDropdown.Item>
-          <NavDropdown.Item onClick={() => setCurrentPage("detailedSpanish")}>
-            Quiz Detallado
+            {isSpanish ? "Quiz Detallado" : "Detailed Quiz"}
           </NavDropdown.Item>
         </NavDropdown>
       </div>

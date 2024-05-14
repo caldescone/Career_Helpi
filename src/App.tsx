@@ -5,9 +5,6 @@ import { Button, CardFooter, Form } from "react-bootstrap";
 import BasicQuiz from "./components/BasicQuiz";
 import DetailedQuiz from "./components/DetailedQuiz";
 import HomePage from "./components/HomePage";
-import BasicQuizSpanish from "./components/BasicQuizSpanish";
-import DetailedQuizSpanish from "./components/DetailedQuizSpanish";
-import HomePageSpanish from "./components/HomePageSpanish";
 import NavBar from "./components/NavBar";
 import logo from "./assets/images/logo2.png";
 
@@ -22,14 +19,10 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [currentPage, setCurrentPage] = useState<
-    | "detailed"
-    | "basic"
-    | "home"
-    | "basicSpanish"
-    | "detailedSpanish"
-    | "homeSpanish"
-  >("home");
+  const [isSpanish, setIsSpanish] = useState<boolean>(false); //for spanish translation
+  const [currentPage, setCurrentPage] = useState<"detailed" | "basic" | "home">(
+    "home"
+  );
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -51,41 +44,50 @@ function App() {
   return (
     <div className="parallax">
       <NavBar
-        brandName="         The Career Helpi"
+        brandName={isSpanish ? "La ayuda profesional" : "The Career Helpi"}
         imageSrcPath={logo}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
+        isSpanish={isSpanish}
+        setIsSpanish={setIsSpanish}
       />
       <div className="App">
-        {currentPage === "home" ? <HomePage currentPage={currentPage} setCurrentPage={setCurrentPage}/> : null}
-        {currentPage === "basic" ? <BasicQuiz keyData={keyData} /> : null}
-        {currentPage === "detailed" ? <DetailedQuiz keyData={keyData} /> : null}
-        {currentPage === "basicSpanish" ? (
-          <BasicQuizSpanish keyData={keyData} />
+        {currentPage === "home" ? (
+          <HomePage
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            isSpanish={isSpanish}
+            setIsSpanish={setIsSpanish}
+          />
         ) : null}
-        {currentPage === "detailedSpanish" ? (
-          <DetailedQuizSpanish keyData={keyData} />
+        {currentPage === "basic" ? (
+          <BasicQuiz keyData={keyData} isSpanish={isSpanish} />
         ) : null}
-        {currentPage === "homeSpanish" ? <HomePageSpanish currentPage={currentPage} setCurrentPage={setCurrentPage}/> : null}
-
+        {currentPage === "detailed" ? (
+          <DetailedQuiz keyData={keyData} isSpanish={isSpanish} />
+        ) : null}
         <div className="EmptySpace"></div>
 
         <CardFooter>
           <Form>
             <Form.Label className="d-block text-center mt-2">
-              API Key / Clave de API:
+              {isSpanish ? "Clave API" : "API Key"}
               <Form.Control
                 id={`api`} // unique id for each input from chrome suggestions
                 name={`api`} // unique name for each input from chrome suggestions
                 type="password"
-                placeholder="Insert API Key Here / Inserte la Clave de API Aquí"
+                placeholder={
+                  isSpanish
+                    ? "Inserte la clave API aquí"
+                    : "Insert API Key Here"
+                }
                 onChange={changeKey}
                 style={{ width: "800px", margin: "0 auto" }}
               ></Form.Control>
             </Form.Label>
 
             <Button className="Submit-Button" onClick={handleSubmit}>
-              Submit / Enviar
+              {isSpanish ? "Enviar" : "Submit"}
             </Button>
           </Form>
         </CardFooter>

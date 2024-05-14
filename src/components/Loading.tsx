@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 import Spinner from "react-bootstrap/Spinner";
 import { CareerRecommendation } from "./GPT";
@@ -7,20 +7,22 @@ export default function Loading({
   submitAnswers,
   setShowReport,
   recJobs,
+  isSpanish,
 }: {
   submitAnswers: () => void;
   setShowReport: (showReport: boolean) => void;
   recJobs: CareerRecommendation | null;
+  isSpanish: boolean;
 }) {
   const [showRetry, setShowRetry] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowRetry(true);
-    }, 20000); // 15 seconds
+    }, { isSpanish } ? 30000 : 20000);
 
     return () => clearTimeout(timer);
-  }, [setShowRetry]); // Include setShowRetry as a dependency
+  }, [setShowRetry, isSpanish]); // Include setShowRetry as a dependency
 
   useEffect(() => {
     if (recJobs) {
@@ -39,18 +41,16 @@ export default function Loading({
 
   return (
     <div className="Loading">
-      <h1 style={{ marginRight: "10px" }}>Loading</h1>
+      <h1 style={{ marginRight: "10px" }}>{isSpanish ? "Cargando" : "Loading"}</h1>
       <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
       {showRetry && (
         <div className="popup">
-          <p>
-            This took longer than expected / Esto tomó más tiempo de lo
-            esperado.
+          <p> {isSpanish ? "Esto tomó más tiempo de lo esperado." : "This took longer than expected."}
           </p>
-          <button onClick={handleRetry}>Try Again / Intentar de nuevo</button>
-          <button onClick={handleGoBack}>Go Back / Volver</button>
+          <button onClick={handleRetry}>{isSpanish ? "Reintentar" : "Retry"}</button>
+          <button onClick={handleGoBack}>{isSpanish ? "Volver" : "Go Back"}</button>
         </div>
       )}
     </div>
