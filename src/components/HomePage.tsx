@@ -41,7 +41,7 @@ export default function HomePage() {
             <br></br>
             <br></br>
             <button className="Submit-Button" onClick={() => setCurrentPage("basic")}>
-                Go To Basic Quiz
+                To Basic Quiz
             </button>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function HomePage() {
             <br></br>
             <br></br>
             <button className="Submit-Button" onClick={() => setCurrentPage("detailed")}>
-                Go To Detailed Quiz
+                To Detailed Quiz
             </button>
           </div>
         </div>
