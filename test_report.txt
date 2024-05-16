@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (63 ms)
+  ✕ renders learn react link (66 ms)
 
   ● renders learn react link
 
@@ -244,7 +244,7 @@ All files             |    7.26 |    14.13 |    5.17 |    7.47 |
   reportWebVitals.ts  |       0 |        0 |       0 |       0 | 3-10              
  src/components       |    3.26 |    11.11 |    3.84 |    3.37 |                   
   BasicQuiz.tsx       |       0 |        0 |       0 |       0 | 24-227            
-  DetailedQuiz.tsx    |       0 |        0 |       0 |       0 | 20-156            
+  DetailedQuiz.tsx    |       0 |        0 |       0 |       0 | 20-155            
   GPT.tsx             |    5.26 |        0 |       0 |    5.55 | 8-51,118-177      
   GPTSpanish.tsx      |       0 |        0 |       0 |       0 | 7-146             
   HomePage.tsx        |   33.33 |       50 |   33.33 |   33.33 | 51-79             
@@ -257,5 +257,5 @@ All files             |    7.26 |    14.13 |    5.17 |    7.47 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.549 s
+Time:        3.673 s
 Ran all test suites.
