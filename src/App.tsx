@@ -19,7 +19,7 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [isSpanish, setIsSpanish] = useState<boolean>(navigator.language === "es");
+  const [isSpanish, setIsSpanish] = useState<boolean>(navigator.language.includes("es"));
   const [currentPage, setCurrentPage] = useState<"detailed" | "basic" | "home">(
     "home"
   );
@@ -35,6 +35,11 @@ function App() {
       }
     });
   }
+
+  // On load run function
+  window.onload = function () {
+    console.log(navigator.language);
+  };
 
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
