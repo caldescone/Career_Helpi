@@ -127,13 +127,12 @@ export default function DetailedQuiz({
                         {answers[index].length > 1 ? " ✔️" : " ❌"}
                       </div>
                     </li>
-                    <input
+                    <textarea
                       id={`answer-${index}`} // unique id for each input from chrome suggestions
                       name={`answer-${index}`} // unique name for each input from chrome suggestions
-                      type="text"
                       value={answers[index]}
                       onChange={(e) => updateAnswer(index, e.target.value)}
-                      style={{ width: "100%", height: "auto" }}
+                      style={{ width: "100%", minHeight: "30px" }}
                     />
                   </ol>
                 </div>
