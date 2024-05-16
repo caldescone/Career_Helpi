@@ -19,7 +19,7 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [isSpanish, setIsSpanish] = useState<boolean>(false); //for spanish translation
+  const [isSpanish, setIsSpanish] = useState<boolean>(navigator.language === "es");
   const [currentPage, setCurrentPage] = useState<"detailed" | "basic" | "home">(
     "home"
   );
