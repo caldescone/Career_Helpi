@@ -36,11 +36,6 @@ function App() {
     });
   }
 
-  // On load run function
-  window.onload = function () {
-    console.log(navigator.language);
-  };
-
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
